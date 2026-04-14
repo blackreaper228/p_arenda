@@ -1,15 +1,17 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
   font-family: TT Firs Neue;
-  src: url(/parametr-header/TTFirsNeue-Regular.ttf) format("truetype"),
+  src:
+    url(/parametr-header/TTFirsNeue-Regular.ttf) format('truetype'),
     url(https://static.tildacdn.com/tild3761-6331-4234-b039-346630363437/TTFirsNeue-Regular.woff);
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: TT Firs Neue;
-  src: url(/parametr-header/TTFirsNeue-Medium.ttf) format("truetype"),
+  src:
+    url(/parametr-header/TTFirsNeue-Medium.ttf) format('truetype'),
     url(https://static.tildacdn.com/tild3038-3936-4734-a664-643863393164/TTFirsNeue-Medium.woff);
   font-weight: 500;
   font-style: normal;
@@ -18,7 +20,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: "TT Firs Neue", sans-serif;
+  font-family: 'TT Firs Neue', sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -80,6 +82,13 @@ h3 {
 
 #scale-content {
   width: 100%;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .flex-height {
@@ -146,58 +155,45 @@ h3 {
   }
 }
 
+.row_text_small {
+  font-size: 16px;
+  line-height: 130%;
+  color: var(--pikBlack);
+  font-weight: 400;
+
+  &.white {
+    color: var(--white);
+  }
+}
+
 .feature {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   &:is(.first) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_04.jpg");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_04.jpg');
   }
   &:is(.second) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_01.jpg");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_01.jpg');
   }
   &:is(.third) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_03.png");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_03.png');
   }
   &:is(.fourth) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_02.png");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_02.png');
   }
   &:is(.fifth) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_05.jpg");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_05.jpg');
   }
   &:is(.sixth) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_06.jpg");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_06.jpg');
   }
 }
 
@@ -207,36 +203,24 @@ h3 {
   background-repeat: no-repeat;
   overflow: hidden;
   &:is(.first) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("https://optim.tildacdn.com/tild3361-3737-4036-b664-336334633764/-/format/webp/arenda_advantages_01.jpg.webp");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild3361-3737-4036-b664-336334633764/-/format/webp/arenda_advantages_01.jpg.webp');
   }
   &:is(.second) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("https://optim.tildacdn.com/tild3231-3662-4333-b839-636264396532/-/format/webp/arenda_advantages_02.jpg.webp");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild3231-3662-4333-b839-636264396532/-/format/webp/arenda_advantages_02.jpg.webp');
   }
   &:is(.third) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("https://optim.tildacdn.com/tild6533-3932-4664-a533-623730353930/-/format/webp/arenda_advantages_03.jpg.webp");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild6533-3932-4664-a533-623730353930/-/format/webp/arenda_advantages_03.jpg.webp');
   }
   &:is(.fourth) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("https://optim.tildacdn.com/tild6363-3364-4762-b364-313538393666/-/format/webp/arenda_advantages_04.jpg.webp");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild6363-3364-4762-b364-313538393666/-/format/webp/arenda_advantages_04.jpg.webp');
   }
 }
 
@@ -247,46 +231,34 @@ h3 {
   overflow: hidden;
 
   &:is(.first) {
-    background-image: linear-gradient(180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%),
-      url("https: //optim.tildacdn.com/tild3933-6538-4339-a236-323538646236/-/format/webp/residents_01.jpg.webp");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild3933-6538-4339-a236-323538646236/-/format/webp/residents_01.jpg.webp');
   }
 
   &:is(.second) {
-    background-image: linear-gradient(180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%),
-      url("https: //optim.tildacdn.com/tild3765-3337-4133-b764-366537303862/-/format/webp/residents_02.jpg.webp");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild3765-3337-4133-b764-366537303862/-/format/webp/residents_02.jpg.webp');
   }
 
   &:is(.third) {
-    background-image: linear-gradient(180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%),
-      url("https: //optim.tildacdn.com/tild3763-3930-4639-a430-346135666566/-/format/webp/residents_03.jpg.webp");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild3763-3930-4639-a430-346135666566/-/format/webp/residents_03.jpg.webp');
   }
 
   &:is(.fourth) {
-    background-image: linear-gradient(180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%),
-      url("https: //optim.tildacdn.com/tild6530-3136-4333-b464-373930363231/-/format/webp/residents_04.jpg.webp");
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild6530-3136-4333-b464-373930363231/-/format/webp/residents_04.jpg.webp');
   }
 
-        &:is(.fifth) {
-          background-image: linear-gradient(180deg,
-              rgba(0, 0, 0, 0) 40%,
-              rgba(0, 0, 0, 1) 100%),
-            url("https: //optim.tildacdn.com/tild6530-3136-4333-b464-373930363231/-/format/webp/residents_04.jpg.webp");
-        }
-
-                    &:is(.sixth) {
-                      background-image: linear-gradient(180deg,
-                          rgba(0, 0, 0, 0) 40%,
-                          rgba(0, 0, 0, 1) 100%),
-                        url("https: //optim.tildacdn.com/tild6530-3136-4333-b464-373930363231/-/format/webp/residents_04.jpg.webp");
-                    }
+  &:is(.fifth) {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild6332-3335-4866-a464-636666383261/-/format/webp/residents_05.jpg.webp');
+  }
 }
 
 .galleryItem {
@@ -298,31 +270,31 @@ h3 {
 
   &:is(.first) {
     margin-left: 40px;
-    background-image: url("https://optim.tildacdn.com/tild3932-3433-4638-b135-623661616234/-/format/webp/arenda_gallery_01.jpg.webp");
+    background-image: url('https://optim.tildacdn.com/tild3932-3433-4638-b135-623661616234/-/format/webp/arenda_gallery_01.jpg.webp');
   }
   &:is(.second) {
-    background-image: url("https://optim.tildacdn.com/tild3839-6231-4937-a334-633334373264/-/format/webp/arenda_gallery_02.jpg.webp");
+    background-image: url('https://optim.tildacdn.com/tild3839-6231-4937-a334-633334373264/-/format/webp/arenda_gallery_02.jpg.webp');
   }
   &:is(.third) {
-    background-image: url("https://optim.tildacdn.com/tild6362-3161-4139-a263-643266323933/-/format/webp/arenda_gallery_03.jpg.webp");
+    background-image: url('https://optim.tildacdn.com/tild6362-3161-4139-a263-643266323933/-/format/webp/arenda_gallery_03.jpg.webp');
   }
   &:is(.fourth) {
-    background-image: url("https://optim.tildacdn.com/tild3533-6431-4231-b065-313432393566/-/format/webp/arenda_gallery_04.jpg.webp");
+    background-image: url('https://optim.tildacdn.com/tild3533-6431-4231-b065-313432393566/-/format/webp/arenda_gallery_04.jpg.webp');
   }
   &:is(.fifth) {
-    background-image: url("https://optim.tildacdn.com/tild6131-6261-4163-b234-336434666266/-/format/webp/arenda_gallery_05.jpg.webp");
+    background-image: url('https://optim.tildacdn.com/tild6131-6261-4163-b234-336434666266/-/format/webp/arenda_gallery_05.jpg.webp');
   }
   &:is(.sixth) {
-    background-image: url("https://optim.tildacdn.com/tild3266-3863-4463-b863-346439656261/-/format/webp/arenda_gallery_06.jpg.webp");
+    background-image: url('https://optim.tildacdn.com/tild3266-3863-4463-b863-346439656261/-/format/webp/arenda_gallery_06.jpg.webp');
   }
   &:is(.seventh) {
-    background-image: url("https://optim.tildacdn.com/tild6439-3662-4666-b635-626435303836/-/format/webp/arenda_gallery_07.jpg.webp");
+    background-image: url('https://optim.tildacdn.com/tild6439-3662-4666-b635-626435303836/-/format/webp/arenda_gallery_07.jpg.webp');
   }
   &:is(.eighth) {
-    background-image: url("https://optim.tildacdn.com/tild6366-3436-4061-a466-343536613762/-/format/webp/arenda_gallery_08.jpg.webp");
+    background-image: url('https://optim.tildacdn.com/tild6366-3436-4061-a466-343536613762/-/format/webp/arenda_gallery_08.jpg.webp');
   }
   &:is(.ninth) {
-    background-image: url("https://optim.tildacdn.com/tild3238-3134-4036-a231-626331316131/-/format/webp/arenda_gallery_09.jpg.webp");
+    background-image: url('https://optim.tildacdn.com/tild3238-3134-4036-a231-626331316131/-/format/webp/arenda_gallery_09.jpg.webp');
   }
 }
 
@@ -342,7 +314,7 @@ h3 {
   }
   &:is(.kuvekino) {
     background-color: var(--kuvekino-color);
-    background-image: url("/card/kuvekino.jpg");
+    background-image: url('/card/kuvekino.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -351,7 +323,7 @@ h3 {
   }
   &:is(.senkino) {
     background-color: var(--senkino-color);
-    background-image: url("/card/senkino.jpg");
+    background-image: url('/card/senkino.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -360,7 +332,7 @@ h3 {
   }
   &:is(.balashiha) {
     background-color: var(--balashiha-color);
-    background-image: url("/card/balashiha.jpg");
+    background-image: url('/card/balashiha.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -369,7 +341,7 @@ h3 {
   }
   &:is(.sokolovo) {
     background-color: var(--sokolovo-color);
-    background-image: url("/card/sokolovo.jpg");
+    background-image: url('/card/sokolovo.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -378,7 +350,7 @@ h3 {
   }
   &:is(.tokarevo) {
     background-color: var(--tokarevo-color);
-    background-image: url("/card/tokarevo.jpg");
+    background-image: url('/card/tokarevo.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -387,7 +359,7 @@ h3 {
   }
   &:is(.butovo) {
     background-color: var(--butovo-color);
-    background-image: url("/card/butovo.jpg");
+    background-image: url('/card/butovo.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -401,9 +373,10 @@ h3 {
 }
 
 .main-slider {
-  background-image: url("/MainSliderBG.svg");
+  background-image: url('/MainSliderBG.svg');
 }
 .button {
+  cursor: pointer;
   display: flex;
   flex-shrink: 0;
   flex-direction: row;
@@ -449,11 +422,11 @@ body.mobile-no-hover .feature.group:hover p {
   opacity: inherit !important;
 }
 
-body.mobile-no-hover .feature.group.active > div[class*="-translate-y-"] {
+body.mobile-no-hover .feature.group.active > div[class*='-translate-y-'] {
   transform: translateY(-100px) !important;
 }
 
-body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
+body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
   opacity: 1 !important; /* Текст становится видимым при активном состоянии */
 }
 
@@ -479,7 +452,7 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
   opacity: 100;
 
   &::placeholder {
-    color: var(--color-primary);
+    color: var(--grey);
   }
 }
 
@@ -499,8 +472,8 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
 
 .custom-form__checkbox-icon {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: 1px solid #181818;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -511,11 +484,11 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
 }
 
 .custom-form__checkbox-input:checked ~ .custom-form__checkbox-icon::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
-  top: 2px;
-  left: 6px;
+  top: 30%;
+  left: 40%;
   width: 5px;
   height: 10px;
   border: solid #181818;
@@ -548,7 +521,6 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: fit-content;
   gap: 60px;
 }
 
@@ -782,7 +754,7 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
 .openBtn {
   width: 42px;
   aspect-ratio: 1;
-  background-image: url("/icons/chevron-up.svg");
+  background-image: url('/icons/chevron-up.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -807,7 +779,9 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
   max-height: 0;
   opacity: 0;
 
-  transition: max-height 0.5s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.3s ease;
 }
 
 .accordionCard.is-open {

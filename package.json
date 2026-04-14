@@ -8,7 +8,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist",
-
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

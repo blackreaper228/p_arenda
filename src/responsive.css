@@ -238,27 +238,27 @@
 
   .project {
     &:is(.kuvekino) {
-      background-image: url("/card/kuvekino_mobile.jpg");
+      background-image: url('/card/kuvekino_mobile.jpg');
     }
     &:is(.senkino) {
-      background-image: url("/card/senkino_mobile.jpg");
+      background-image: url('/card/senkino_mobile.jpg');
     }
     &:is(.balashiha) {
-      background-image: url("/card/balashiha_mobile.jpg");
+      background-image: url('/card/balashiha_mobile.jpg');
     }
     &:is(.sokolovo) {
-      background-image: url("/card/sokolovo_mobile.jpg");
+      background-image: url('/card/sokolovo_mobile.jpg');
     }
     &:is(.tokarevo) {
-      background-image: url("/card/tokarevo_mobile.jpg");
+      background-image: url('/card/tokarevo_mobile.jpg');
     }
     &:is(.butovo) {
-      background-image: url("/card/butovo_mobile.jpg");
+      background-image: url('/card/butovo_mobile.jpg');
     }
   }
 
   .main-slider {
-    background-image: url("/MainSliderMobileBG.svg");
+    background-image: url('/MainSliderMobileBG.svg');
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -293,11 +293,11 @@
     opacity: inherit !important;
   }
 
-  .feature.group.active > div[class*="-translate-y-"] {
+  .feature.group.active > div[class*='-translate-y-'] {
     transform: translateY(-100px) !important;
   }
 
-  .feature.group.active p[class*="opacity-0"] {
+  .feature.group.active p[class*='opacity-0'] {
     opacity: 1 !important;
   }
 
