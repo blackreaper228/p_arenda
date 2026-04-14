@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".A_Mobilecount.U_Dynamic"
   );
   const totalCountElement = document.querySelector(".A_Mobilecount:last-child");
-  totalCountElement.textContent = totalOffers;
+  // totalCountElement.textContent = totalOffers;
 
   // Function to get the width of a slide including gap
   const getSlideWidth = () => {

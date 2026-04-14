@@ -1,13 +1,43 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: TT Firs Neue;
+  src: url(/parametr-header/TTFirsNeue-Regular.ttf) format("truetype"),
+    url(https://static.tildacdn.com/tild3761-6331-4234-b039-346630363437/TTFirsNeue-Regular.woff);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: TT Firs Neue;
+  src: url(/parametr-header/TTFirsNeue-Medium.ttf) format("truetype"),
+    url(https://static.tildacdn.com/tild3038-3936-4734-a664-643863393164/TTFirsNeue-Medium.woff);
+  font-weight: 500;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
   font-family: "TT Firs Neue", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-@import "tailwindcss";
-
 :root {
-  --color-primary: #000;
+  --black: #000000;
+  --pikBlack: #181818;
+  --white: #ffffff;
+
+  --lightGrey: #f7f7f7;
+  --grey: #888888;
+
+  /* stroke */
+  --stroke-light: #dddddd;
+  --stroke-dark: #3a3a3a;
+
+  /* park */
   --senkino-color: #9ca8af;
   --balashiha-color: #4f98a3;
   --kuvekino-color: #bdb7aa;
@@ -15,10 +45,11 @@
   --tokarevo-color: #8a7f8e;
   --butovo-color: #949e8c;
 
-  --parametr-ease: cubic-bezier(0.16, 1, 0.3, 1);
-
+  /* переменные Матвея */
+  --color-primary: #000;
   --secondary-light: #f7f7f7;
-  --grey: #d6d6d6;
+
+  --parametr-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body {
@@ -62,6 +93,10 @@ h3 {
   color: var(--color-primary);
   text-transform: uppercase;
   font-weight: 500;
+
+  &.white {
+    color: var(--white);
+  }
 }
 .number {
   font-size: 70px;
@@ -86,13 +121,31 @@ h3 {
   color: var(--color-primary);
   font-weight: 400;
 }
+
+.textSubtitle {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.48px;
+  text-transform: uppercase;
+
+  &.white {
+    color: var(--white);
+  }
+}
+
 .row_text {
   font-size: 13px;
   line-height: 17px;
   color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.52px;
+
+  &.white {
+    color: var(--white);
+  }
 }
+
 .feature {
   background-size: cover;
   background-position: center;
@@ -145,6 +198,82 @@ h3 {
         rgba(0, 0, 0, 1) 100%
       ),
       url("/card/Card_06.jpg");
+  }
+}
+
+.advantage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  &:is(.first) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 1) 100%
+      ),
+      url("https://optim.tildacdn.com/tild3361-3737-4036-b664-336334633764/-/format/webp/arenda_advantages_01.jpg.webp");
+  }
+  &:is(.second) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 1) 100%
+      ),
+      url("https://optim.tildacdn.com/tild3231-3662-4333-b839-636264396532/-/format/webp/arenda_advantages_02.jpg.webp");
+  }
+  &:is(.third) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 1) 100%
+      ),
+      url("https://optim.tildacdn.com/tild6533-3932-4664-a533-623730353930/-/format/webp/arenda_advantages_03.jpg.webp");
+  }
+  &:is(.fourth) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 1) 100%
+      ),
+      url("https://optim.tildacdn.com/tild6363-3364-4762-b364-313538393666/-/format/webp/arenda_advantages_04.jpg.webp");
+  }
+}
+
+.galleryItem {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-left: 32px;
+
+  &:is(.first) {
+    margin-left: 40px;
+    background-image: url("https://optim.tildacdn.com/tild3932-3433-4638-b135-623661616234/-/format/webp/arenda_gallery_01.jpg.webp");
+  }
+  &:is(.second) {
+    background-image: url("https://optim.tildacdn.com/tild3839-6231-4937-a334-633334373264/-/format/webp/arenda_gallery_02.jpg.webp");
+  }
+  &:is(.third) {
+    background-image: url("https://optim.tildacdn.com/tild6362-3161-4139-a263-643266323933/-/format/webp/arenda_gallery_03.jpg.webp");
+  }
+  &:is(.fourth) {
+    background-image: url("https://optim.tildacdn.com/tild3533-6431-4231-b065-313432393566/-/format/webp/arenda_gallery_04.jpg.webp");
+  }
+  &:is(.fifth) {
+    background-image: url("https://optim.tildacdn.com/tild6131-6261-4163-b234-336434666266/-/format/webp/arenda_gallery_05.jpg.webp");
+  }
+  &:is(.sixth) {
+    background-image: url("https://optim.tildacdn.com/tild3266-3863-4463-b863-346439656261/-/format/webp/arenda_gallery_06.jpg.webp");
+  }
+  &:is(.seventh) {
+    background-image: url("https://optim.tildacdn.com/tild6439-3662-4666-b635-626435303836/-/format/webp/arenda_gallery_07.jpg.webp");
+  }
+  &:is(.eighth) {
+    background-image: url("https://optim.tildacdn.com/tild6366-3436-4061-a466-343536613762/-/format/webp/arenda_gallery_08.jpg.webp");
+  }
+  &:is(.ninth) {
+    background-image: url("https://optim.tildacdn.com/tild3238-3134-4036-a231-626331316131/-/format/webp/arenda_gallery_09.jpg.webp");
   }
 }
 
@@ -238,19 +367,25 @@ h3 {
   padding: 0 20px;
   white-space: nowrap;
   text-transform: uppercase;
+  font-size: 13px;
+  padding-top: 2px;
   &:is(.primary) {
-    background-color: var(--color-primary);
+    background-color: var(--pikBlack);
     color: #fff;
   }
   &:is(.secondary) {
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--pikBlack);
     background-color: transparent;
-    color: var(--color-primary);
+    color: var(--pikBlack);
   }
 
   &:is(.secondary.finance) {
     padding: 0px 36px;
     height: 48px;
+  }
+
+  .A_Plus {
+    margin-bottom: 2px;
   }
 }
 
@@ -592,7 +727,7 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
 .divGrey {
   width: 100%;
   height: 1px;
-  background-color: var(--grey);
+  background-color: var(--stroke-light);
 }
 
 .openBtn {

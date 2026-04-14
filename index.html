@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,55 +7,36 @@
   </head>
 
   <body class="overflow-x-hidden max-w-full">
-    <style>
-      * {
-        box-sizing: border-box !important;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-      }
-      @font-face {
-        font-family: TT Firs Neue;
-        src: url(/parametr-header/TTFirsNeue-Regular.ttf) format("truetype"),
-          url(https://static.tildacdn.com/tild3761-6331-4234-b039-346630363437/TTFirsNeue-Regular.woff);
-        font-weight: 400;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: TT Firs Neue;
-        src: url(/parametr-header/TTFirsNeue-Medium.ttf) format("truetype"),
-          url(https://static.tildacdn.com/tild3038-3936-4734-a664-643863393164/TTFirsNeue-Medium.woff);
-        font-weight: 500;
-        font-style: normal;
-      }
-    </style>
     <div id="scale-wrapper">
       <div id="scale-container">
         <div id="scale-content">
-          <div
-            class="flex flex-col gap-[80px] max-md:gap-[40px] p-[40px] max-md:px-[30px]">
-            <h1 class="title">
-              FLEX BOX — склад «класса А» с гибким делением блоков от 4 500 м²
-            </h1>
+          <!-- Первый экран с заголовком -->
+          <section>
             <div
-              class="flex flex-row gap-[240px] justify-between max-md:flex-col max-md:gap-[60px]">
-              <p class="text">
-                Новый формат индустриально-логистической недвижимости для тех,
-                кому тесно в light industrial
-              </p>
-              <a class="button primary" href="">
-                Выбрать помещение
-                <!-- button icon -->
-                <div class="w-[20px] h-[20px] rounded-full bg-white">
-                  <img
-                    class="w-[20px] h-[20px] invert"
-                    src="icons/IconPlus.svg"
-                    alt="" />
-                </div>
-              </a>
+              class="flex flex-col gap-[80px] max-md:gap-[40px] px-[40px] py-[60px] max-md:px-[30px]">
+              <h1 class="title">
+                Аренда складов и производств в москве и области
+              </h1>
+              <div
+                class="flex flex-row gap-[240px] justify-between max-md:flex-col max-md:gap-[60px]">
+                <p class="text pr-26">
+                  Помещения формата лайт индастриал от 600 м² на Калужском
+                  и Варшавском шоссе
+                </p>
+                <a class="button primary" href="">
+                  Оставить заявку
+                  <div class="A_Plus w-[20px] h-[20px] rounded-full bg-white">
+                    <img
+                      class="w-[20px] h-[20px] invert"
+                      src="icons/IconPlus.svg"
+                      alt="" />
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
+          </section>
 
+          <!-- Фото-слайдер с баннером -->
           <section
             class="relative flex flex-col w-full aspect-video max-md:w-full max-md:aspect-[360/440] bg-black"
             data-slider
@@ -65,7 +46,7 @@
               class="main-slider absolute top-[40px] left-[40px] max-md:top-[auto] max-md:bottom-[0] max-md:left-[0] max-md:pt-[22%] flex flex-row max-md:flex-col max-md:items-end w-[680px] h-[270px] max-md:w-[100%] max-md:h-[auto] max-md:aspect-[360/180] p-[40px] max-md:p-[20px] z-100">
               <p
                 class="text-white uppercase text-[28px] leading-[30px] max-md:text-[17px] max-md:leading-[20px]">
-                В Новой Москве и МО на ключевых логистических маршрутах
+                Помещения с отделкой, Готовы к заезду
               </p>
               <!-- counter and slider buttons -->
               <div
@@ -100,21 +81,22 @@
               <img
                 class="absolute w-full max-md:h-[75%] h-full max-md:object-cover opacity-100 transition-all duration-200 ease-in"
                 data-slide
-                src="cover_01.jpg"
+                src="https://optim.tildacdn.com/tild3332-3137-4537-a332-383031316637/-/format/webp/arenda_start_01_smal.jpg.webp"
                 alt="" />
               <img
                 class="absolute w-full max-md:h-[75%] h-full max-md:object-cover opacity-0 transition-all duration-200 ease-in"
                 data-slide
-                src="cover_02.jpg"
+                src="https://optim.tildacdn.com/tild3730-3934-4465-a634-333939323337/-/format/webp/arenda_start_02_smal.jpg.webp"
                 alt="" />
               <img
                 class="absolute w-full max-md:h-[75%] h-full max-md:object-cover opacity-0 transition-all duration-200 ease-in"
                 data-slide
-                src="cover_03.jpg"
+                src="https://optim.tildacdn.com/tild3834-6632-4435-b630-396634323734/-/format/webp/arenda_start_03_smal.jpg.webp"
                 alt="" />
             </div>
           </section>
-          <!-- halves with scroll -->
+
+          <!-- Карта и список проектов -->
           <section
             class="flex flex-row max-md:flex-col w-full h-fit border-b-[1px] border-[#18181815]">
             <div
@@ -124,281 +106,201 @@
             </div>
             <div
               class="flex max-md:hidden flex-col w-1/2 max-h-[720px] overflow-y-scroll max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
-              <a
-                href="#"
-                class="group flex flex-col p-[40px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
+              <div
+                class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
                 <img
-                  class="group-hover:scale-102 transition-all duration-400 ease-[var(--parametr-ease)] w-full h-[280px]"
-                  src="/card/wide_sokolovo.jpg"
+                  class="w-full h-[280px]"
+                  src="https://optim.tildacdn.com/tild3734-6235-4566-a431-373930653834/-/format/webp/arenda_info_01.jpg.webp"
                   alt="" />
-                <div class="flex flex-col w-full h-fit gap-[86px]">
+                <div class="flex flex-col w-full h-fit gap-[24px]">
                   <div class="flex flex-row w-full justify-between">
                     <div class="flex flex-col">
-                      <p class="text-[13px] text-[#9CA8AE] uppercase">
+                      <p class="text-[13px] text-[var(--grey)] uppercase">
                         Промышленный парк
                       </p>
                       <div class="flex flex-row items-center gap-[10px]">
                         <h3 class="text-[28px] uppercase leading-[30px]">
-                          Соколово
+                          Сенькино
                         </h3>
-                        <div
-                          class="w-[20px] h-[20px] rounded-full bg-[#181818]">
-                          <img
-                            class="w-[20px] h-[20px]"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                        </div>
+                        <!-- <div class="pb-[3px]">
+                          <div class="w-[20px] rounded-full bg-[#181818]">
+                            <img
+                              class="w-[20px] h-[20px]"
+                              src="icons/IconPlus.svg"
+                              alt="" />
+                          </div>
+                        </div> -->
                       </div>
                     </div>
                     <div class="flex flex-col">
-                      <p class="text-[13px] uppercase">от 87 000 000 ₽</p>
+                      <p class="text-[13px] uppercase">лайт индастриал</p>
                       <p
-                        class="text-[13px] text-[#9CA8AE] uppercase text_right">
-                        с учетом НДС
+                        class="text-[13px] text-[var(--grey)] uppercase text_right">
+                        от 580 м²
                       </p>
                     </div>
                   </div>
-                  <div class="flex flex-row w-full gap-[24px]">
-                    <div>
-                      <p class="text-[13px] uppercase">Big Box</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        от 69 375 м²
+                  <div class="flex flex-col w-full">
+                    <div
+                      class="py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">
+                        1-я линия ЦКАД и А-107, Троицк
                       </p>
                     </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Light industrial</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        от 602 м²
+                    <div
+                      class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">
+                        5 км до калужского шоссе
+                      </p>
+                      <p class="text-[13px] uppercase text-[var(--grey)]">
+                        10 минут
                       </p>
                     </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Built-to-suit</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        по запросу
+                    <div class="flex flex-row justify-between pt-[26px]">
+                      <p class="text-[13px] uppercase">
+                        14 км до киевского шоссе
                       </p>
-                    </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Flex Box</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        нет свободных помещений
+                      <p class="text-[13px] uppercase text-[var(--grey)]">
+                        15 минут
                       </p>
                     </div>
                   </div>
                 </div>
-              </a>
-              <a
-                href="#"
-                class="group flex flex-col p-[40px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
+              </div>
+              <div
+                class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
                 <img
-                  class="group-hover:scale-102 transition-all duration-400 ease-[var(--parametr-ease)] w-full h-[280px]"
-                  src="/card/wide_kuvekino.jpg"
+                  class="w-full h-[280px]"
+                  src="https://optim.tildacdn.com/tild6263-3665-4562-a435-633537383834/-/format/webp/arenda_info_02.jpg.webp"
                   alt="" />
-                <div class="flex flex-col w-full h-fit gap-[86px]">
+                <div class="flex flex-col w-full h-fit gap-[24px]">
                   <div class="flex flex-row w-full justify-between">
                     <div class="flex flex-col">
-                      <p class="text-[13px] text-[#9CA8AE] uppercase">
+                      <p class="text-[13px] text-[var(--grey)] uppercase">
                         Промышленный парк
                       </p>
                       <div class="flex flex-row items-center gap-[10px]">
                         <h3 class="text-[28px] uppercase leading-[30px]">
                           Кувекино
                         </h3>
-                        <div
-                          class="w-[20px] h-[20px] rounded-full bg-[#181818]">
-                          <img
-                            class="w-[20px] h-[20px]"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                        </div>
+                        <!-- <div class="pb-[3px]">
+                          <div class="w-[20px] rounded-full bg-[#181818]">
+                            <img
+                              class="w-[20px] h-[20px]"
+                              src="icons/IconPlus.svg"
+                              alt="" />
+                          </div>
+                        </div> -->
                       </div>
                     </div>
                     <div class="flex flex-col">
-                      <p class="text-[13px] uppercase">от 85 000 000 ₽</p>
+                      <p class="text-[13px] uppercase">лайт индастриал</p>
                       <p
-                        class="text-[13px] text-[#9CA8AE] uppercase text_right">
-                        с учетом НДС
+                        class="text-[13px] text-[var(--grey)] uppercase text_right">
+                        от 580 м²
                       </p>
                     </div>
                   </div>
-                  <div class="flex flex-row w-full gap-[24px]">
-                    <div>
-                      <p class="text-[13px] uppercase">Big Box</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        по запросу
+                  <div class="flex flex-col w-full">
+                    <div
+                      class="py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">16 км от МКАД, Троицк</p>
+                    </div>
+                    <div
+                      class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">
+                        5 км до калужского шоссе
                       </p>
                     </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Light industrial</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        от 602 м²
-                      </p>
-                    </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Built-to-suit</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        от 9777 м²
-                      </p>
-                    </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Flex box</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        от 4455 м²
+                    <div class="flex flex-row justify-between pt-[26px]">
+                      <p class="text-[13px] uppercase">
+                        10 км до Варшавского шоссе
                       </p>
                     </div>
                   </div>
                 </div>
-              </a>
-              <a
-                href="#"
-                class="group flex flex-col p-[40px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
+              </div>
+              <div
+                class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px]">
                 <img
-                  class="group-hover:scale-102 transition-all duration-400 ease-[var(--parametr-ease)] w-full h-[280px]"
-                  src="/card/wide_balashiha.jpg"
+                  class="w-full h-[280px]"
+                  src="https://optim.tildacdn.com/tild3264-3262-4035-a430-356463333138/-/format/webp/arenda_info_03.jpg.webp"
                   alt="" />
-                <div class="flex flex-col w-full h-fit gap-[86px]">
+                <div class="flex flex-col w-full h-fit gap-[24px]">
                   <div class="flex flex-row w-full justify-between">
                     <div class="flex flex-col">
-                      <p class="text-[13px] text-[#9CA8AE] uppercase">
+                      <p class="text-[13px] text-[var(--grey)] uppercase">
                         Промышленный парк
                       </p>
                       <div class="flex flex-row items-center gap-[10px]">
                         <h3 class="text-[28px] uppercase leading-[30px]">
-                          Балашиха
+                          балашиха
                         </h3>
-                        <div
-                          class="w-[20px] h-[20px] rounded-full bg-[#181818]">
-                          <img
-                            class="w-[20px] h-[20px]"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                        </div>
+                        <!-- <div class="pb-[3px]">
+                          <div class="w-[20px] rounded-full bg-[#181818]">
+                            <img
+                              class="w-[20px] h-[20px]"
+                              src="icons/IconPlus.svg"
+                              alt="" />
+                          </div>
+                        </div> -->
                       </div>
                     </div>
                     <div class="flex flex-col">
-                      <p class="text-[13px] uppercase">от 95 000 000 ₽</p>
+                      <p class="text-[13px] uppercase">лайт индастриал</p>
                       <p
-                        class="text-[13px] text-[#9CA8AE] uppercase text_right">
-                        с учетом НДС
+                        class="text-[13px] text-[var(--grey)] uppercase text_right">
+                        скоро
                       </p>
                     </div>
                   </div>
-                  <div class="flex flex-row w-full gap-[24px]">
-                    <div>
-                      <p class="text-[13px] uppercase">Big Box</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        по запросу
+                  <div class="flex flex-col w-full">
+                    <div
+                      class="py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">
+                        15 минут до МКАД, шоссе Энтузиастов
                       </p>
                     </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Light industrial</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        от 602 м²
+                    <div
+                      class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">
+                        ПРЯМОЙ ЗАЕЗД И ВЫЕЗД НА М-7
+                      </p>
+                      <p class="text-[13px] uppercase text-[var(--grey)]">
+                        Рядом трасса М-12
                       </p>
                     </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Built-to-suit</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        по запросу
-                      </p>
-                    </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Flex box</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        от 4554 м²
+                    <div class="flex flex-row justify-between pt-[26px]">
+                      <p class="text-[13px] uppercase">
+                        15 мин до ж/д станции Балашиха
                       </p>
                     </div>
                   </div>
                 </div>
-              </a>
-              <a
-                href="#"
-                class="group flex flex-col p-[40px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
-                <img
-                  class="group-hover:scale-102 transition-all duration-400 ease-[var(--parametr-ease)] w-full h-[280px]"
-                  src="/card/wide_tokarevo.jpg"
-                  alt="" />
-                <div class="flex flex-col w-full h-fit gap-[86px]">
-                  <div class="flex flex-row w-full justify-between">
-                    <div class="flex flex-col">
-                      <p class="text-[13px] text-[#9CA8AE] uppercase">
-                        Промышленный парк
-                      </p>
-                      <div class="flex flex-row items-center gap-[10px]">
-                        <h3 class="text-[28px] uppercase leading-[30px]">
-                          Токарево
-                        </h3>
-                        <div
-                          class="w-[20px] h-[20px] rounded-full bg-[#181818]">
-                          <img
-                            class="w-[20px] h-[20px]"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex flex-col">
-                      <p class="text-[13px] uppercase">от 83 000 000 ₽</p>
-                      <p
-                        class="text-[13px] text-[#9CA8AE] uppercase text_right">
-                        с учетом НДС
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex flex-row w-full gap-[24px]">
-                    <div>
-                      <p class="text-[13px] uppercase">Big Box</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        по запросу
-                      </p>
-                    </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Light industrial</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        от 602 м²
-                      </p>
-                    </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Built-to-suit</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        по запросу
-                      </p>
-                    </div>
-                    <div>
-                      <p class="text-[13px] uppercase">Flex Box</p>
-                      <p class="text-[13px] uppercase text-[#9CA8AE]">
-                        нет свободных помещений
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              </div>
             </div>
           </section>
 
-          <!-- halves -->
+          <!-- Характеристики -->
           <section
             class="flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]">
             <div
-              class="flex flex-col gap-[60px] w-1/2 max-md:w-full p-[40px] max-md:px-[0] max-md:p-[30px]">
-              <h2 class="title">Характеристики проектов Flex Box</h2>
-              <p class="text">
-                Узнайте больше о помещениях, их характеристиках, вариантах и
-                стоимости покупки в форматах flex box
-              </p>
+              class="flex flex-col gap-[60px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[0] max-md:p-[30px]">
+              <h2 class="title">Характеристики помещений лайт индастриал</h2>
             </div>
             <div
-              class="flex flex-col w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
+              class="flex flex-col py-[20px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
               <div
                 class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                <p class="row_text">Рабочая высота 12,5 метров</p>
+                <p class="row_text">Рабочая высота 8 метров</p>
               </div>
               <div
                 class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                <p class="row_text">Нагрузка на пол 8 т/м²</p>
+                <p class="row_text">Нагрузка на пол 5 т/м²</p>
               </div>
               <div
                 class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                <p class="row_text">Шаг колонн 12х24 м</p>
+                <p class="row_text">Шаг колонн 12х18 м</p>
               </div>
               <div
                 class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
@@ -408,11 +310,7 @@
               </div>
               <div
                 class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                <p class="row_text">Кросс док</p>
-              </div>
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                <p class="row_text">Не менее 4 погрузочных доков на блок</p>
+                <p class="row_text">Есть помещения с Кросс доком</p>
               </div>
               <div
                 class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
@@ -427,156 +325,477 @@
               <div
                 class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0]">
                 <p class="row_text">
-                  выделенные парковки для грузового и легкового транспорта
+                  Выделенные парковки для грузового и легкового транспорта
                 </p>
               </div>
             </div>
           </section>
 
-          <!-- halves with slider -->
+          <!-- Преимущества формата -->
           <section
-            class="flex flex-row max-md:flex-col-reverse w-full h-fit overflow-x-hidden"
+            class="flex flex-col w-full h-fit"
             data-slider
             data-mode="translate"
             data-infinite="true">
             <div
-              class="relative flex flex-col gap-[40px] w-1/2 max-md:w-full p-[40px] max-md:p-[30px] bg-[#181818] max-md:min-h-[470px]">
-              <div class="flex flex-row justify-between">
-                <p class="text-[13px] max-md:text-[11px] text-white uppercase">
-                  Особенности Flex Box
-                </p>
-                <!-- counter -->
-                <p
-                  class="text-[13px] max-md:text-[11px] text-[#9CA8AE]"
-                  data-counter>
-                  <span class="text-white" data-current>1</span> /
-                  <span data-total>3</span>
-                </p>
-              </div>
-              <div
-                class="flex flex-row gap-[12px] max-md:flex-row justify-between">
-                <h2 class="text-[28px] max-md:text-[17px] text-white uppercase">
-                  Варианты деления блоков
+              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[30px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start">
+              <div class="flex flex-row gap-[40px] items-center">
+                <h2 class="title">
+                  Преимущества формата лайт индастриал для бизнеса
                 </h2>
-                <div class="flex flex-row gap-[5px]">
+              </div>
+              <div class="flex flex-row gap-[5px]">
+                <div
+                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
+                  data-prev>
+                  <img
+                    class="w-[40px] h-[40px] invert"
+                    src="icons/IconLeft.svg"
+                    alt="" />
+                </div>
+                <div
+                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
+                  data-next>
+                  <img
+                    class="w-[40px] h-[40px] invert"
+                    src="icons/IconRight.svg"
+                    alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="relative w-full h-[580px] overflow-x-hidden">
+              <div
+                class="absolute h-[580px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]"
+                data-track>
+                <div
+                  class="advantage first group flex flex-col justify-end w-[412px] h-[580px] bg-amber-900"
+                  data-slide>
                   <div
-                    class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer"
-                    data-prev>
-                    <img
-                      class="w-[40px] h-[40px]"
-                      src="icons/IconLeft.svg"
-                      alt="" />
+                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)">
+                    <div
+                      class="uppercase bold flex flex-row justify-between text-white">
+                      <p>4 функции в 1 помещении</p>
+                      <div>
+                        <!-- button icon -->
+                        <div
+                          class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img
+                            class="w-[20px] h-[20px] invert"
+                            src="icons/IconPlus.svg"
+                            alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Универсальная планировка и качественная инженерия.
+                      Подходит для компаний любого профиля
+                    </p>
                   </div>
+                </div>
+                <div
+                  class="advantage second group flex flex-col justify-end w-[412px] h-[580px] bg-amber-900"
+                  data-slide>
                   <div
-                    class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer"
-                    data-next>
-                    <img
-                      class="w-[40px] h-[40px]"
-                      src="icons/IconRight.svg"
-                      alt="" />
+                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)">
+                    <div
+                      class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Готовая отделка</p>
+                      <div>
+                        <!-- button icon -->
+                        <div
+                          class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img
+                            class="w-[20px] h-[20px] invert"
+                            src="icons/IconPlus.svg"
+                            alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Возможность приобрести пространство под индивидуальный
+                      запрос: выбрать площадь, конфигурацию, количество доков,
+                      наличие отделки и мезонина
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="advantage third group flex flex-col justify-end w-[412px] h-[580px] bg-amber-900"
+                  data-slide>
+                  <div
+                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)">
+                    <div
+                      class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Профессиональная ук</p>
+                      <div>
+                        <!-- button icon -->
+                        <div
+                          class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img
+                            class="w-[20px] h-[20px] invert"
+                            src="icons/IconPlus.svg"
+                            alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Компактное здание на собственной территории с минимальным
+                      количеством «соседей»
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="advantage fourth group flex flex-col justify-end w-[412px] h-[580px] bg-amber-900"
+                  data-slide>
+                  <div
+                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)">
+                    <div
+                      class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Свобода в планировании бизнес процессов</p>
+                      <div>
+                        <!-- button icon -->
+                        <div
+                          class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img
+                            class="w-[20px] h-[20px] invert"
+                            src="icons/IconPlus.svg"
+                            alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Повышение эффективности стеллажного хранения
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="advantage first group flex flex-col justify-end w-[412px] h-[580px] bg-amber-900"
+                  data-slide>
+                  <div
+                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)">
+                    <div
+                      class="uppercase bold flex flex-row justify-between text-white">
+                      <p>4 функции в 1 помещении</p>
+                      <div>
+                        <!-- button icon -->
+                        <div
+                          class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img
+                            class="w-[20px] h-[20px] invert"
+                            src="icons/IconPlus.svg"
+                            alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Универсальная планировка и качественная инженерия.
+                      Подходит для компаний любого профиля
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="advantage second group flex flex-col justify-end w-[412px] h-[580px] bg-amber-900"
+                  data-slide>
+                  <div
+                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)">
+                    <div
+                      class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Готовая отделка</p>
+                      <div>
+                        <!-- button icon -->
+                        <div
+                          class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img
+                            class="w-[20px] h-[20px] invert"
+                            src="icons/IconPlus.svg"
+                            alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Возможность приобрести пространство под индивидуальный
+                      запрос: выбрать площадь, конфигурацию, количество доков,
+                      наличие отделки и мезонина
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="advantage third group flex flex-col justify-end w-[412px] h-[580px] bg-amber-900"
+                  data-slide>
+                  <div
+                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)">
+                    <div
+                      class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Профессиональная ук</p>
+                      <div>
+                        <!-- button icon -->
+                        <div
+                          class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img
+                            class="w-[20px] h-[20px] invert"
+                            src="icons/IconPlus.svg"
+                            alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Компактное здание на собственной территории с минимальным
+                      количеством «соседей»
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="advantage fourth group flex flex-col justify-end w-[412px] h-[580px] bg-amber-900"
+                  data-slide>
+                  <div
+                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)">
+                    <div
+                      class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Свобода в планировании бизнес процессов</p>
+                      <div>
+                        <!-- button icon -->
+                        <div
+                          class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img
+                            class="w-[20px] h-[20px] invert"
+                            src="icons/IconPlus.svg"
+                            alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p
+                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Повышение эффективности стеллажного хранения
+                    </p>
                   </div>
                 </div>
               </div>
-              <p
-                class="text-[36px] max-md:text-[16px] leading-[120%] text-white w-[360px] leading-[40px]">
-                Гибкое деление блоков от 4,5 тыс. м² до 20 тыс. м²
+            </div>
+          </section>
+
+          <!-- УК -->
+          <section
+            class="flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]">
+            <div
+              class="flex flex-col gap-[60px] w-1/2 max-md:w-full p-[60px] max-md:px-[0] max-md:p-[30px]">
+              <h2 class="title">управляющая компания</h2>
+              <p class="text">
+                Профессиональная управляющая компания осуществляет техническую
+                эксплуатацию и содержание комплекса
               </p>
             </div>
             <div
-              class="flex w-1/2 max-md:w-full aspect-square relative overflow-hidden">
+              class="flex flex-col py-[20px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
               <div
-                class="absolute top-0 left-0 w-full min-w-fit h-full flex flex-row"
-                data-track>
-                <img
-                  class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px] bg-zinc-900"
-                  data-slide
-                  src="plan_01.png"
-                  alt="" />
-                <img
-                  class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px] bg-zinc-800"
-                  data-slide
-                  src="plan_02.png"
-                  alt="" />
-                <img
-                  class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px] bg-zinc-700"
-                  data-slide
-                  src="plan_03.png"
-                  alt="" />
-                <img
-                  class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px] bg-zinc-800"
-                  data-slide
-                  src="plan_04.png"
-                  alt="" />
-                <img
-                  class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px] bg-zinc-800"
-                  data-slide
-                  src="plan_05.png"
-                  alt="" />
-                <img
-                  class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px] bg-zinc-800"
-                  data-slide
-                  src="plan_06.png"
-                  alt="" />
-                <img
-                  class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px] bg-zinc-800"
-                  data-slide
-                  src="plan_07.png"
-                  alt="" />
-                <img
-                  class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px] bg-zinc-800"
-                  data-slide
-                  src="plan_08.png"
-                  alt="" />
+                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
+                <p class="row_text">Клининг</p>
+              </div>
+              <div
+                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
+                <p class="row_text">Техническая эксплуатация</p>
+              </div>
+              <div
+                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
+                <p class="row_text">Безопасность и контроль доступа</p>
+              </div>
+              <div
+                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
+                <p class="row_text">Уборка территории</p>
+              </div>
+              <div
+                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0]">
+                <p class="row_text">
+                  Возможность заключения контракта на обслуживание помещений
+                  собственников / арендаторов
+                </p>
               </div>
             </div>
           </section>
-          <!-- full image -->
-          <section class="w-full bg-amber-900 flex-height">
-            <img
-              class="w-full h-full object-cover"
-              src="render_cut.png"
-              alt="" />
-          </section>
 
-          <!-- halves -->
+          <!-- Типовые планировки -->
           <section
-            class="flex flex-row max-md:flex-col max-md:px-[30px] w-full h-fit border-b-[1px] border-[#18181815]">
+            class="flex flex-col w-full h-fit"
+            data-slider
+            data-mode="translate"
+            data-infinite="true">
             <div
-              class="flex flex-col gap-[60px] w-1/2 max-md:w-full p-[40px] max-md:px-[0] max-md:py-[30px]">
-              <h2 class="title">Для размещения своего бизнеса и инвестиций</h2>
-              <a class="button secondary" href="">
-                Получить предложение
-                <!-- button icon -->
-                <div class="w-[20px] h-[20px] rounded-full bg-[#181818]">
+              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[30px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start">
+              <div class="flex flex-row gap-[40px] items-center">
+                <h2 class="title">Типовые планировки</h2>
+              </div>
+            </div>
+            <div
+              class="flex flex-row max-md:flex-col-reverse w-full h-fit overflow-x-hidden">
+              <div
+                class="flex flex-col justify-between relative flex flex-col gap-[40px] w-1/2 max-md:w-full p-[40px] max-md:p-[30px] bg-[#181818] max-md:min-h-[470px]">
+                <div
+                  class="flex items-center justify-between flex-row gap-[12px] max-md:flex-row">
+                  <h2
+                    class="font-medium text-[28px] max-md:text-[17px] text-white uppercase">
+                    от 580 м² до 3 000 м²
+                  </h2>
+                  <div class="flex items-center gap-[16px]">
+                    <!-- counter -->
+                    <p
+                      class="text-[13px] max-md:text-[11px] text-[#9CA8AE]"
+                      data-counter>
+                      <span class="text-white" data-current>1</span> /
+                      <span data-total>3</span>
+                    </p>
+                    <div class="flex flex-row gap-[5px]">
+                      <div
+                        class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer"
+                        data-prev>
+                        <img
+                          class="w-[40px] h-[40px]"
+                          src="icons/IconLeft.svg"
+                          alt="" />
+                      </div>
+                      <div
+                        class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer"
+                        data-next>
+                        <img
+                          class="w-[40px] h-[40px]"
+                          src="icons/IconRight.svg"
+                          alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p
+                  class="text-[36px] max-md:text-[16px] leading-[120%] text-white w-full leading-[40px]">
+                  Помещения с офисами и производственно-складскими площадями
+                </p>
+              </div>
+              <div
+                class="flex w-1/2 max-md:w-full aspect-square relative overflow-hidden">
+                <div
+                  class="bg-[var(--lightGrey)] absolute top-0 left-0 w-full min-w-fit h-full flex flex-row"
+                  data-track>
                   <img
-                    class="w-[20px] h-[20px]"
-                    src="icons/IconPlus.svg"
+                    class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px]"
+                    data-slide
+                    src="https://static.tildacdn.com/tild6265-3665-4432-b161-336531626538/plan_01.svg"
+                    alt="" />
+                  <img
+                    class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px]"
+                    data-slide
+                    src="https://static.tildacdn.com/tild6633-6262-4037-a262-633837663666/plan_02.svg"
+                    alt="" />
+                  <img
+                    class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px]"
+                    data-slide
+                    src="https://static.tildacdn.com/tild6262-3664-4631-b038-623966333139/plan_03.svg"
+                    alt="" />
+                  <img
+                    class="pic-ungrag h-[720px] w-[720px] min-w-[720px] min-h-[720px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px]"
+                    data-slide
+                    src="https://static.tildacdn.com/tild3032-3330-4366-a135-323566663036/plan_04.svg"
                     alt="" />
                 </div>
-              </a>
-            </div>
-            <div
-              class="flex flex-col w-1/2 max-md:w-full border-l-[1px] border-[#18181815] max-md:border-l-[0px]">
-              <div
-                class="flex flex-col w-full h-[230px] max-md:h-fit max-md:gap-6 p-[40px] max-md:px-[0] justify-between border-b-[1px] border-[#18181815]">
-                <h3 class="number">7 лет</h3>
-                <p class="number_text">
-                  Окупаемость <br />
-                  инвестиций
-                </p>
-              </div>
-              <div
-                class="flex flex-col w-full h-[230px] max-md:h-fit max-md:gap-6 p-[40px] max-md:px-[0] justify-between border-b-[1px] border-[#18181815]">
-                <h3 class="number">до 15%</h3>
-                <p class="number_text">
-                  Доходность <br />
-                  от арендного бизнеса
-                </p>
               </div>
             </div>
           </section>
 
-          <!-- Финансовые программы покупки -->
+          <!-- Галерея -->
+          <section
+            class="flex flex-col w-full h-fit"
+            data-slider
+            data-mode="translate"
+            data-infinite="true">
+            <div
+              class="flex flex-row w-full p-[40px] max-md:p-[30px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start">
+              <div class="flex flex-row gap-[40px] items-center">
+                <h2 class="title">фото реализованных проектов</h2>
+              </div>
+              <div class="flex flex-row gap-[5px]">
+                <div
+                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
+                  data-prev>
+                  <img
+                    class="w-[40px] h-[40px] invert"
+                    src="icons/IconLeft.svg"
+                    alt="" />
+                </div>
+                <div
+                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
+                  data-next>
+                  <img
+                    class="w-[40px] h-[40px] invert"
+                    src="icons/IconRight.svg"
+                    alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="relative w-full h-[580px] overflow-x-hidden">
+              <div
+                class="absolute pb-[60px] h-[556px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row"
+                data-track>
+                <div
+                  class="galleryItem first group w-[884px] h-full"
+                  data-slide></div>
+                <div
+                  class="galleryItem second group w-[884px] h-full"
+                  data-slide></div>
+                <div
+                  class="galleryItem third group w-[884px] h-full"
+                  data-slide></div>
+                <div
+                  class="galleryItem fourth group w-[884px] h-full"
+                  data-slide></div>
+                <div
+                  class="galleryItem fifth group w-[884px] h-full"
+                  data-slide></div>
+                <div
+                  class="galleryItem sixth group w-[884px] h-full"
+                  data-slide></div>
+                <div
+                  class="galleryItem seventh group w-[884px] h-full"
+                  data-slide></div>
+                <div
+                  class="galleryItem eighth group w-[884px] h-full"
+                  data-slide></div>
+                <div
+                  class="galleryItem ninth group w-[884px] h-full"
+                  data-slide></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Аренда помещений, тёмный блок -->
+          <section
+            class="bg-[var(--pikBlack)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]">
+            <div
+              class="flex flex-col gap-[60px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[0] max-md:p-[30px]">
+              <h2 class="title white">Аренда помещений лайт индастриал</h2>
+            </div>
+            <div
+              class="flex flex-col py-[20px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
+              <div
+                class="h-auto flex flex-col gap-[40px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
+                <p class="textSubtitle white">Готово ко въезду</p>
+                <p class="row_text white">Помещения с финишной отделкой</p>
+              </div>
+              <div
+                class="h-auto flex flex-col gap-[40px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
+                <p class="textSubtitle white">Готово ко въезду</p>
+                <p class="row_text white">Помещения с финишной отделкой</p>
+              </div>
+              <div
+                class="h-auto flex flex-col gap-[40px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
+                <p class="textSubtitle white">Готово ко въезду</p>
+                <p class="row_text white">Помещения с финишной отделкой</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Аккордеон -->
           <section
             class="flex flex-row max-md:flex-col w-full h-fit border-b-[1px] border-[#18181815]">
             <div
@@ -587,58 +806,7 @@
             </div>
             <div
               class="flex flex-col w-1/2 max-md:w-full border-l-[1px] border-[#18181815] max-md:border-l-[0px]">
-              <div
-                class="flex flex-col w-full max-md:px-[0] justify-between border-b-[1px] border-[#18181815]">
-                <!-- <div
-                  class="financeProgram flex w-full justify-between prior p-[40px] border-b-[1px] border-[#18181815]"
-                  id="firstAccordion"
-                >
-                  <div class="w-full flex flex-col">
-                    <h2
-                      class="cursor-pointer leading-none font-medium text-[28px] max-w-xs max-md:text-[17px] uppercase"
-                    >
-                      Беспроцентная рассрочка
-                    </h2>
-                    <div
-                      class="accordionCard flex flex-col gap-[44px] max-md:gap-6"
-                    >
-                      <div class="flex flex-col gap-[22px] max-md:gap-6">
-                        <div class="flex flex-col w-full">
-                          <div>
-                            <h2
-                              class="pt-[44px] max-md:pt-[20px] leading-none font-light text-[28px] max-w-xs max-md:text-[17px]"
-                            >
-                              от 20%
-                            </h2>
-                            <p class="text-[#747474] text-base">
-                              первоначальный взнос
-                            </p>
-                          </div>
-                        </div>
-                        <div class="divGrey"></div>
-                        <div class="flex flex-col w-full">
-                          <div>
-                            <h2
-                              class="leading-none font-light text-[28px] max-w-xs max-md:text-[17px]"
-                            >
-                              до марта 2026
-                            </h2>
-                            <p class="text-[#747474] text-base">
-                              срок рассрочки
-                            </p>
-                          </div>
-                        </div>
-                        <div class="divGrey"></div>
-                      </div>
-                      <a class="button secondary finance">
-                        Узнать подробности
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cursor-pointer openBtnWrap">
-                    <div class="openBtn"></div>
-                  </div>
-                </div> -->
+              <div class="flex flex-col w-full max-md:px-[0] justify-between">
                 <div
                   class="financeProgram flex w-full justify-between p-[40px] border-b-[1px] border-[#18181815]"
                   id="secondAccordion">
@@ -756,16 +924,97 @@
             </div>
           </section>
 
-          <!-- Преимущества формата -->
+          <!-- Форма для презентации -->
+          <section
+            class="bg-[var(--lightGrey)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]">
+            <div
+              class="flex flex-col gap-[60px] w-1/2 max-md:w-full p-[40px] max-md:px-[0] max-md:p-[30px]">
+              <h2 class="title">
+                Получить презентацию о формате лайт индастриал
+              </h2>
+            </div>
+            <div
+              class="flex flex-col w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
+              <div class="W_FormPart">
+                <div class="custom-form">
+                  <form
+                    id="presentation-send"
+                    action="#"
+                    method="post"
+                    novalidate
+                    class="custom-form__form js-custom-form__form">
+                    <div
+                      class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
+                      <input
+                        type="email"
+                        autocomplete="email"
+                        name="email"
+                        required
+                        placeholder="Электронная почта"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$"
+                        data-error-required="Пожалуйста, заполните все обязательные поля"
+                        data-error-pattern="Укажите, пожалуйста, корректный email"
+                        class="custom-form__input" />
+                    </div>
+                    <div class="captcha-container js-captcha-container"></div>
+                    <input type="hidden" name="utm_source" />
+                    <input type="hidden" name="utm_medium" />
+                    <input type="hidden" name="utm_campaign" />
+                    <input type="hidden" name="utm_term" />
+                    <input type="hidden" name="utm_content" />
+                    <input type="hidden" name="cid" />
+                    <input type="hidden" name="id" value="Кувекино" />
+                    <input type="hidden" name="hostname" />
+                    <input type="hidden" name="request_url" />
+                    <input type="hidden" name="ct_session_id" />
+                    <div
+                      class="flex flex-row max-md:flex-col justify-between items-center max-md:items-start max-md:gap-[30px] w-full p-[40px] pt-[40px] max-md:px-[0] max-md:pt-[40px]">
+                      <label class="custom-form__checkbox" style="width: 100%">
+                        <input
+                          type="checkbox"
+                          class="custom-form__checkbox-input js-custom-form__input"
+                          required
+                          data-error-required="Дайте согласие на обработку данных" />
+                        <span class="custom-form__checkbox-icon"></span>
+                        <p
+                          class="text-[11px] leading-[13px] text-[#9CA8AE] uppercase"
+                          style="margin-left: 20px; width: 100%">
+                          Нажимаю кнопку «отправить»,<br />
+                          я соглашаюсь на обработку<br /><a
+                            class="underline text-[#181818]"
+                            target="_blank"
+                            href="https://parametr.space/agreement"
+                            >персональных данных</a
+                          >
+                        </p>
+                      </label>
+                      <button class="button primary">
+                        Отправить
+                        <!-- button icon -->
+                        <div class="w-[20px] h-[20px] rounded-full bg-white">
+                          <img
+                            class="w-[20px] h-[20px] invert"
+                            src="icons/IconPlus.svg"
+                            alt="" />
+                        </div>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Наши резиденты -->
           <section
             class="flex flex-col w-full h-fit"
             data-slider
             data-mode="translate"
             data-infinite="true">
             <div
-              class="flex flex-row w-full p-[40px] max-md:p-[30px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start">
+              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[30px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start">
               <div class="flex flex-row gap-[40px] items-center">
-                <h2 class="title">Преимущества формата</h2>
+                <h2 class="title">Наши резиденты</h2>
               </div>
               <div class="flex flex-row gap-[5px]">
                 <div
@@ -918,361 +1167,12 @@
             </div>
           </section>
 
-          <!-- Управляющая компания -->
+          <!-- ФОС -->
           <section
-            class="flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]">
+            class="bg-[var(--lightGrey)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]">
             <div
               class="flex flex-col gap-[60px] w-1/2 max-md:w-full p-[40px] max-md:px-[0] max-md:p-[30px]">
-              <h2 class="title">Управляющая компания</h2>
-              <p class="text">
-                Профессиональная управляющая компания осуществляет техническую
-                эксплуатацию и содержание комплекса
-              </p>
-            </div>
-            <div
-              class="flex flex-col w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                <p class="row_text">Клининг</p>
-              </div>
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                <p class="row_text">Техническая эксплуатация</p>
-              </div>
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                <p class="row_text">Безопасность и контроль доступа</p>
-              </div>
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                <p class="row_text">Уборка территории</p>
-              </div>
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0]">
-                <p class="row_text">
-                  Возможность заключения контракта на обслуживание помещений
-                  собственников / арендаторов
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Наши проекты -->
-          <section
-            class="flex flex-col w-full h-fit"
-            data-slider
-            data-mode="translate"
-            data-infinite="true">
-            <div
-              class="flex flex-row w-full p-[40px] max-md:p-[30px] items-center max-md:items-start justify-between">
-              <div
-                class="flex flex-row max-md:flex-col max-md:gap-[20px] gap-[40px] items-center">
-                <h2 class="title">Наши проекты</h2>
-                <a
-                  class="button secondary"
-                  href="https://yandex.ru/maps/213/moscow/search/parametr/?ll=37.617700%2C55.755863&sll=37.617700%2C55.755863&sspn=1.658936%2C0.591666&z=10"
-                  target="_blank">
-                  Смотреть все
-                  <!-- button icon -->
-                  <div class="w-[20px] h-[20px] rounded-full bg-[#181818]">
-                    <img
-                      class="w-[20px] h-[20px]"
-                      src="icons/IconPlus.svg"
-                      alt="" />
-                  </div>
-                </a>
-              </div>
-              <div class="flex flex-row gap-[5px]">
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
-                  data-prev>
-                  <img
-                    class="w-[40px] h-[40px] invert"
-                    src="icons/IconLeft.svg"
-                    alt="" />
-                </div>
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
-                  data-next>
-                  <img
-                    class="w-[40px] h-[40px] invert"
-                    src="icons/IconRight.svg"
-                    alt="" />
-                </div>
-              </div>
-            </div>
-            <div
-              class="relative w-full h-[580px] max-md:h-[380px] overflow-x-hidden">
-              <div
-                class="absolute h-[580px] max-md:h-[380px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]"
-                data-track>
-                <a
-                  href="https://senkino-prom.ru"
-                  target="_blank"
-                  class="project senkino w-[100vw] md:w-[440px] h-full max-md:h-[380px] bg-amber-300"
-                  data-slide>
-                  <div class="tagWrap">
-                    <p class="text tag">Light Industrial</p>
-                  </div>
-                  <div
-                    class="growing senkino flex items-end p-[36px] w-full h-[100px] bg-[#181818] px-[40px]">
-                    <div class="flex flex-col h-full justify-end">
-                      <div class="content top-10 left-10 pr-10 flex flex-col">
-                        <p
-                          class="data pt-5 pr-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          г. Москва, пос. Краснопахорское, квартал №61
-                        </p>
-                        <p
-                          class="data pt-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          Близость к городу Троицк. <br />1-я линия ЦКАД
-                        </p>
-                      </div>
-                      <div class="flex gap-2 items-center">
-                        <div
-                          class="plus project_color rounded-full h-[30px] w-[30px] overflow-hidden">
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconMinus.svg"
-                            alt="" />
-                        </div>
-                        <p class="text uppercase">Сенькино</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://balashiha-prom.ru"
-                  target="_blank"
-                  class="project balashiha w-[100vw] md:w-[440px] h-full max-md:h-[380px] bg-amber-300"
-                  data-slide>
-                  <div class="tagWrap">
-                    <p class="text tag">Big Box</p>
-                    <p class="text tag">Light Industrial</p>
-                    <p class="text tag">Built-to-suit</p>
-                    <p class="text tag">Flex Box</p>
-                  </div>
-                  <div
-                    class="growing balashiha flex items-end p-[36px] w-full h-[100px] bg-[#181818] px-[40px]">
-                    <div class="flex flex-col h-full justify-end">
-                      <div class="content top-10 left-10 pr-10 flex flex-col">
-                        <p
-                          class="data pt-5 pr-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          МО, город Балашиха
-                        </p>
-                        <p
-                          class="data pt-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          15 минут до МКАД, шоссе Энтузиастов
-                        </p>
-                      </div>
-                      <div class="flex gap-2 items-center">
-                        <div
-                          class="plus project_color rounded-full h-[30px] w-[30px] overflow-hidden">
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconMinus.svg"
-                            alt="" />
-                        </div>
-                        <p class="text uppercase">Балашиха</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://kuvekino-prom.ru"
-                  target="_blank"
-                  class="project kuvekino w-[100vw] md:w-[440px] h-full max-md:h-[380px] bg-amber-300"
-                  data-slide>
-                  <div class="tagWrap">
-                    <p class="text tag">Big Box</p>
-                    <p class="text tag">Light Industrial</p>
-                    <p class="text tag">Built-to-suit</p>
-                    <p class="text tag">Flex Box</p>
-                  </div>
-                  <div
-                    class="growing kuvekino flex items-end p-[36px] w-full h-[100px] bg-[#181818] px-[40px]">
-                    <div class="flex flex-col h-full justify-end">
-                      <div class="content top-10 left-10 pr-10 flex flex-col">
-                        <p
-                          class="data pt-5 pr-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          г. Москва, пос. Десеновское, квартал 121
-                        </p>
-                        <p
-                          class="data pt-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          16 км от МКАД по Калужскому или Варшавскому ш.
-                        </p>
-                      </div>
-                      <div class="flex gap-2 items-center">
-                        <div
-                          class="plus project_color rounded-full h-[30px] w-[30px] overflow-hidden">
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconMinus.svg"
-                            alt="" />
-                        </div>
-                        <p class="text uppercase">Кувекино</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://tokarevo-prom.ru/"
-                  target="_blank"
-                  class="project tokarevo w-[100vw] md:w-[440px] h-full max-md:h-[380px] bg-amber-300"
-                  data-slide>
-                  <div class="tagWrap">
-                    <p class="text tag">Big Box</p>
-                    <p class="text tag">Light Industrial</p>
-                    <p class="text tag">Built-to-suit</p>
-                    <p class="text tag">Flex Box</p>
-                  </div>
-                  <div
-                    class="growing tokarevo flex items-end p-[36px] w-full h-[100px] bg-[#181818] px-[40px]">
-                    <div class="flex flex-col h-full justify-end">
-                      <div class="content top-10 left-10 pr-10 flex flex-col">
-                        <p
-                          class="data pt-5 pr-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          Люберецкий район, пос. Томилино, деревня Токарево
-                        </p>
-                        <p
-                          class="data pt-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          10 км от МКАД, 9 км до метро Котельники
-                        </p>
-                        <p
-                          class="data pt-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          Новорязанское шоссе
-                        </p>
-                      </div>
-                      <div class="flex gap-2 items-center">
-                        <div
-                          class="plus project_color rounded-full h-[30px] w-[30px] overflow-hidden">
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconMinus.svg"
-                            alt="" />
-                        </div>
-                        <p class="text uppercase">Токарево</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://sokolovo-prom.ru/"
-                  target="_blank"
-                  class="project sokolovo w-[100vw] md:w-[440px] h-full max-md:h-[380px] bg-amber-300"
-                  data-slide>
-                  <div class="tagWrap">
-                    <p class="text tag">Big Box</p>
-                    <p class="text tag">Light Industrial</p>
-                    <p class="text tag">Built-to-suit</p>
-                    <p class="text tag">Flex Box</p>
-                  </div>
-                  <div
-                    class="growing sokolovo flex items-end p-[36px] w-full h-[100px] bg-[#181818] px-[40px]">
-                    <div class="flex flex-col h-full justify-end">
-                      <div class="content top-10 left-10 pr-10 flex flex-col">
-                        <p
-                          class="data pt-5 pr-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          г. Москва, п. Марушинское ОНО ОПХ «Толстопальцево»,
-                          уч. 19
-                        </p>
-                        <p
-                          class="data pt-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          15 км от МКАД, 6 км до метро Внуково
-                        </p>
-                        <p
-                          class="data pt-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          Киевское шоссе, рядом с аэропортом Внуково
-                        </p>
-                      </div>
-                      <div class="flex gap-2 items-center">
-                        <div
-                          class="plus project_color rounded-full h-[30px] w-[30px] overflow-hidden">
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconMinus.svg"
-                            alt="" />
-                        </div>
-                        <p class="text uppercase">Соколово</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://butovo-prom.ru/"
-                  target="_blank"
-                  class="project butovo w-[100vw] md:w-[440px] h-full max-md:h-[380px] bg-amber-300"
-                  data-slide>
-                  <div class="tagWrap">
-                    <p class="text tag">Big Box</p>
-                    <p class="text tag">Light Industrial</p>
-                  </div>
-                  <div
-                    class="growing butovo flex items-end p-[36px] w-full h-[100px] bg-[#181818] px-[40px]">
-                    <div class="flex flex-col h-full justify-end">
-                      <div class="content top-10 left-10 pr-10 flex flex-col">
-                        <p
-                          class="data pt-5 pr-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          г. Москва, ул. Бутова, д. 9
-                        </p>
-                        <p
-                          class="data pt-5 pb-5 border-b-[1px] border-white/25 text-base text-white uppercase">
-                          22 км от МКАД, рядом с промышленной зоной
-                        </p>
-                      </div>
-                      <div class="flex gap-2 items-center">
-                        <div
-                          class="plus project_color rounded-full h-[30px] w-[30px] overflow-hidden">
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconPlus.svg"
-                            alt="" />
-                          <img
-                            class="h-[30px] w-[30px] invert"
-                            src="icons/IconMinus.svg"
-                            alt="" />
-                        </div>
-                        <p class="text uppercase">Бутово</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </section>
-
-          <!-- Форма для презентации -->
-          <section
-            class="flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]">
-            <div
-              class="flex flex-col gap-[60px] w-1/2 max-md:w-full p-[40px] max-md:px-[0] max-md:p-[30px]">
-              <h2 class="title">
-                Получите подробную<br />презентацию<br />о формате Flex Box
-              </h2>
+              <h2 class="title">ОСТАВЬТЕ ЗАЯВКУ НА ЗВОНОК МЕНЕДЖЕРА</h2>
             </div>
             <div
               class="flex flex-col w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">

@@ -1,10 +1,241 @@
-@media (max-width: 768px) {
-  .flex-height {
-    aspect-ratio: 16 / 9;
+@media (max-width: 1439px) {
+  .W_OfferLeft {
+    height: 612px;
+    padding-left: calc((100vw - 944px) / 2);
+  }
+
+  .U_BestOffer {
+    height: 612px;
+  }
+
+  .W_OfferRight {
+    height: 612px;
+    padding-right: calc((100vw - 944px) / 2);
+  }
+
+  .A_OfferNewLogo {
+    width: auto;
+    max-width: none;
+    height: 40px;
+    max-height: 40px;
+  }
+
+  .A_OfferNewLogo {
+    width: 57.43px;
+    max-width: 57.43px;
+    height: 50px;
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .W_Offers {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    transition: all 0.3s ease-in-out;
+    transition: transform 0.4s ease;
+  }
+
+  .W_OfferLeft {
+    padding-left: 24px;
+  }
+
+  .W_OfferRight {
+    padding-right: 24px;
+  }
+
+  .W_Offer.U_BestOffer {
+    order: -1;
+  }
+
+  .W_Offer.W_OfferRight {
+    order: 2;
+  }
+
+  .W_Offer.W_OfferLeft {
+    order: 1;
+  }
+
+  .O_Offers {
+    padding: 40px 0px 0px 0px;
+  }
+
+  .W_Offer {
+    min-width: 100%;
+  }
+
+  .U_Floating {
+    padding: 0 24px;
+    padding-right: 100px;
+  }
+
+  .W_MobileNavigation {
+    padding: 0 24px;
+  }
+
+  .W_MobileNavigation {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .W_Mobilecounter {
+    display: flex;
+    flex-direction: row;
+    gap: 6.86px;
+  }
+
+  .W_Switchers {
+    width: fit-content;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .U_LeftOffer {
+    width: 35px;
+    max-width: 35px;
+    height: 35px;
+    max-height: 35px;
+    border-radius: 100px;
+    border: 1px solid #131313;
+  }
+
+  .U_RightOffer {
+    width: 35px;
+    max-width: 35px;
+    height: 35px;
+    max-height: 35px;
+    border-radius: 100px;
+    border: 1px solid #131313;
+  }
+
+  .A_Mobilecount {
+    font-size: 44px;
+    color: #d8d8d8;
+  }
+
+  .U_Slash {
+    font-weight: 100;
+  }
+  .U_Dynamic {
+    color: #131313;
+  }
+
+  .W_RowHistoryTitleButton {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 24px;
+    padding-left: 24px !important;
+  }
+
+  .M_HistoryItem {
+    padding: 24px;
+  }
+
+  .W_OfferLeft {
+    padding-left: 24px;
+  }
+
+  .W_OfferRight {
+    padding-right: 24px;
+  }
+
+  .U_Floating {
+    padding: 0 24px;
+  }
+
+  .W_MobileNavigation {
+    padding: 0 24px;
+  }
+
+  .map {
+    /*height: 720px;*/
+    height: 400px;
+  }
+
+  .map_desktop-hide {
+    display: block;
+  }
+
+  .map_mobile-show {
+    display: none;
+  }
+
+  .O_Offers {
+    overflow-x: hidden;
+  }
+
+  .W_Offers {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .Q_OfferDivHorizontal {
+    display: none;
+  }
+
+  .W_Offer {
+    min-width: 100%;
+  }
+
+  .W_MobileNavigation {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: -20px;
+  }
+
+  .U_LeftOffer {
+    width: 35px;
+    max-width: 35px;
+    height: 35px;
+    max-height: 35px;
+    border-radius: 100px;
+    border: 1px solid #131313;
+  }
+
+  .W_Switchers {
+    width: fit-content;
+  }
+
+  .A_Mobilecount {
+    font-size: 44px;
+    color: #d8d8d8;
+  }
+
+  .U_Slash {
+    font-weight: 100;
+  }
+
+  .U_Dynamic {
+    color: #131313;
+  }
+
+  .W_Mobilecounter {
+    display: flex;
+    flex-direction: row;
+    gap: 6.86px;
+  }
+
+  .U_RightOffer {
+    width: 35px;
+    max-width: 35px;
+    height: 35px;
+    max-height: 35px;
+    border-radius: 100px;
+    border: 1px solid #131313;
   }
 }
 
 @media (max-width: 768px) {
+  .flex-height {
+    aspect-ratio: 16 / 9;
+  }
+
   .project {
     &:is(.kuvekino) {
       background-image: url("/card/kuvekino_mobile.jpg");
@@ -25,17 +256,13 @@
       background-image: url("/card/butovo_mobile.jpg");
     }
   }
-}
 
-@media screen and (max-width: 768px) {
   .main-slider {
     background-image: url("/MainSliderMobileBG.svg");
     background-size: cover;
     background-repeat: no-repeat;
   }
-}
 
-@media (max-width: 768px) {
   .title {
     font-size: 26px;
     line-height: 30px;
@@ -57,11 +284,7 @@
   .feature {
     width: 90vw;
   }
-}
 
-/* Полностью отключить hover эффекты на мобильных устройствах */
-@media (max-width: 768px) {
-  /* Полностью отключаем все hover эффекты */
   .feature.group:hover > div {
     transform: inherit !important;
   }
@@ -70,265 +293,25 @@
     opacity: inherit !important;
   }
 
-  /* Добавить активное состояние по клику - скрываем карточку */
   .feature.group.active > div[class*="-translate-y-"] {
     transform: translateY(-100px) !important;
   }
 
   .feature.group.active p[class*="opacity-0"] {
-    opacity: 1 !important; /* Текст становится видимым при активном состоянии */
+    opacity: 1 !important;
   }
 
   .-translate-y-\\[-100px\\] {
     --tw-translate-y: calc(-100px * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-}
 
-@media (max-width: 1024px) {
-  .W_Offers {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 1023px) {
-  .W_Offers {
-    display: flex;
-    flex-wrap: nowrap;
-    transition: transform 0.4s ease;
-  }
-
-  .W_Offers {
-    transition: all 0.3s ease-in-out;
-  }
-
-  .W_OfferLeft {
-    padding-left: 24px;
-  }
-
-  .W_Offer.U_BestOffer {
-    order: -1;
-  }
-
-  .W_Offer.W_OfferLeft {
-    order: 1;
-  }
-
-  .U_BestOffer {
-  }
-
-  .O_Offers {
-    padding: 40px 0px 0px 0px;
-  }
-
-  .W_Offer {
-    min-width: 100%;
-  }
-
-  .U_Floating {
-    padding: 0 24px;
-    padding-right: 100px;
-  }
-
-  .W_OfferRight {
-    padding-right: 24px;
+  .openBtn {
+    width: 26px;
+    height: 18px;
   }
 }
 
-@media (max-width: 1439px) {
-  .W_OfferLeft {
-    height: 612px;
-    padding-left: calc((100vw - 944px) / 2);
-  }
-}
-
-@media (max-width: 1439px) {
-  .U_BestOffer {
-    height: 612px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .W_Offer.W_OfferRight {
-    order: 2;
-  }
-}
-
-@media (max-width: 1439px) {
-  .W_OfferRight {
-    height: 612px;
-    padding-right: calc((100vw - 944px) / 2);
-  }
-}
-
-@media (max-width: 1023px) {
-  .W_MobileNavigation {
-    padding: 0 24px;
-  }
-}
-
-@media (max-width: 1023px) {
-  .W_MobileNavigation {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 1023px) {
-  .W_Mobilecounter {
-    display: flex;
-    flex-direction: row;
-    gap: 6.86px;
-  }
-}
-
-@media (max-width: 1023px) {
-  .W_Switchers {
-    width: fit-content;
-    display: flex;
-    gap: 4px;
-    align-items: center;
-  }
-}
-
-@media (max-width: 1023px) {
-  .U_LeftOffer {
-    width: 35px;
-    max-width: 35px;
-    height: 35px;
-    max-height: 35px;
-    border-radius: 100px;
-    border: 1px solid #131313;
-  }
-
-  .U_RightOffer {
-    width: 35px;
-    max-width: 35px;
-    height: 35px;
-    max-height: 35px;
-    border-radius: 100px;
-    border: 1px solid #131313;
-  }
-}
-
-@media (max-width: 1023px) {
-  .A_Mobilecount {
-    font-size: 44px;
-    color: #d8d8d8;
-  }
-
-  .U_Slash {
-    font-weight: 100;
-  }
-  .U_Dynamic {
-    color: #131313;
-  }
-}
-
-@media all and (max-width: 1023px) {
-  .W_RowHistoryTitleButton {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 0 24px;
-    padding-left: 24px !important;
-  }
-  .M_HistoryItem {
-    padding: 24px;
-  }
-
-  .W_OfferLeft {
-    padding-left: 24px;
-  }
-  .U_Floating {
-    padding: 0 24px;
-  }
-  .W_OfferRight {
-    padding-right: 24px;
-  }
-  .W_MobileNavigation {
-    padding: 0 24px;
-  }
-  .U_BestOffer {
-  }
-  .W_Offers {
-    display: flex;
-    flex-wrap: nowrap;
-    transition: transform 0.4s ease; /* плавный сдвиг */
-  }
-
-  .map {
-    /*height: 720px;*/
-    height: 400px;
-  }
-
-  .map_desktop-hide {
-    display: block;
-  }
-
-  .map_mobile-show {
-    display: none;
-  }
-
-  .O_Offers {
-    overflow-x: hidden;
-  }
-  .W_Offers {
-    transition: all 0.3s ease-in-out;
-  }
-  .Q_OfferDivHorizontal {
-    display: none;
-  }
-  .W_Offer {
-    min-width: 100%;
-  }
-  .W_MobileNavigation {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: -20px;
-  }
-  .U_LeftOffer {
-    width: 35px;
-    max-width: 35px;
-    height: 35px;
-    max-height: 35px;
-    border-radius: 100px;
-    border: 1px solid #131313;
-  }
-  .W_Switchers {
-    width: fit-content;
-  }
-  .A_Mobilecount {
-    font-size: 44px;
-    color: #d8d8d8;
-  }
-  .U_Slash {
-    font-weight: 100;
-  }
-  .U_Dynamic {
-    color: #131313;
-  }
-  .W_Mobilecounter {
-    display: flex;
-    flex-direction: row;
-    gap: 6.86px;
-  }
-  .U_RightOffer {
-    width: 35px;
-    max-width: 35px;
-    height: 35px;
-    max-height: 35px;
-    border-radius: 100px;
-    border: 1px solid #131313;
-  }
-}
-
-/* Hover анимация только для десктопа (>= 768px) */
 @media (min-width: 768px) {
   .project:hover {
     .growing {
@@ -395,13 +378,10 @@
     .content {
       transition: 0.3s;
       pointer-events: auto;
-      /* animation: goingUp 0.3s ease-in-out forwards;
-    animation-delay: 0.2s; */
     }
   }
 }
 
-/* Анимация по клику для мобильных устройств (< 768px) */
 @media (max-width: 767px) {
   .project.active {
     .growing {
@@ -469,29 +449,5 @@
       transition: 0.3s;
       pointer-events: auto;
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .openBtn {
-    width: 26px;
-    height: 18px;
-  }
-}
-
-@media (max-width: 1439px) {
-  .A_OfferNewLogo {
-    width: auto;
-    max-width: none;
-    height: 40px;
-    max-height: 40px;
-  }
-}
-@media (max-width: 1439px) {
-  .A_OfferNewLogo {
-    width: 57.43px;
-    max-width: 57.43px;
-    height: 50px;
-    max-height: 50px;
   }
 }
