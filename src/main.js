@@ -84,10 +84,10 @@ function initSliderInstance(sliderRoot) {
   const initialSlides = track ? Array.from(track.querySelectorAll('[data-slide]')) : []
   if (!track || initialSlides.length === 0) return
 
-  const prevButton = sliderRoot.querySelector('[data-prev]')
-  const nextButton = sliderRoot.querySelector('[data-next]')
-  const currentEl = sliderRoot.querySelector('[data-counter] [data-current]')
-  const totalEl = sliderRoot.querySelector('[data-counter] [data-total]')
+  const prevButtons = Array.from(sliderRoot.querySelectorAll('[data-prev]'))
+  const nextButtons = Array.from(sliderRoot.querySelectorAll('[data-next]'))
+  const currentEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-current]'))
+  const totalEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-total]'))
   const infinite = sliderRoot.getAttribute('data-infinite') === 'true' && mode === 'translate'
 
   let currentIndex = 0
@@ -97,7 +97,9 @@ function initSliderInstance(sliderRoot) {
   let dragDeltaX = 0
 
   const totalCount = initialSlides.length
-  if (totalEl) totalEl.textContent = String(totalCount)
+  totalEls.forEach((el) => {
+    el.textContent = String(totalCount)
+  })
 
   const getSlides = () => Array.from(track.querySelectorAll('[data-slide]'))
 
@@ -147,7 +149,9 @@ function initSliderInstance(sliderRoot) {
   }
 
   function updateCounter() {
-    if (currentEl) currentEl.textContent = String(currentIndex + 1)
+    currentEls.forEach((el) => {
+      el.textContent = String(currentIndex + 1)
+    })
   }
 
   function goTo(index) {
@@ -292,8 +296,8 @@ function initSliderInstance(sliderRoot) {
     track.addEventListener('touchstart', onPointerDown, { passive: true })
   }
 
-  if (prevButton) prevButton.addEventListener('click', handlePrev)
-  if (nextButton) nextButton.addEventListener('click', handleNext)
+  prevButtons.forEach((btn) => btn.addEventListener('click', handlePrev))
+  nextButtons.forEach((btn) => btn.addEventListener('click', handleNext))
   updateCounter()
 
   // Keep in sync on resize (after scale updates as well)

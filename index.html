@@ -12,16 +12,10 @@
         <div id="scale-content">
           <!-- Первый экран с заголовком -->
           <section>
-            <div
-              class="flex flex-col gap-[80px] px-[40px] py-[60px] max-md:px-[16px] max-md:py-[24px] max-md:gap-[48px] "
-            >
+            <div class="flex flex-col gap-[80px] px-[40px] py-[60px] max-md:px-[16px] max-md:py-[24px] max-md:gap-[48px]">
               <h1 class="title">Аренда складов и производств в москве и области</h1>
-              <div
-                class="flex flex-row gap-[240px] justify-between max-md:flex-col max-md:gap-[60px]"
-              >
-                <p class="text pr-26 max-md:pr-0">
-                  Помещения формата лайт индастриал от 600 м² на Калужском и Варшавском шоссе
-                </p>
+              <div class="flex flex-row gap-[240px] justify-between max-md:flex-col max-md:gap-[60px]">
+                <p class="text pr-26 max-md:pr-0">Помещения формата лайт индастриал от 600 м² на Калужском и Варшавском шоссе</p>
                 <a class="button primary" href="">
                   Оставить заявку
                   <div class="A_Plus w-[20px] h-[20px] rounded-full bg-white">
@@ -33,39 +27,23 @@
           </section>
 
           <!-- Фото-слайдер с баннером -->
-          <section
-            class="relative flex flex-col w-full aspect-video max-md:w-full max-md:aspect-[360/440] bg-black"
-            data-slider
-            data-mode="fade"
-          >
+          <section class="relative flex flex-col w-full aspect-video max-md:w-full max-md:h-[442px] bg-black" data-slider data-mode="fade">
             <!-- slider -->
             <div
               class="main-slider absolute top-[40px] left-[40px] max-md:top-[auto] max-md:bottom-[0] max-md:left-[0] max-md:pt-[22%] flex flex-row max-md:flex-col max-md:items-end w-[680px] h-[270px] max-md:w-[100%] max-md:h-[auto] max-md:aspect-[360/180] p-[40px] max-md:p-[20px] z-100"
             >
-              <p
-                class="text-white uppercase text-[28px] leading-[30px] max-md:text-[17px] max-md:leading-[20px]"
-              >
-                Помещения с отделкой, Готовы к заезду
-              </p>
+              <p class="text-white uppercase text-[28px] leading-[30px] max-md:text-[17px] max-md:leading-[20px]">Помещения с отделкой, Готовы к заезду</p>
               <!-- counter and slider buttons -->
-              <div
-                class="flex flex-row items-center h-fit gap-[10px] max-md:absolute top-[8%]"
-                data-slider-controls
-              >
+              <div class="flex flex-row items-center h-fit gap-[10px] max-md:absolute top-[8%]" data-slider-controls>
                 <p class="text-[13px] text-[#9CA8AE] text-nowrap max-md:hidden" data-counter>
-                  <span class="text-white" data-current>1</span> /
+                  <span class="text-white" data-current>1</span>
+                  /
                   <span data-total>3</span>
                 </p>
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer"
-                  data-prev
-                >
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer" data-prev>
                   <img class="w-[40px] h-[40px]" src="icons/IconLeft.svg" alt="" />
                 </div>
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer"
-                  data-next
-                >
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer" data-next>
                   <img class="w-[40px] h-[40px]" src="icons/IconRight.svg" alt="" />
                 </div>
               </div>
@@ -73,19 +51,24 @@
             <div class="relative w-full h-full" data-track>
               <!-- circle through opacity -->
               <img
-                class="absolute w-full max-md:h-[75%] h-full max-md:object-cover opacity-100 transition-all duration-200 ease-in"
+                class="absolute w-full max-md:h-[442px] h-full max-md:object-cover opacity-100 transition-all duration-200 ease-in"
                 data-slide
                 src="https://optim.tildacdn.com/tild3332-3137-4537-a332-383031316637/-/format/webp/arenda_start_01_smal.jpg.webp"
                 alt=""
+                srcset="
+                  https://optim.tildacdn.com/tild6238-6362-4435-a432-306133316335/-/format/webp/arendaFirstScreen.jpg.webp     768w,
+                  https://optim.tildacdn.com/tild3332-3137-4537-a332-383031316637/-/format/webp/arenda_start_01_smal.jpg.webp 1280w
+                "
+                sizes="(max-width: 768px) 100vw, 1280px"
               />
               <img
-                class="absolute w-full max-md:h-[75%] h-full max-md:object-cover opacity-0 transition-all duration-200 ease-in"
+                class="absolute w-full max-md:h-[340px] h-full max-md:object-cover opacity-0 transition-all duration-200 ease-in"
                 data-slide
                 src="https://optim.tildacdn.com/tild3730-3934-4465-a634-333939323337/-/format/webp/arenda_start_02_smal.jpg.webp"
                 alt=""
               />
               <img
-                class="absolute w-full max-md:h-[75%] h-full max-md:object-cover opacity-0 transition-all duration-200 ease-in"
+                class="absolute w-full max-md:h-[340px] h-full max-md:object-cover opacity-0 transition-all duration-200 ease-in"
                 data-slide
                 src="https://optim.tildacdn.com/tild3834-6632-4435-b630-396634323734/-/format/webp/arenda_start_03_smal.jpg.webp"
                 alt=""
@@ -94,27 +77,19 @@
           </section>
 
           <!-- Карта и список проектов -->
-          <section
-            class="flex flex-row max-md:flex-col w-full h-fit border-b-[1px] border-[#18181815]"
-          >
-          <div
-            class="hidden max-md:flex flex-row w-full px-[16px] pt-[40px] pb-[24px] items-center justify-between">
-            <div class="flex flex-row gap-[40px] items-center">
-              <h2 class="title">Расположение</h2>
+          <section class="flex flex-row max-md:flex-col w-full h-fit border-b-[1px] border-[#18181815]">
+            <div class="hidden max-md:flex flex-row w-full px-[16px] pt-[40px] pb-[24px] items-center justify-between">
+              <div class="flex flex-row gap-[40px] items-center">
+                <h2 class="title">Расположение</h2>
+              </div>
             </div>
-          </div>
-            <div
-              class="gap-[60px] w-1/2 max-md:w-full aspect-square bg-black flex items-center justify-center"
-              id="map"
-            >
+            <div class="gap-[60px] w-1/2 max-md:w-full aspect-square bg-black flex items-center justify-center" id="map">
               <p class="text-white">на тильде тут будет карта</p>
             </div>
             <div
               class="flex max-md:hidden flex-col w-1/2 max-h-[720px] overflow-y-scroll max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]"
             >
-              <div
-                class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]"
-              >
+              <div class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
                 <img
                   class="w-full h-[280px]"
                   src="https://optim.tildacdn.com/tild3734-6235-4566-a431-373930653834/-/format/webp/arenda_info_01.jpg.webp"
@@ -145,9 +120,7 @@
                     <div class="py-[26px] border-b border-[var(--stroke-light)]">
                       <p class="text-[13px] uppercase">1-я линия ЦКАД и А-107, Троицк</p>
                     </div>
-                    <div
-                      class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]"
-                    >
+                    <div class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
                       <p class="text-[13px] uppercase">5 км до калужского шоссе</p>
                       <p class="text-[13px] uppercase text-[var(--grey)]">10 минут</p>
                     </div>
@@ -158,9 +131,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]"
-              >
+              <div class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
                 <img
                   class="w-full h-[280px]"
                   src="https://optim.tildacdn.com/tild6263-3665-4562-a435-633537383834/-/format/webp/arenda_info_02.jpg.webp"
@@ -191,9 +162,7 @@
                     <div class="py-[26px] border-b border-[var(--stroke-light)]">
                       <p class="text-[13px] uppercase">16 км от МКАД, Троицк</p>
                     </div>
-                    <div
-                      class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]"
-                    >
+                    <div class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
                       <p class="text-[13px] uppercase">5 км до калужского шоссе</p>
                     </div>
                     <div class="flex flex-row justify-between pt-[26px]">
@@ -233,9 +202,7 @@
                     <div class="py-[26px] border-b border-[var(--stroke-light)]">
                       <p class="text-[13px] uppercase">15 минут до МКАД, шоссе Энтузиастов</p>
                     </div>
-                    <div
-                      class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]"
-                    >
+                    <div class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
                       <p class="text-[13px] uppercase">ПРЯМОЙ ЗАЕЗД И ВЫЕЗД НА М-7</p>
                       <p class="text-[13px] uppercase text-[var(--grey)]">Рядом трасса М-12</p>
                     </div>
@@ -249,17 +216,11 @@
           </section>
 
           <!-- Характеристики -->
-          <section
-            class="flex flex-row max-md:flex-col w-full h-fit max-md:px-[16px] max-md:pt-[0px] max-md:pb-[0px] border-b-[1px] border-[#18181815]"
-          >
-            <div
-              class="flex flex-col gap-[60px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[0] max-md:pt-[40px] max-md:pb-[24px]"
-            >
+          <section class="flex flex-row max-md:flex-col w-full h-fit max-md:px-[16px] max-md:pt-[0px] max-md:pb-[0px] border-b-[1px] border-[#18181815]">
+            <div class="flex flex-col gap-[60px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[0] max-md:pt-[40px] max-md:pb-[24px]">
               <h2 class="title">Характеристики помещений лайт индастриал</h2>
             </div>
-            <div
-              class="flex flex-col py-[20px] max-md:py-[0px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[var(--stroke-light)]"
-            >
+            <div class="flex flex-col py-[20px] max-md:py-[0px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[var(--stroke-light)]">
               <div
                 class="flex items-center w-full h-[90px] max-md:h-[fit-content] max-md:py-[24px] px-[40px] max-md:px-[0] border-b-[1px] border-[var(--stroke-light)]"
               >
@@ -302,44 +263,27 @@
           </section>
 
           <!-- Преимущества формата -->
-          <section
-            class="flex flex-col w-full h-fit"
-            data-slider
-            data-mode="translate"
-            data-infinite="true"
-          >
+          <section class="max-md:border-b-[1px] border-[var(--stroke-light)] flex flex-col w-full h-fit" data-slider data-mode="translate" data-infinite="true">
             <div
-              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[30px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start"
+              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[16px] max-md:pb-[24px] max-md:pt-[40px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start"
             >
               <div class="flex flex-row gap-[40px] items-center">
                 <h2 class="title">Преимущества формата лайт индастриал для бизнеса</h2>
               </div>
-              <div class="flex flex-row gap-[5px]">
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
-                  data-prev
-                >
+              <div class="flex flex-row gap-[5px] max-md:hidden">
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-prev>
                   <img class="w-[40px] h-[40px] invert" src="icons/IconLeft.svg" alt="" />
                 </div>
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
-                  data-next
-                >
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-next>
                   <img class="w-[40px] h-[40px] invert" src="icons/IconRight.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="relative w-full h-[580px] overflow-x-hidden">
-              <div
-                class="absolute h-[580px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]"
-                data-track
-              >
-                <div
-                  class="advantage first group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
+            <div class="relative w-full max-md:h-[500px] h-[580px] overflow-x-hidden max-md:flex max-md:flex-col max-md:justify-end max-md:px-[16px]">
+              <div class="max-md:h-[194px] absolute h-[580px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]" data-track>
+                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage first group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
                   <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
                     <div class="uppercase bold flex flex-row justify-between text-white">
                       <p>4 функции в 1 помещении</p>
@@ -350,20 +294,22 @@
                         </div>
                       </div>
                     </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Универсальная планировка и качественная инженерия. Подходит для компаний
-                      любого профиля
+                    <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
+                    </p>
+                  </div>
+                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                    <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
+                      <p>4 функции в 1 помещении</p>
+                    </div>
+                    <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
                     </p>
                   </div>
                 </div>
-                <div
-                  class="advantage second group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
+                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage second group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
                   <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
                     <div class="uppercase bold flex flex-row justify-between text-white">
                       <p>Готовая отделка</p>
@@ -374,20 +320,22 @@
                         </div>
                       </div>
                     </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Возможность приобрести пространство под индивидуальный запрос: выбрать
-                      площадь, конфигурацию, количество доков, наличие отделки и мезонина
+                    <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Возможность приобрести пространство под индивидуальный запрос: выбрать площадь, конфигурацию, количество доков, наличие отделки и мезонина
+                    </p>
+                  </div>
+                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                    <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
+                      <p>4 функции в 1 помещении</p>
+                    </div>
+                    <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
                     </p>
                   </div>
                 </div>
-                <div
-                  class="advantage third group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
+                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage third group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
                   <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
                     <div class="uppercase bold flex flex-row justify-between text-white">
                       <p>Профессиональная ук</p>
@@ -398,20 +346,22 @@
                         </div>
                       </div>
                     </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Компактное здание на собственной территории с минимальным количеством
-                      «соседей»
+                    <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Компактное здание на собственной территории с минимальным количеством «соседей»
+                    </p>
+                  </div>
+                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                    <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
+                      <p>4 функции в 1 помещении</p>
+                    </div>
+                    <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
                     </p>
                   </div>
                 </div>
-                <div
-                  class="advantage fourth group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
+                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage fourth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
                   <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
                     <div class="uppercase bold flex flex-row justify-between text-white">
                       <p>Свобода в планировании бизнес процессов</p>
@@ -422,106 +372,33 @@
                         </div>
                       </div>
                     </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
+                    <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
                       Повышение эффективности стеллажного хранения
                     </p>
                   </div>
-                </div>
-                <div
-                  class="advantage first group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
-                  <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
-                  >
-                    <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>4 функции в 1 помещении</p>
-                      <div>
-                        <!-- button icon -->
-                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
-                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
-                        </div>
-                      </div>
+                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                    <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
+                      <p>4 функции в 1 помещении</p>
                     </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Универсальная планировка и качественная инженерия. Подходит для компаний
-                      любого профиля
+                    <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
                     </p>
                   </div>
                 </div>
-                <div
-                  class="advantage second group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
-                  <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
-                  >
-                    <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Готовая отделка</p>
-                      <div>
-                        <!-- button icon -->
-                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
-                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Возможность приобрести пространство под индивидуальный запрос: выбрать
-                      площадь, конфигурацию, количество доков, наличие отделки и мезонина
-                    </p>
+              </div>
+              <!-- counter mobile -->
+              <div class="hidden max-md:flex w-full justify-between items-center pb-[12px]">
+                <p class="text-[46px] font-normal text-[var(--grey)]" data-counter>
+                  <span class="text-[var(--pikBlack)]" data-current>1</span>
+                  /
+                  <span data-total>3</span>
+                </p>
+                <div class="hidden max-md:flex flex-row gap-[5px]">
+                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-prev>
+                    <img class="w-[40px] h-[40px] invert" src="icons/IconLeft.svg" alt="" />
                   </div>
-                </div>
-                <div
-                  class="advantage third group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
-                  <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
-                  >
-                    <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Профессиональная ук</p>
-                      <div>
-                        <!-- button icon -->
-                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
-                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Компактное здание на собственной территории с минимальным количеством
-                      «соседей»
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="advantage fourth group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
-                  <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
-                  >
-                    <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Свобода в планировании бизнес процессов</p>
-                      <div>
-                        <!-- button icon -->
-                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
-                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Повышение эффективности стеллажного хранения
-                    </p>
+                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer" data-next>
+                    <img class="w-[40px] h-[40px] invert" src="icons/IconRight.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -529,125 +406,124 @@
           </section>
 
           <!-- УК -->
-          <section
-            class="flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]"
-          >
+          <section class="flex flex-row max-md:flex-col w-full h-fit border-b-[1px] border-[#18181815]">
             <div
-              class="flex flex-col gap-[60px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[0] max-md:p-[30px]"
+              class="flex flex-col gap-[60px] max-md:gap-[24px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[16px] max-md:pt-[40px] max-md:pb-[24px] max-md:border-b-[1px] border-[var(--stroke-light)]"
             >
               <h2 class="title">управляющая компания</h2>
-              <p class="text">
-                Профессиональная управляющая компания осуществляет техническую эксплуатацию
-                и содержание комплекса
-              </p>
+              <p class="text">Профессиональная управляющая компания осуществляет техническую эксплуатацию и содержание комплекса</p>
             </div>
-            <div
-              class="flex flex-col py-[20px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]"
-            >
+            <div class="flex flex-col py-[20px] max-md:py-[24px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
               <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]"
+                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] border-b-[1px] border-[#18181815] max-md:h-[fit-content] max-md:pb-[24px] max-md:pt-[0px]"
               >
                 <p class="row_text">Клининг</p>
               </div>
               <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]"
+                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] border-b-[1px] border-[#18181815] max-md:h-[fit-content] max-md:py-[24px]"
               >
                 <p class="row_text">Техническая эксплуатация</p>
               </div>
               <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]"
+                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] border-b-[1px] border-[#18181815] max-md:h-[fit-content] max-md:py-[24px]"
               >
                 <p class="row_text">Безопасность и контроль доступа</p>
               </div>
               <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0] border-b-[1px] border-[#18181815]"
+                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] border-b-[1px] border-[#18181815] max-md:h-[fit-content] max-md:py-[24px]"
               >
                 <p class="row_text">Уборка территории</p>
               </div>
-              <div class="flex items-center w-full h-[90px] px-[40px] max-md:px-[0]">
-                <p class="row_text">
-                  Возможность заключения контракта на обслуживание помещений
-                  собственников / арендаторов
-                </p>
+              <div class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] max-md:h-[fit-content] max-md:pt-[24px] max-md:pb-[ 0px]">
+                <p class="row_text">Возможность заключения контракта на обслуживание помещений собственников / арендаторов</p>
               </div>
             </div>
           </section>
 
           <!-- Типовые планировки -->
-          <section
-            class="flex flex-col w-full h-fit"
-            data-slider
-            data-mode="translate"
-            data-infinite="true"
-          >
+          <section class="flex flex-col w-full h-fit" data-slider data-mode="translate" data-infinite="true">
             <div
-              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[30px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start"
+              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[16px] max-md:gap-[20px] max-md:pt-[40px] max-md:pb-[24px] items-center max-md:flex-row justify-between max-md:items-center"
             >
               <div class="flex flex-row gap-[40px] items-center">
                 <h2 class="title">Типовые планировки</h2>
               </div>
+              <div class="hidden max-md:flex flex-col justify-center items-center gap-[10px]">
+                <!-- counter -->
+                <p class="text-[13px] max-md:text-[11px] text-[var(--grey)]" data-counter>
+                  <span class="text-[var(--pikBlack)]" data-current>1</span>
+                  /
+                  <span data-total>3</span>
+                </p>
+                <div class="flex flex-row gap-[5px]">
+                  <div class="flex items-center justify-center w-[30px] h-[30px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-prev>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                      <path
+                        d="M7.3587 0.857708L2.32312 5.89328L13.001 5.89328V7.10672L2.32312 7.10672L7.3587 12.1423L6.50099 13L0.429842 6.92885L0 6.5L0.429842 6.07115L6.50099 0L7.3587 0.857708Z"
+                        fill="#181818"
+                      />
+                    </svg>
+                  </div>
+                  <div class="flex items-center justify-center w-[30px] h-[30px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-next>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                      <path
+                        d="M5.64228 0.857708L10.6779 5.89328L-1.21004e-05 5.89328V7.10672L10.6779 7.10672L5.64228 12.1423L6.49999 13L12.5711 6.92885L13.001 6.5L12.5711 6.07115L6.49999 0L5.64228 0.857708Z"
+                        fill="#181818"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="flex flex-row max-md:flex-col-reverse w-full h-fit overflow-x-hidden">
               <div
-                class="flex flex-col justify-between relative flex flex-col gap-[40px] w-1/2 max-md:w-full p-[40px] max-md:p-[30px] bg-[#181818] max-md:min-h-[470px]"
+                class="flex flex-col justify-between relative flex flex-col gap-[40px] w-1/2 max-md:w-full p-[40px] max-md:py-[40px] max-md:px-[16px] bg-[#181818] max-md:min-h-[178px]"
               >
                 <div class="flex items-center justify-between flex-row gap-[12px] max-md:flex-row">
-                  <h2 class="font-medium text-[28px] max-md:text-[17px] text-white uppercase">
-                    от 580 м² до 3 000 м²
-                  </h2>
-                  <div class="flex items-center gap-[16px]">
+                  <h2 class="font-medium text-[28px] max-md:text-[17px] text-white uppercase">от 580 м² до 3 000 м²</h2>
+                  <div class="max-md:hidden flex items-center gap-[16px]">
                     <!-- counter -->
                     <p class="text-[13px] max-md:text-[11px] text-[#9CA8AE]" data-counter>
-                      <span class="text-white" data-current>1</span> /
+                      <span class="text-white" data-current>1</span>
+                      /
                       <span data-total>3</span>
                     </p>
                     <div class="flex flex-row gap-[5px]">
-                      <div
-                        class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer"
-                        data-prev
-                      >
+                      <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer" data-prev>
                         <img class="w-[40px] h-[40px]" src="icons/IconLeft.svg" alt="" />
                       </div>
-                      <div
-                        class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer"
-                        data-next
-                      >
+                      <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#fff] cursor-pointer" data-next>
                         <img class="w-[40px] h-[40px]" src="icons/IconRight.svg" alt="" />
                       </div>
                     </div>
                   </div>
                 </div>
-                <p
-                  class="text-[36px] max-md:text-[16px] leading-[120%] text-white w-full leading-[40px]"
-                >
+                <p class="text-[36px] max-md:text-[16px] leading-[120%] text-white w-full leading-[40px]">
                   Помещения с офисами и производственно-складскими площадями
                 </p>
               </div>
-              <div class="flex w-1/2 max-md:w-full h-[540px] relative overflow-hidden">
-                <div
-                  class="bg-[var(--lightGrey)] absolute top-0 left-0 w-full min-w-fit h-full flex flex-row"
-                  data-track
-                >
+              <div class="flex w-1/2 max-md:w-full h-[540px] max-md:h-[200px] relative overflow-hidden">
+                <div class="bg-[var(--lightGrey)] absolute top-0 left-0 w-full min-w-fit h-full flex flex-row" data-track>
                   <img
-                    class="pic-ungrag h-[540px] w-[720px] min-w-[720px] min-h-[540px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px]"
+                    class="pic-ungrag h-[540px] w-[720px] min-w-[720px] min-h-[540px] max-md:w-[100vw] max-md:min-w-[100vw] max-md:h-[200px] max-md:min-h-[0]"
                     data-slide
                     src="https://static.tildacdn.com/tild6265-3665-4432-b161-336531626538/plan_01.svg"
                     alt=""
                   />
                   <img
-                    class="pic-ungrag h-[540px] w-[720px] min-w-[720px] min-h-[540px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px]"
+                    class="pic-ungrag h-[540px] w-[720px] min-w-[720px] min-h-[540px] max-md:w-[100vw] max-md:min-w-[100vw] max-md:h-[200px] max-md:min-h-[0]"
                     data-slide
                     src="https://static.tildacdn.com/tild6633-6262-4037-a262-633837663666/plan_02.svg"
                     alt=""
                   />
                   <img
-                    class="pic-ungrag h-[540px] w-[720px] min-w-[720px] min-h-[540px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px]"
+                    class="pic-ungrag h-[540px] w-[720px] min-w-[720px] min-h-[540px] max-md:w-[100vw] max-md:min-w-[100vw] max-md:h-[200px] max-md:min-h-[0]"
                     data-slide
                     src="https://static.tildacdn.com/tild6262-3664-4631-b038-623966333139/plan_03.svg"
                     alt=""
                   />
                   <img
-                    class="pic-ungrag h-[540px] w-[720px] min-w-[720px] min-h-[540px] max-md:aspect-square max-md:h-[auto] max-md:w-[100vw] max-md:min-w-[100vw] max-md:min-h-[360px]"
+                    class="pic-ungrag h-[540px] w-[720px] min-w-[720px] min-h-[540px] max-md:w-[100vw] max-md:min-w-[100vw] max-md:h-[200px] max-md:min-h-[0]"
                     data-slide
                     src="https://static.tildacdn.com/tild3032-3330-4366-a135-323566663036/plan_04.svg"
                     alt=""
@@ -658,78 +534,81 @@
           </section>
 
           <!-- Галерея -->
-          <section
-            class="flex flex-col w-full h-fit"
-            data-slider
-            data-mode="translate"
-            data-infinite="true"
-          >
+          <section class="flex flex-col w-full h-fit" data-slider data-mode="translate" data-infinite="true">
             <div
-              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:p-[30px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start"
+              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:pt-[40px] max-md:pb-[24px] max-md:px-[16px] max-md:gap-[20px] items-center max-md:flex-row justify-between"
             >
               <div class="flex flex-row gap-[40px] items-center">
                 <h2 class="title">фото реализованных проектов</h2>
               </div>
-              <div class="flex flex-row gap-[5px]">
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
-                  data-prev
-                >
+              <!-- counter -->
+              <div class="max-md:hidden flex flex-row gap-[5px]">
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-prev>
                   <img class="w-[40px] h-[40px] invert" src="icons/IconLeft.svg" alt="" />
                 </div>
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
-                  data-next
-                >
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-next>
                   <img class="w-[40px] h-[40px] invert" src="icons/IconRight.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="relative w-full h-[580px] overflow-x-hidden">
-              <div
-                class="absolute pb-[60px] h-[556px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row"
-                data-track
-              >
-                <div class="galleryItem first group w-[884px] h-full" data-slide></div>
-                <div class="galleryItem second group w-[884px] h-full" data-slide></div>
-                <div class="galleryItem third group w-[884px] h-full" data-slide></div>
-                <div class="galleryItem fourth group w-[884px] h-full" data-slide></div>
-                <div class="galleryItem fifth group w-[884px] h-full" data-slide></div>
-                <div class="galleryItem sixth group w-[884px] h-full" data-slide></div>
-                <div class="galleryItem seventh group w-[884px] h-full" data-slide></div>
-                <div class="galleryItem eighth group w-[884px] h-full" data-slide></div>
-                <div class="galleryItem ninth group w-[884px] h-full" data-slide></div>
+            <div
+              class="relative w-full h-[580px] max-md:h-[470px] overflow-x-hidden max-md:flex max-md:justify-between max-md:items-end max-md:pb-[12px] max-md:px-[16px]"
+            >
+              <div class="absolute pb-[60px] h-[556px] max-md:pb-[0px] max-md:h-[372px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row" data-track>
+                <div class="galleryItem first group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem second group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem third group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem fourth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem fifth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem sixth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem seventh group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem eighth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem ninth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+              </div>
+              <!-- counter mobile -->
+              <div class="hidden max-md:flex w-full justify-between items-center">
+                <p class="text-[46px] font-normal text-[var(--grey)]" data-counter>
+                  <span class="text-[var(--pikBlack)]" data-current>1</span>
+                  /
+                  <span data-total>3</span>
+                </p>
+                <div class="hidden max-md:flex flex-row gap-[5px]">
+                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-prev>
+                    <img class="w-[40px] h-[40px] invert" src="icons/IconLeft.svg" alt="" />
+                  </div>
+                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer" data-next>
+                    <img class="w-[40px] h-[40px] invert" src="icons/IconRight.svg" alt="" />
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
           <!-- Аренда помещений, тёмный блок -->
-          <section
-            class="bg-[var(--pikBlack)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]"
-          >
-            <div
-              class="flex flex-col gap-[60px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[0] max-md:p-[30px]"
-            >
+          <section class="bg-[var(--pikBlack)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[0px] border-b-[1px] border-[#18181815]">
+            <div class="flex flex-col gap-[60px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[16px] max-md:py-[40px]">
               <h2 class="title white">Аренда помещений лайт индастриал</h2>
             </div>
             <div
-              class="flex flex-col py-[20px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[var(--stroke-dark)]"
+              class="flex flex-col py-[20px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[var(--stroke-dark)] max-md:py-[0px] max-md:border-t-[1px] max-md:border-t-[var(--stroke-dark)]"
             >
               <div
-                class="h-auto flex flex-col gap-[40px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[var(--stroke-dark)]"
+                class="h-auto flex flex-col gap-[40px] max-md:gap-[24px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[var(--stroke-dark)] max-md:px-[16px]"
               >
                 <p class="textSubtitle white">Готово ко въезду</p>
                 <p class="row_text_small white">Помещения с финишной отделкой</p>
               </div>
               <div
-                class="h-auto flex flex-col gap-[40px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[var(--stroke-dark)]"
+                class="h-auto flex flex-col gap-[40px] max-md:gap-[24px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[var(--stroke-dark)] max-md:px-[16px]"
               >
-                <p class="textSubtitle white">Удобный въезд на федеральные трассы</p>
-                <p class="row_text_small white">Удобный выезд на Варшавское и Калужское шоссе. <br> Комфорт для ваших сотрудников, деловых партнеров и гостей</p>
+                <p class="textSubtitle white">Удобный въезд на федеральные трассы</p>
+                <p class="row_text_small white">
+                  Удобный выезд на Варшавское и Калужское шоссе.
+                  <br />
+                  Комфорт для ваших сотрудников, деловых партнеров и гостей
+                </p>
               </div>
-              <div
-                class="h-auto flex flex-col gap-[40px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0]"
-              >
+              <div class="h-auto flex flex-col gap-[40px] max-md:gap-[24px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] max-md:px-[16px]">
                 <p class="textSubtitle white">Арендные каникулы</p>
                 <p class="row_text_small white">30 дней</p>
               </div>
@@ -737,221 +616,410 @@
           </section>
 
           <!-- Доступные лоты -->
-          <section
-            class="flex flex-col max-md:flex-col w-full h-[900px] border-b-[1px] border-[#18181815]"
-          >
-          <div class="flex flex-row gap-[40px] items-center w-full px-[40px] pt-[60px] pb-[40px]">
-            <h2 class="title">Доступные лоты</h2>
-          </div>
-          <div class="flex flex-row w-full h-full border-t border-[var(--stroke-light)]">
-          <div class="flex flex-col w-1/2 max-md:w-full border-l-[1px] border-[#18181815] max-md:border-l-[0px]">
-            <div class="flex flex-col w-full max-md:px-[0] h-full">
-              <div class="financeProgram flex w-full justify-between px-[40px] py-[60px] border-b-[1px] border-[#18181815]"
-                id="secondAccordion">
-                <div class="w-full flex flex-col">
-                  <div class="flex gap-[24px] items-center">
-                  <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[17px] uppercase">
-                    Промпарк Сенькино
-                  </h2>
-                  <div class="flex items-center gap-[10px] relative px-[14px] py-[4px] rounded-full border-[1px] border-[var(--pikBlack)]">Калужское шоссе
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path
-                        d="M9.54502 0.120354C10.9323 -0.41293 12.3111 0.916837 11.8282 2.3225L9.18466 10.0178C8.89231 10.8689 8.09884 11.2296 7.40244 11.2131C6.71139 11.1966 5.94738 10.8106 5.64463 9.99926C5.43554 9.43863 5.20866 8.90666 4.97373 8.47485C4.72759 8.02248 4.51562 7.76165 4.37021 7.65453C4.24381 7.56166 3.93197 7.42965 3.39658 7.29516C2.88896 7.16767 2.26673 7.05798 1.5997 6.96606C0.652841 6.83537 0.125837 6.05956 0.0206022 5.3391C-0.085201 4.6145 0.206666 3.70975 1.12509 3.35668L9.54502 0.120354ZM10.0831 1.52074L1.66318 4.75707C1.59359 4.78388 1.55875 4.82252 1.53525 4.87035C1.50703 4.928 1.48955 5.01659 1.50498 5.12231C1.53822 5.34992 1.6732 5.46152 1.80478 5.47973C2.49848 5.57532 3.17991 5.69393 3.76181 5.84008C4.31508 5.97904 4.87976 6.16678 5.26084 6.4475C5.68129 6.75743 6.02075 7.26116 6.29111 7.75805C6.57285 8.2759 6.82795 8.87972 7.0499 9.47485C7.09762 9.60275 7.23503 9.7093 7.43857 9.7141C7.6368 9.7187 7.73226 9.6279 7.76572 9.53051L10.4093 1.8352C10.4783 1.63439 10.2813 1.44456 10.0831 1.52074Z"
-                        fill="#181818" />
-                    </svg>
-                  </div>
-                  </div>
-                  <div class="accordionCard flex flex-col gap-[44px] max-md:gap-6">
-                    <div class="flex flex-col">
-                      <div class="py-[40px] border-b border-[var(--stroke-light)]">
-                          <p class="leading-[130%]">г. Москва, поселение Десеновское, <br> вблизи деревень Кувекино и Евсеево</p>
+          <section class="flex flex-col max-md:flex-col w-full h-[900px] max-md:h-[fit-content] border-b-[1px] border-[#18181815]">
+            <div class="flex flex-row gap-[40px] items-center w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[16px] max-md:pt-[40px] max-md:pb-[24px]">
+              <h2 class="title">Доступные лоты</h2>
+            </div>
+            <div class="flex flex-row w-full h-full border-t border-[var(--stroke-light)] max-md:flex-col">
+              <div class="flex flex-col w-1/2 max-md:w-full border-l-[1px] border-[#18181815] max-md:border-l-[0px]">
+                <div class="flex flex-col w-full max-md:px-[0] h-full">
+                  <div
+                    class="financeProgram flex w-full justify-between px-[40px] py-[60px] border-b-[1px] border-[#18181815] max-md:px-[16px] max-md:py-[40px]"
+                    id="secondAccordion"
+                  >
+                    <div class="w-full flex flex-col">
+                      <div class="flex gap-[24px] items-center max-md:flex-col max-md:items-start max-md:gap-[18px]">
+                        <div class="flex flex-row justify-between items-center max-md:items-start w-full">
+                          <div class="flex gap-[24px] items-center max-md:flex-col max-md:items-start">
+                            <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Промпарк Сенькино</h2>
+                            <div
+                              class="leading-[130%] flex items-center gap-[10px] relative px-[14px] py-[4px] max-md:py-[8px] rounded-full border-[1px] border-[var(--pikBlack)]"
+                            >
+                              Калужское шоссе
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path
+                                  d="M9.54502 0.120354C10.9323 -0.41293 12.3111 0.916837 11.8282 2.3225L9.18466 10.0178C8.89231 10.8689 8.09884 11.2296 7.40244 11.2131C6.71139 11.1966 5.94738 10.8106 5.64463 9.99926C5.43554 9.43863 5.20866 8.90666 4.97373 8.47485C4.72759 8.02248 4.51562 7.76165 4.37021 7.65453C4.24381 7.56166 3.93197 7.42965 3.39658 7.29516C2.88896 7.16767 2.26673 7.05798 1.5997 6.96606C0.652841 6.83537 0.125837 6.05956 0.0206022 5.3391C-0.085201 4.6145 0.206666 3.70975 1.12509 3.35668L9.54502 0.120354ZM10.0831 1.52074L1.66318 4.75707C1.59359 4.78388 1.55875 4.82252 1.53525 4.87035C1.50703 4.928 1.48955 5.01659 1.50498 5.12231C1.53822 5.34992 1.6732 5.46152 1.80478 5.47973C2.49848 5.57532 3.17991 5.69393 3.76181 5.84008C4.31508 5.97904 4.87976 6.16678 5.26084 6.4475C5.68129 6.75743 6.02075 7.26116 6.29111 7.75805C6.57285 8.2759 6.82795 8.87972 7.0499 9.47485C7.09762 9.60275 7.23503 9.7093 7.43857 9.7141C7.6368 9.7187 7.73226 9.6279 7.76572 9.53051L10.4093 1.8352C10.4783 1.63439 10.2813 1.44456 10.0831 1.52074Z"
+                                  fill="#181818"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="cursor-pointer openBtnWrap h-full">
+                            <div class="openBtn"></div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="py-[40px] border-b border-[var(--stroke-light)]">
-                        <p class="leading-[130%]">10 км до Варшавского шоссе</p>
-                      </div>  
-                      <div class="py-[40px] border-b border-[var(--stroke-light)]">
-                        <p class="leading-[130%]">5 км до Калужского шоссе</p>
+                      <div class="accordionCard flex flex-col gap-[44px] max-md:gap-6">
+                        <div class="flex flex-col">
+                          <!-- мобильное фото -->
+                          <div class="hidden max-md:flex w-full flex-col pt-[24px] gap-[24px]">
+                            <img
+                              src="https://optim.tildacdn.com/tild3734-6235-4566-a431-373930653834/-/format/webp/arenda_info_01.jpg.webp"
+                              alt="Склад Лайт индастриал Сенькино"
+                              class="h-[194px] object-cover"
+                            />
+                            <div class="flex flex-col uppercase">
+                              <p class="text-[var(--pikBlack)] text-[12px] pMed">лайт индастриал</p>
+                              <p class="text-[var(--grey)] text-[12px] pMed">от 580 м²</p>
+                            </div>
+                          </div>
+                          <div class="py-[40px] border-b border-[var(--stroke-light)] max-md:py-[24px]">
+                            <p class="leading-[130%]">
+                              г. Москва, поселение Десеновское,
+                              <br />
+                              вблизи деревень Кувекино и Евсеево
+                            </p>
+                          </div>
+                          <div class="py-[40px] border-b border-[var(--stroke-light)] max-md:py-[24px]">
+                            <p class="leading-[130%]">10 км до Варшавского шоссе</p>
+                          </div>
+                          <div class="py-[40px] border-b border-[var(--stroke-light)] max-md:py-[24px]">
+                            <p class="leading-[130%]">5 км до Калужского шоссе</p>
+                          </div>
+                          <div class="py-[40px] max-md:py-[24px]">
+                            <p class="leading-[130%]">Блок от 580 м² до 3 000 м²</p>
+                          </div>
+                          <!-- мобильный список лотов -->
+                          <div class="hidden max-md:flex py-[40px]">
+                            <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Список лотов</h2>
+                          </div>
+                          <div class="hidden max-md:flex border-[var(--stroke-light)] w-full gap-[40px] flex flex-col">
+                            <div class="flex flex-col h-full overflow-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                              <div class="listLots flex flex-col">
+                                <div class="flex justify-between pb-[15px] border-b border-[var(--stroke-light)] items-end">
+                                  <p class="text-[13px] text-[var(--grey)] uppercase w-[112px] shrink-0">площадь</p>
+                                  <p class="text-[13px] text-[var(--grey)] uppercase w-full">
+                                    дата
+                                    <br />
+                                    доступа
+                                  </p>
+                                  <p class="text-[13px] text-[var(--grey)] uppercase w-full text-right">тип погрузки</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] pb-[0px]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="py-[40px]">
-                        <p class="leading-[130%]">Блок от 580 м² до 3 000 м²</p>
+                    </div>
+                  </div>
+                  <div
+                    class="financeProgram flex w-full justify-between px-[40px] py-[60px] border-b-[1px] border-[#18181815] max-md:px-[16px] max-md:py-[40px]"
+                    id="lastAccordion"
+                  >
+                    <div class="w-full flex flex-col">
+                      <div class="flex gap-[24px] items-center max-md:flex-col max-md:items-start max-md:gap-[18px]">
+                        <div class="flex flex-row justify-between items-center max-md:items-start w-full">
+                          <div class="flex gap-[24px] items-center max-md:flex-col max-md:items-start">
+                            <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Промпарк Кувекино</h2>
+                            <div
+                              class="leading-[130%] flex items-center gap-[10px] relative px-[14px] py-[4px] max-md:py-[8px] rounded-full border-[1px] border-[var(--pikBlack)]"
+                            >
+                              Варшавское шоссе
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path
+                                  d="M9.54502 0.120354C10.9323 -0.41293 12.3111 0.916837 11.8282 2.3225L9.18466 10.0178C8.89231 10.8689 8.09884 11.2296 7.40244 11.2131C6.71139 11.1966 5.94738 10.8106 5.64463 9.99926C5.43554 9.43863 5.20866 8.90666 4.97373 8.47485C4.72759 8.02248 4.51562 7.76165 4.37021 7.65453C4.24381 7.56166 3.93197 7.42965 3.39658 7.29516C2.88896 7.16767 2.26673 7.05798 1.5997 6.96606C0.652841 6.83537 0.125837 6.05956 0.0206022 5.3391C-0.085201 4.6145 0.206666 3.70975 1.12509 3.35668L9.54502 0.120354ZM10.0831 1.52074L1.66318 4.75707C1.59359 4.78388 1.55875 4.82252 1.53525 4.87035C1.50703 4.928 1.48955 5.01659 1.50498 5.12231C1.53822 5.34992 1.6732 5.46152 1.80478 5.47973C2.49848 5.57532 3.17991 5.69393 3.76181 5.84008C4.31508 5.97904 4.87976 6.16678 5.26084 6.4475C5.68129 6.75743 6.02075 7.26116 6.29111 7.75805C6.57285 8.2759 6.82795 8.87972 7.0499 9.47485C7.09762 9.60275 7.23503 9.7093 7.43857 9.7141C7.6368 9.7187 7.73226 9.6279 7.76572 9.53051L10.4093 1.8352C10.4783 1.63439 10.2813 1.44456 10.0831 1.52074Z"
+                                  fill="#181818"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="cursor-pointer openBtnWrap h-full">
+                            <div class="openBtn"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordionCard flex flex-col gap-[44px] max-md:gap-6">
+                        <div class="flex flex-col">
+                          <!-- мобильное фото -->
+                          <div class="hidden max-md:flex w-full flex-col pt-[24px] gap-[24px]">
+                            <img
+                              src="https://optim.tildacdn.com/tild3631-6234-4135-b036-343738616163/-/format/webp/firstScreen-01_910x4.jpg.webp"
+                              alt="Склад Лайт индастриал Сенькино"
+                              class="h-[194px] object-cover"
+                            />
+                            <div class="flex flex-col uppercase">
+                              <p class="text-[var(--pikBlack)] text-[12px] pMed">лайт индастриал</p>
+                              <p class="text-[var(--grey)] text-[12px] pMed">от 580 м²</p>
+                            </div>
+                          </div>
+                          <div class="py-[40px] border-b border-[var(--stroke-light)]">
+                            <p class="leading-[130%]">
+                              г. Москва, поселение Десеновское,
+                              <br />
+                              вблизи деревень Кувекино и Евсеево
+                            </p>
+                          </div>
+                          <div class="py-[40px] border-b border-[var(--stroke-light)]">
+                            <p class="leading-[130%]">10 км до Варшавского шоссе</p>
+                          </div>
+                          <div class="py-[40px] border-b border-[var(--stroke-light)]">
+                            <p class="leading-[130%]">5 км до Калужского шоссе</p>
+                          </div>
+                          <div class="py-[40px]">
+                            <p class="leading-[130%]">Блок от 580 м² до 3 000 м²</p>
+                          </div>
+                          <!-- мобильный список лотов -->
+                          <div class="hidden max-md:flex py-[40px]">
+                            <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Список лотов</h2>
+                          </div>
+                          <div class="hidden max-md:flex border-[var(--stroke-light)] w-full gap-[40px] flex flex-col">
+                            <div class="flex flex-col h-full overflow-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                              <div class="listLots flex flex-col">
+                                <div class="flex justify-between pb-[15px] border-b border-[var(--stroke-light)] items-end">
+                                  <p class="text-[13px] text-[var(--grey)] uppercase w-[112px] shrink-0">площадь</p>
+                                  <p class="text-[13px] text-[var(--grey)] uppercase w-full">
+                                    дата
+                                    <br />
+                                    доступа
+                                  </p>
+                                  <p class="text-[13px] text-[var(--grey)] uppercase w-full text-right">тип погрузки</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] border-b border-[var(--stroke-light)]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                                <div class="flex justify-between py-[15px] pb-[0px]">
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">579 м²</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">сейчас</p>
+                                  <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="cursor-pointer openBtnWrap">
-                  <div class="openBtn"></div>
-                </div>
               </div>
-              <div class="financeProgram flex w-full justify-between px-[40px] py-[60px] items-center" id="lastAccordion">
-                <div class="w-full flex flex-col">
-                  <div class="flex gap-[24px] items-center">
-                    <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[17px] uppercase">
-                      Промпарк Кувекино
-                    </h2>
-                    <div
-                      class="flex items-center gap-[10px] relative px-[14px] py-[4px] rounded-full border-[1px] border-[var(--pikBlack)]">
-                      Варшавское шоссе
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <div class="loti_fotka w-1/2 max-md:w-full relative max-md:h-[194px]">
+                <div
+                  id="listSenkino"
+                  class="border-l border-[var(--stroke-light)] absolute bg-[var(--white)] w-full h-full px-[40px] py-[60px] gap-[40px] flex flex-col"
+                >
+                  <div class="flex justify-between">
+                    <h2 class="leading-none font-medium text-[28px] max-md:text-[17px] uppercase">Список лотов</h2>
+                    <div id="closeListSenk" class="rounded-full bg-[var(--pikBlack)] w-[23px] h-[23px] relative cursor-pointer">
+                      <svg class="centered" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
                         <path
-                          d="M9.54502 0.120354C10.9323 -0.41293 12.3111 0.916837 11.8282 2.3225L9.18466 10.0178C8.89231 10.8689 8.09884 11.2296 7.40244 11.2131C6.71139 11.1966 5.94738 10.8106 5.64463 9.99926C5.43554 9.43863 5.20866 8.90666 4.97373 8.47485C4.72759 8.02248 4.51562 7.76165 4.37021 7.65453C4.24381 7.56166 3.93197 7.42965 3.39658 7.29516C2.88896 7.16767 2.26673 7.05798 1.5997 6.96606C0.652841 6.83537 0.125837 6.05956 0.0206022 5.3391C-0.085201 4.6145 0.206666 3.70975 1.12509 3.35668L9.54502 0.120354ZM10.0831 1.52074L1.66318 4.75707C1.59359 4.78388 1.55875 4.82252 1.53525 4.87035C1.50703 4.928 1.48955 5.01659 1.50498 5.12231C1.53822 5.34992 1.6732 5.46152 1.80478 5.47973C2.49848 5.57532 3.17991 5.69393 3.76181 5.84008C4.31508 5.97904 4.87976 6.16678 5.26084 6.4475C5.68129 6.75743 6.02075 7.26116 6.29111 7.75805C6.57285 8.2759 6.82795 8.87972 7.0499 9.47485C7.09762 9.60275 7.23503 9.7093 7.43857 9.7141C7.6368 9.7187 7.73226 9.6279 7.76572 9.53051L10.4093 1.8352C10.4783 1.63439 10.2813 1.44456 10.0831 1.52074Z"
-                          fill="#181818" />
+                          d="M13 0.930102L7.4301 6.5L13 12.0699L12.0699 13L6.5 7.4301L0.930102 13L0 12.0699L5.5699 6.5L0 0.930102L0.930102 0L6.5 5.5699L12.0699 0L13 0.930102Z"
+                          fill="white"
+                        />
                       </svg>
                     </div>
                   </div>
-                  <div class="accordionCard flex flex-col gap-[44px] max-md:gap-6">
+                  <div class="flex flex-col h-full overflow-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                     <div class="flex flex-col">
-                      <div class="py-[40px] border-b border-[var(--stroke-light)]">
-                        <p class="leading-[130%]">г. Москва, поселение Десеновское, <br> вблизи деревень Кувекино и Евсеево</p>
+                      <div class="flex justify-between pb-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--grey)] uppercase w-full">площадь</p>
+                        <p class="text-[13px] text-[var(--grey)] uppercase w-[112px] shrink-0">дата доступа</p>
+                        <p class="text-[13px] text-[var(--grey)] uppercase w-full text-right">тип погрузки</p>
                       </div>
-                      <div class="py-[40px] border-b border-[var(--stroke-light)]">
-                        <p class="leading-[130%]">10 км до Варшавского шоссе</p>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
                       </div>
-                      <div class="py-[40px] border-b border-[var(--stroke-light)]">
-                        <p class="leading-[130%]">5 км до Калужского шоссе</p>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
                       </div>
-                      <div class="py-[40px]">
-                        <p class="leading-[130%]">Блок от 580 м² до 3 000 м²</p>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                      </div>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                      </div>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                      </div>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                      </div>
+                    </div>
+                    <div class="flex justify-center w-full py-[20px]">
+                      <div
+                        class="cursor-pointer rounded-full border-[1px] border-[var(--pikBlack)] w-fit h-[20px] uppercase text-[13px] leading-[16px] text-[var(--pikBlack)] px-[10px] pt-[1px] font-medium"
+                      >
+                        Показать еще
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="cursor-pointer openBtnWrap">
-                  <div class="openBtn"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-            <div class="loti_fotka w-1/2 max-md:w-full relative">
-              <div id="listSenkino" class="border-l border-[var(--stroke-light)] absolute bg-[var(--white)] w-full h-full px-[40px] py-[60px] gap-[40px] flex flex-col">
-                <div class="flex justify-between">
-                  <h2 class="leading-none font-medium text-[28px] max-md:text-[17px] uppercase">
-                    Список лотов
-                  </h2>
-                  <div id="closeListSenk" class="rounded-full bg-[var(--pikBlack)] w-[23px] h-[23px] relative cursor-pointer">
-                    <svg class="centered" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                      <path
-                        d="M13 0.930102L7.4301 6.5L13 12.0699L12.0699 13L6.5 7.4301L0.930102 13L0 12.0699L5.5699 6.5L0 0.930102L0.930102 0L6.5 5.5699L12.0699 0L13 0.930102Z"
-                        fill="white" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="flex flex-col h-full overflow-y-scroll">
-                  <div class="flex flex-col">
-                    <div class="flex justify-between pb-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--grey)] uppercase w-full">площадь</p>
-                      <p class="text-[13px] text-[var(--grey)] uppercase w-[112px] shrink-0">дата доступа</p>
-                      <p class="text-[13px] text-[var(--grey)] uppercase w-full text-right">тип погрузки</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                <div
+                  id="listKuvekino"
+                  class="border-l border-[var(--stroke-light)] absolute bg-[var(--white)] w-full h-full px-[40px] py-[60px] gap-[40px] flex flex-col"
+                >
+                  <div class="flex justify-between">
+                    <h2 class="leading-none font-medium text-[28px] max-md:text-[17px] uppercase">Список лотов</h2>
+                    <div id="closeListKuv" class="rounded-full bg-[var(--pikBlack)] w-[23px] h-[23px] relative cursor-pointer">
+                      <svg class="centered" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                        <path
+                          d="M13 0.930102L7.4301 6.5L13 12.0699L12.0699 13L6.5 7.4301L0.930102 13L0 12.0699L5.5699 6.5L0 0.930102L0.930102 0L6.5 5.5699L12.0699 0L13 0.930102Z"
+                          fill="white"
+                        />
+                      </svg>
                     </div>
                   </div>
-                  <div class="flex justify-center w-full py-[20px]">
-                  <div class="cursor-pointer rounded-full border-[1px] border-[var(--pikBlack)] w-fit h-[20px] uppercase text-[13px] leading-[16px] text-[var(--pikBlack)] px-[10px] pt-[1px] font-medium">Показать еще</div>
-                  </div>
-                </div>
-              </div>
-              <div id="listKuvekino" class="border-l border-[var(--stroke-light)] absolute bg-[var(--white)] w-full h-full px-[40px] py-[60px] gap-[40px] flex flex-col">
-                <div class="flex justify-between">
-                  <h2 class="leading-none font-medium text-[28px] max-md:text-[17px] uppercase">
-                    Список лотов
-                  </h2>
-                  <div id="closeListKuv" class="rounded-full bg-[var(--pikBlack)] w-[23px] h-[23px] relative cursor-pointer">
-                    <svg class="centered" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                      <path
-                        d="M13 0.930102L7.4301 6.5L13 12.0699L12.0699 13L6.5 7.4301L0.930102 13L0 12.0699L5.5699 6.5L0 0.930102L0.930102 0L6.5 5.5699L12.0699 0L13 0.930102Z"
-                        fill="white" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="flex flex-col h-full overflow-y-scroll">
-                  <div class="flex flex-col">
-                    <div class="flex justify-between pb-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--grey)] uppercase w-full">площадь</p>
-                      <p class="text-[13px] text-[var(--grey)] uppercase w-[112px] shrink-0">дата доступа</p>
-                      <p class="text-[13px] text-[var(--grey)] uppercase w-full text-right">тип погрузки</p>
+                  <div class="flex flex-col h-full overflow-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                    <div class="flex flex-col">
+                      <div class="flex justify-between pb-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--grey)] uppercase w-full">площадь</p>
+                        <p class="text-[13px] text-[var(--grey)] uppercase w-[112px] shrink-0">дата доступа</p>
+                        <p class="text-[13px] text-[var(--grey)] uppercase w-full text-right">тип погрузки</p>
+                      </div>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                      </div>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">4 554 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                      </div>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">I кв. 2026</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                      </div>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">II кв. 2026</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док, ворота</p>
+                      </div>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">II кв. 2026</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док, ворота</p>
+                      </div>
+                      <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">II кв. 2026</p>
+                        <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                      </div>
                     </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
+                    <div class="flex justify-center w-full py-[20px]">
+                      <div
+                        class="cursor-pointer rounded-full border-[1px] border-[var(--pikBlack)] w-fit h-[20px] uppercase text-[13px] leading-[16px] text-[var(--pikBlack)] px-[10px] pt-[1px] font-medium"
+                      >
+                        Показать еще
+                      </div>
                     </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">4 554 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">сейчас</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">I кв. 2026</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">II кв. 2026</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док, ворота</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">II кв. 2026</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док, ворота</p>
-                    </div>
-                    <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">579 м²</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">II кв. 2026</p>
-                      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">док</p>
-                    </div>
-                  </div>
-                  <div class="flex justify-center w-full py-[20px]">
-                    <div
-                      class="cursor-pointer rounded-full border-[1px] border-[var(--pikBlack)] w-fit h-[20px] uppercase text-[13px] leading-[16px] text-[var(--pikBlack)] px-[10px] pt-[1px] font-medium">
-                      Показать еще</div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </section>
 
           <!-- Форма для презентации -->
           <section
-            class="bg-[var(--lightGrey)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]"
-          > 
-            <div
-              class="flex flex-col gap-[60px] w-1/2 max-md:w-full px-[40px] py-[60px] max-md:px-[0] max-md:p-[30px]"
-            >
+            class="bg-[var(--lightGrey)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[16px] border-b-[1px] border-t-[1px] border-[var(--stroke-light)]"
+          >
+            <div class="flex flex-col gap-[60px] w-1/2 max-md:w-full px-[40px] py-[60px] max-md:px-[0] max-md:pt-[40px] max-md:pb-[24px]">
               <h2 class="title">Получить презентацию о формате лайт индастриал</h2>
             </div>
-            <div
-              class="relative flex flex-col w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]"
-            >
+            <div class="relative flex flex-col w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
               <div class="W_FormPart h-full">
                 <div class="custom-form h-full">
                   <form
@@ -961,23 +1029,304 @@
                     novalidate
                     class="custom-form__form js-custom-form__form flex flex-col justify-between h-full"
                   >
-                  <div class="px-[40px] py-[38px]">
+                    <div class="px-[40px] py-[38px] max-md:px-[0px] max-md:pt-[40px] max-md:pb-[0px]">
+                      <div class="flex items-center w-full h-[60px] max-md:px-[0] border-b-[1px] max-md:pb-[24px] border-[#18181815] max-md:h-fit">
+                        <input
+                          type="email"
+                          autocomplete="email"
+                          name="email"
+                          required
+                          placeholder="Электронная почта"
+                          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$"
+                          data-error-required="Пожалуйста, заполните все обязательные поля"
+                          data-error-pattern="Укажите, пожалуйста, корректный email"
+                          class="custom-form__input"
+                        />
+                      </div>
+                    </div>
+                    <div class="captcha-container js-captcha-container"></div>
+                    <input type="hidden" name="utm_source" />
+                    <input type="hidden" name="utm_medium" />
+                    <input type="hidden" name="utm_campaign" />
+                    <input type="hidden" name="utm_term" />
+                    <input type="hidden" name="utm_content" />
+                    <input type="hidden" name="cid" />
+                    <input type="hidden" name="id" value="Кувекино" />
+                    <input type="hidden" name="hostname" />
+                    <input type="hidden" name="request_url" />
+                    <input type="hidden" name="ct_session_id" />
                     <div
-                      class="flex items-center w-full h-[60px] max-md:px-[0] border-b-[1px] border-[#18181815]"
+                      class="flex flex-row max-md:flex-col justify-between items-center max-md:items-start max-md:gap-[30px] w-full px-[40px] py-[60px] max-md:px-[0] max-md:pt-[40px] max-md:pb-[40px]"
                     >
-                      <input
-                        type="email"
-                        autocomplete="email"
-                        name="email"
-                        required
-                        placeholder="Электронная почта"
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$"
-                        data-error-required="Пожалуйста, заполните все обязательные поля"
-                        data-error-pattern="Укажите, пожалуйста, корректный email"
-                        class="custom-form__input"
-                      />
+                      <label class="custom-form__checkbox" style="width: 100%">
+                        <input
+                          type="checkbox"
+                          class="custom-form__checkbox-input js-custom-form__input"
+                          required
+                          data-error-required="Дайте согласие на обработку данных"
+                        />
+                        <span class="custom-form__checkbox-icon"></span>
+                        <p class="text-[11px] leading-[16px] text-[var(--grey)] uppercase" style="margin-left: 20px; width: 100%">
+                          Соглашаюсь на обработку,
+                          <br />
+                          <a class="underline text-[#181818]" target="_blank" href="https://parametr.space/agreement">персональных данных</a>
+                        </p>
+                      </label>
+                      <button class="button primary">
+                        Отправить
+                        <!-- button icon -->
+                        <div class="relative w-[20px] h-[20px] rounded-full bg-white">
+                          <!-- <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" /> -->
+                          <svg class="centered" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                              d="M12.6084 7.60929L13 8L12.6084 8.39071L7.99955 13L7.2182 12.2186L10.8837 8.55275H3V7.44725H10.8837L7.2182 3.78142L7.99955 3L12.6084 7.60929Z"
+                              fill="var(--pikBlack)"
+                            />
+                          </svg>
+                        </div>
+                      </button>
                     </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Наши резиденты -->
+          <section class="max-md:border-b-[1px] border-[var(--stroke-light)] flex flex-col w-full h-fit" data-slider data-mode="translate" data-infinite="true">
+            <div
+              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[16px] max-md:pb-[24px] max-md:pt-[40px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start"
+            >
+              <div class="flex flex-row gap-[40px] items-center">
+                <h2 class="title">Наши резиденты</h2>
+              </div>
+              <div class="flex flex-row gap-[5px] max-md:hidden">
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-prev>
+                  <img class="w-[40px] h-[40px] invert" src="icons/IconLeft.svg" alt="" />
+                </div>
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-next>
+                  <img class="w-[40px] h-[40px] invert" src="icons/IconRight.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="relative w-full max-md:h-[500px] h-[580px] overflow-x-hidden max-md:flex max-md:flex-col max-md:justify-end max-md:px-[16px]">
+              <div class="max-md:h-[194px] absolute h-[580px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]" data-track>
+                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident first group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                  <div
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
+                  >
+                    <div class="uppercase bold flex flex-row justify-between text-white">
+                      <p>4 функции в 1 помещении</p>
+                      <div>
+                        <!-- button icon -->
+                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
+                        </div>
+                      </div>
                     </div>
+                    <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
+                    </p>
+                  </div>
+                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                    <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
+                      <p>4 функции в 1 помещении</p>
+                    </div>
+                    <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
+                    </p>
+                  </div>
+                </div>
+                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident second group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                  <div
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
+                  >
+                    <div class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Готовая отделка</p>
+                      <div>
+                        <!-- button icon -->
+                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Возможность приобрести пространство под индивидуальный запрос: выбрать площадь, конфигурацию, количество доков, наличие отделки и мезонина
+                    </p>
+                  </div>
+                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                    <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
+                      <p>4 функции в 1 помещении</p>
+                    </div>
+                    <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
+                    </p>
+                  </div>
+                </div>
+                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident third group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                  <div
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
+                  >
+                    <div class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Профессиональная ук</p>
+                      <div>
+                        <!-- button icon -->
+                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Компактное здание на собственной территории с минимальным количеством «соседей»
+                    </p>
+                  </div>
+                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                    <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
+                      <p>4 функции в 1 помещении</p>
+                    </div>
+                    <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
+                    </p>
+                  </div>
+                </div>
+                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident fourth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                  <div
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
+                  >
+                    <div class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Свобода в планировании бизнес процессов</p>
+                      <div>
+                        <!-- button icon -->
+                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Повышение эффективности стеллажного хранения
+                    </p>
+                  </div>
+                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                    <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
+                      <p>4 функции в 1 помещении</p>
+                    </div>
+                    <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
+                    </p>
+                  </div>
+                </div>
+                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident fifth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                  <div
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
+                  >
+                    <div class="uppercase bold flex flex-row justify-between text-white">
+                      <p>Свобода в планировании бизнес процессов</p>
+                      <div>
+                        <!-- button icon -->
+                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
+                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
+                      Повышение эффективности стеллажного хранения
+                    </p>
+                  </div>
+                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                    <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
+                      <p>4 функции в 1 помещении</p>
+                    </div>
+                    <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
+                      Универсальная планировка и качественная инженерия. Подходит для компаний любого профиля
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- counter mobile -->
+              <div class="hidden max-md:flex w-full justify-between items-center pb-[12px]">
+                <p class="text-[46px] font-normal text-[var(--grey)]" data-counter>
+                  <span class="text-[var(--pikBlack)]" data-current>1</span>
+                  /
+                  <span data-total>3</span>
+                </p>
+                <div class="hidden max-md:flex flex-row gap-[5px]">
+                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-prev>
+                    <img class="w-[40px] h-[40px] invert" src="icons/IconLeft.svg" alt="" />
+                  </div>
+                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer" data-next>
+                    <img class="w-[40px] h-[40px] invert" src="icons/IconRight.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ФОС -->
+          <section class="bg-[var(--lightGrey)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[16px] border-b-[1px] border-[#18181815]">
+            <div class="flex flex-col gap-[60px] w-1/2 max-md:w-full px-[40px] py-[60px] max-md:px-[0] max-md:pt-[40px] max-md:pb-[24px]">
+              <h2 class="title">ОСТАВЬТЕ ЗАЯВКУ НА ЗВОНОК МЕНЕДЖЕРА</h2>
+            </div>
+            <div class="relative flex flex-col w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
+              <div class="W_FormPart h-full">
+                <div class="custom-form h-full">
+                  <form id="fos-send" action="#" method="post" novalidate class="custom-form__form js-custom-form__form flex flex-col justify-between h-full">
+                    <div class="px-[40px] max-md:px-[0px]">
+                      <div
+                        class="flex items-center w-full pt-[60px] pb-[26px] max-md:px-[0] max-md:pb-[24px] max-md:pt-[40px] border-b-[1px] border-[#18181815]"
+                      >
+                        <input
+                          type="text"
+                          name="name"
+                          autocomplete="name"
+                          placeholder="Ваше имя"
+                          required
+                          pattern="[A-Za-zА-Яа-яЁё]+([ ][A-Za-zА-Яа-яЁё]+)*([ ][A-Za-zА-Яа-яЁё]+)*"
+                          data-error-required="Пожалуйста, заполните все обязательные поля"
+                          data-error-pattern="Укажите, пожалуйста, корректное имя"
+                          class="custom-form__input js-custom-form__input"
+                        />
+                      </div>
+                    </div>
+                    <div class="px-[40px] max-md:px-[0px]">
+                      <div
+                        class="flex items-center w-full pt-[60px] pb-[26px] max-md:px-[0] max-md:pb-[24px] max-md:pt-[40px] border-b-[1px] border-[#18181815]"
+                      >
+                        <input
+                          type="tel"
+                          autocomplete="tel"
+                          name="phone"
+                          required
+                          placeholder="Телефон"
+                          data-error-required="Пожалуйста, заполните все обязательные поля"
+                          class="custom-form__input js-custom-form__input"
+                        />
+                      </div>
+                    </div>
+                    <div class="px-[40px] max-md:px-[0px]">
+                      <div
+                        class="flex items-center w-full pt-[60px] pb-[26px] max-md:px-[0] max-md:pb-[24px] max-md:pt-[40px] border-b-[1px] border-[#18181815]"
+                      >
+                        <input
+                          type="email"
+                          autocomplete="email"
+                          name="email"
+                          required
+                          placeholder="Электронная почта"
+                          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$"
+                          data-error-required="Пожалуйста, заполните все обязательные поля"
+                          data-error-pattern="Укажите, пожалуйста, корректный email"
+                          class="custom-form__input js-custom-form__input"
+                        />
+                      </div>
+                    </div>
+                    <div class="px-[40px] max-md:px-[0px]">
+                      <div
+                        class="flex items-center w-full pt-[60px] pb-[26px] max-md:px-[0] max-md:pb-[24px] max-md:pt-[40px] border-b-[1px] border-[#18181815]"
+                      >
+                        <input type="text" name="comment" placeholder="Комментарий (необязательно)" class="custom-form__input js-custom-form__input" />
+                      </div>
+                    </div>
+
                     <div class="captcha-container js-captcha-container"></div>
                     <input type="hidden" name="utm_source" />
                     <input type="hidden" name="utm_medium" />
@@ -1000,17 +1349,10 @@
                           data-error-required="Дайте согласие на обработку данных"
                         />
                         <span class="custom-form__checkbox-icon"></span>
-                        <p
-                          class="text-[11px] leading-[16px] text-[var(--grey)] uppercase"
-                          style="margin-left: 20px; width: 100%"
-                        >
-                          Соглашаюсь на обработку,<br />
-                        <a
-                            class="underline text-[#181818]"
-                            target="_blank"
-                            href="https://parametr.space/agreement"
-                            >персональных данных</a
-                          >
+                        <p class="text-[11px] leading-[16px] text-[var(--grey)] uppercase" style="margin-left: 20px; width: 100%">
+                          Соглашаюсь на обработку,
+                          <br />
+                          <a class="underline text-[#181818]" target="_blank" href="https://parametr.space/agreement">персональных данных</a>
                         </p>
                       </label>
                       <button class="button primary">
@@ -1021,7 +1363,8 @@
                           <svg class="centered" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path
                               d="M12.6084 7.60929L13 8L12.6084 8.39071L7.99955 13L7.2182 12.2186L10.8837 8.55275H3V7.44725H10.8837L7.2182 3.78142L7.99955 3L12.6084 7.60929Z"
-                              fill="var(--pikBlack)" />
+                              fill="var(--pikBlack)"
+                            />
                           </svg>
                         </div>
                       </button>
@@ -1031,252 +1374,6 @@
               </div>
             </div>
           </section>
-
-          <!-- Наши резиденты -->
-          <section
-            class="flex flex-col w-full h-fit"
-            data-slider
-            data-mode="translate"
-            data-infinite="true"
-          >
-            <div
-              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[30px] max-md:gap-[20px] items-center max-md:flex-row justify-between max-md:items-start"
-            >
-              <div class="flex flex-row gap-[40px] items-center">
-                <h2 class="title">Наши резиденты</h2>
-              </div>
-              <div class="flex flex-row gap-[5px]">
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
-                  data-prev
-                >
-                  <img class="w-[40px] h-[40px] invert" src="icons/IconLeft.svg" alt="" />
-                </div>
-                <div
-                  class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer"
-                  data-next
-                >
-                  <img class="w-[40px] h-[40px] invert" src="icons/IconRight.svg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="relative w-full h-[580px] overflow-x-hidden">
-              <div
-                class="absolute h-[580px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]"
-                data-track
-              >
-                <div
-                  class="resident first group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
-                  <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
-                  >
-                    <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Производство упаковки</p>
-                      <div>
-                        <!-- button icon -->
-                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
-                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Универсальная планировка и качественная инженерия. Подходит для компаний
-                      любого профиля
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="resident second group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
-                  <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
-                  >
-                    <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Производство медицинского оборудования</p>
-                      <div>
-                        <!-- button icon -->
-                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
-                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Возможность приобрести пространство под индивидуальный запрос: выбрать
-                      площадь, конфигурацию, количество доков, наличие отделки и мезонина
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="resident third group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
-                  <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
-                  >
-                    <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Сборка электроники</p>
-                      <div>
-                        <!-- button icon -->
-                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
-                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Компактное здание на собственной территории с минимальным количеством
-                      «соседей»
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="resident fourth group flex flex-col justify-end w-[412px] h-[580px]  "
-                  data-slide
-                >
-                  <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
-                  >
-                    <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Хранение и логистика</p>
-                      <div>
-                        <!-- button icon -->
-                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
-                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Повышение эффективности стеллажного хранения
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="resident fifth group flex flex-col justify-end w-[412px] h-[580px]"
-                  data-slide
-                >
-                  <div
-                    class="relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
-                  >
-                    <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Произовдство чая</p>
-                      <div>
-                        <!-- button icon -->
-                        <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
-                          <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <p
-                      class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)"
-                    >
-                      Универсальная планировка и качественная инженерия. Подходит для компаний
-                      любого профиля
-                    </p>
-                  </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- ФОС -->
-          <section
-            class="bg-[var(--lightGrey)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[30px] border-b-[1px] border-[#18181815]">
-            <div class="flex flex-col gap-[60px] w-1/2 max-md:w-full px-[40px] py-[60px] max-md:px-[0] max-md:p-[30px]">
-              <h2 class="title">ОСТАВЬТЕ ЗАЯВКУ НА ЗВОНОК МЕНЕДЖЕРА</h2>
-            </div>
-            <div class="relative flex flex-col w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
-              <div class="W_FormPart h-full">
-                <div class="custom-form h-full">
-                  <form id="fos-send" action="#" method="post" novalidate
-                    class="custom-form__form js-custom-form__form flex flex-col justify-between h-full">
-                    <div class="px-[40px]">
-                      <div class="flex items-center w-full pt-[60px] pb-[26px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                        <input type="text" name="name" autocomplete="name" placeholder="Ваше имя" required
-                          pattern="[A-Za-zА-Яа-яЁё]+([ ][A-Za-zА-Яа-яЁё]+)*([ ][A-Za-zА-Яа-яЁё]+)*"
-                          data-error-required="Пожалуйста, заполните все обязательные поля"
-                          data-error-pattern="Укажите, пожалуйста, корректное имя" class="custom-form__input js-custom-form__input" />
-                      </div>
-                    </div>
-                    <div class="px-[40px]">
-                      <div class="flex items-center w-full pt-[60px] pb-[26px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                                            <input type="tel" autocomplete="tel" name="phone" required placeholder="Телефон"
-                                              data-error-required="Пожалуйста, заполните все обязательные поля" class="custom-form__input js-custom-form__input">
-                      </div>
-                    </div>
-                    <div class="px-[40px]">
-                      <div class="flex items-center w-full pt-[60px] pb-[26px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                        <input
-                        type="email"
-                        autocomplete="email"
-                        name="email"
-                        required
-                        placeholder="Электронная почта"
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$"
-                        data-error-required="Пожалуйста, заполните все обязательные поля"
-                        data-error-pattern="Укажите, пожалуйста, корректный email"
-                        class="custom-form__input js-custom-form__input"
-                          />
-                      </div>
-                    </div>
-                    <div class="px-[40px]">
-                      <div class="flex items-center w-full pt-[60px] pb-[26px] max-md:px-[0] border-b-[1px] border-[#18181815]">
-                        <input type="text" name="comment" placeholder="Комментарий (необязательно)"
-                          class="custom-form__input js-custom-form__input" />
-                      </div>
-                    </div>
-                    
-                    <div class="captcha-container js-captcha-container"></div>
-                    <input type="hidden" name="utm_source" />
-                    <input type="hidden" name="utm_medium" />
-                    <input type="hidden" name="utm_campaign" />
-                    <input type="hidden" name="utm_term" />
-                    <input type="hidden" name="utm_content" />
-                    <input type="hidden" name="cid" />
-                    <input type="hidden" name="id" value="Кувекино" />
-                    <input type="hidden" name="hostname" />
-                    <input type="hidden" name="request_url" />
-                    <input type="hidden" name="ct_session_id" />
-                    <div
-                      class="flex flex-row max-md:flex-col justify-between items-center max-md:items-start max-md:gap-[30px] w-full px-[40px] py-[60px] max-md:px-[0] max-md:pt-[40px]">
-                      <label class="custom-form__checkbox" style="width: 100%">
-                        <input type="checkbox" class="custom-form__checkbox-input js-custom-form__input" required
-                          data-error-required="Дайте согласие на обработку данных" />
-                        <span class="custom-form__checkbox-icon"></span>
-                        <p class="text-[11px] leading-[16px] text-[var(--grey)] uppercase" style="margin-left: 20px; width: 100%">
-                          Соглашаюсь на обработку,<br />
-                          <a class="underline text-[#181818]" target="_blank" href="https://parametr.space/agreement">персональных
-                            данных</a>
-                        </p>
-                      </label>
-                      <button class="button primary">
-                        Отправить
-                        <!-- button icon -->
-                        <div class="relative w-[20px] h-[20px] rounded-full bg-white">
-                          <!-- <img class="w-[20px] h-[20px] invert" src="icons/IconPlus.svg" alt="" /> -->
-                          <svg class="centered" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                            fill="none">
-                            <path
-                              d="M12.6084 7.60929L13 8L12.6084 8.39071L7.99955 13L7.2182 12.2186L10.8837 8.55275H3V7.44725H10.8837L7.2182 3.78142L7.99955 3L12.6084 7.60929Z"
-                              fill="var(--pikBlack)" />
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </section>
-
         </div>
       </div>
     </div>

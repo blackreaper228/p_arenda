@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showListForAccordion(acc) {
+    // On mobile (< 768px) do not show popups at all
+    if (window.innerWidth < 768) {
+      hideLists()
+      return
+    }
     hideLists()
     if (!acc) return
     if (acc.id === 'secondAccordion') listSenkino?.classList.remove('hidden')
@@ -108,8 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = acc.querySelector('.accordionCard')
       if (!card) return
 
+      const wasOpen = card.classList.contains('is-open')
       closeAll()
-      openCard(acc, card)
+      if (!wasOpen) openCard(acc, card)
     })
   })
 })

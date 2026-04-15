@@ -275,6 +275,7 @@
     font-size: 16px;
     line-height: 20px;
   }
+
   .number_text {
     font-size: 14px;
     line-height: 15px;
@@ -309,6 +310,65 @@
   .openBtn {
     width: 26px;
     height: 18px;
+  }
+
+  .advantage {
+    margin-left: 16px;
+    overflow: visible;
+
+    &:is(.first) {
+      background-image: url('https://optim.tildacdn.com/tild3361-3737-4036-b664-336334633764/-/format/webp/arenda_advantages_01.jpg.webp');
+    }
+    &:is(.second) {
+      background-image: url('https://optim.tildacdn.com/tild3231-3662-4333-b839-636264396532/-/format/webp/arenda_advantages_02.jpg.webp');
+    }
+    &:is(.third) {
+      background-image: url('https://optim.tildacdn.com/tild6533-3932-4664-a533-623730353930/-/format/webp/arenda_advantages_03.jpg.webp');
+    }
+    &:is(.fourth) {
+      background-image: url('https://optim.tildacdn.com/tild6363-3364-4762-b364-313538393666/-/format/webp/arenda_advantages_04.jpg.webp');
+    }
+  }
+
+  .resident {
+    margin-left: 16px;
+    overflow: visible;
+
+    &:is(.first) {
+      background-image: url('https://optim.tildacdn.com/tild3933-6538-4339-a236-323538646236/-/format/webp/residents_01.jpg.webp');
+    }
+
+    &:is(.second) {
+      background-image: url('https://optim.tildacdn.com/tild3765-3337-4133-b764-366537303862/-/format/webp/residents_02.jpg.webp');
+    }
+
+    &:is(.third) {
+      background-image: url('https://optim.tildacdn.com/tild3763-3930-4639-a430-346135666566/-/format/webp/residents_03.jpg.webp');
+    }
+
+    &:is(.fourth) {
+      background-image: url('https://optim.tildacdn.com/tild6530-3136-4333-b464-373930363231/-/format/webp/residents_04.jpg.webp');
+    }
+
+    &:is(.fifth) {
+      background-image: url('https://optim.tildacdn.com/tild6332-3335-4866-a464-636666383261/-/format/webp/residents_05.jpg.webp');
+    }
+  }
+
+  .row_text {
+    font-size: 12px;
+  }
+
+  .textSubtitle {
+    font-size: 18px;
+  }
+
+  .galleryItem {
+    margin-left: 0;
+
+    &:is(.first) {
+      margin-left: 0;
+    }
   }
 }
 

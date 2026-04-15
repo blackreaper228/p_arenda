@@ -179,28 +179,22 @@ h3 {
   background-repeat: no-repeat;
   overflow: hidden;
   &:is(.first) {
-    background-image:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_04.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_04.jpg');
   }
   &:is(.second) {
-    background-image:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_01.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_01.jpg');
   }
   &:is(.third) {
-    background-image:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_03.png');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_03.png');
   }
   &:is(.fourth) {
-    background-image:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_02.png');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_02.png');
   }
   &:is(.fifth) {
-    background-image:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_05.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_05.jpg');
   }
   &:is(.sixth) {
-    background-image:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_06.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_06.jpg');
   }
 }
 
@@ -806,7 +800,7 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
+
   overflow: hidden;
 }
 
@@ -814,4 +808,14 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
   p {
     font-weight: 400;
   }
+}
+
+.listLots {
+  p {
+    font-weight: 500;
+  }
+}
+
+p.pMed {
+  font-weight: 500;
 }
