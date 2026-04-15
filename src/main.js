@@ -1,4 +1,5 @@
 import './style.css'
+import './responsive.css'
 import '../slider.js'
 import './accordion.js'
 import './projectsAnim.js'

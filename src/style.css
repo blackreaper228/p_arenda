@@ -91,6 +91,12 @@ h3 {
   transform: translate(-50%, -50%);
 }
 
+.centeredHor {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .flex-height {
   height: 65vh;
 }
@@ -107,6 +113,7 @@ h3 {
     color: var(--white);
   }
 }
+
 .number {
   font-size: 70px;
   line-height: 70px;
@@ -739,6 +746,7 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
 .financeProgram {
   position: relative;
   align-items: flex-start;
+  transition: background-color 0.2s ease;
 }
 
 .financeProgram.prior {
@@ -758,6 +766,11 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  transition: transform 0.2s ease;
+}
+
+.financeProgram.prior .openBtn {
+  transform: rotate(180deg);
 }
 
 .openBtnWrap {
@@ -786,4 +799,19 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
 
 .accordionCard.is-open {
   opacity: 1;
+}
+
+.loti_fotka {
+  background-image: url('https://optim.tildacdn.com/tild3230-3235-4138-b265-343338653533/-/format/webp/arenda_loti.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  overflow: hidden;
+}
+
+.accordionCard {
+  p {
+    font-weight: 400;
+  }
 }
