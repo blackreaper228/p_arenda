@@ -235,31 +235,56 @@ h3 {
   &:is(.first) {
     background-image:
       linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
-      url('https://optim.tildacdn.com/tild3933-6538-4339-a236-323538646236/-/format/webp/residents_01.jpg.webp');
+      url('https://optim.tildacdn.com/tild3330-3636-4334-a465-653337613938/-/format/webp/resident_01.jpg.webp');
   }
 
   &:is(.second) {
     background-image:
       linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
-      url('https://optim.tildacdn.com/tild3765-3337-4133-b764-366537303862/-/format/webp/residents_02.jpg.webp');
+      url('https://optim.tildacdn.com/tild6336-3333-4662-b264-666365343339/-/format/webp/resident_02.jpg.webp');
   }
 
   &:is(.third) {
     background-image:
       linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
-      url('https://optim.tildacdn.com/tild3763-3930-4639-a430-346135666566/-/format/webp/residents_03.jpg.webp');
+      url('https://optim.tildacdn.com/tild3864-3431-4262-b136-353938353565/-/format/webp/resident_03.jpg.webp');
   }
 
   &:is(.fourth) {
     background-image:
       linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
-      url('https://optim.tildacdn.com/tild6530-3136-4333-b464-373930363231/-/format/webp/residents_04.jpg.webp');
+      url('https://optim.tildacdn.com/tild3239-3133-4266-b835-313338616635/-/format/webp/resident_04.jpg.webp');
   }
 
   &:is(.fifth) {
     background-image:
       linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
-      url('https://optim.tildacdn.com/tild6332-3335-4866-a464-636666383261/-/format/webp/residents_05.jpg.webp');
+      url('https://optim.tildacdn.com/tild3735-3630-4131-a163-643365323431/-/format/webp/resident_05.jpg.webp');
+  }
+  &:is(.sixth) {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild3461-6263-4564-a636-653338316164/-/format/webp/resident_06.jpg.webp');
+  }
+  &:is(.seventh) {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild3935-6362-4838-b932-306438363666/-/format/webp/resident_07.jpg.webp');
+  }
+  &:is(.eighth) {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild3334-6232-4364-b261-376539333935/-/format/webp/resident_08.jpg.webp');
+  }
+  &:is(.ninth) {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild6463-3461-4433-b232-613861353039/-/format/webp/resident_09.jpg.webp');
+  }
+  &:is(.tenth) {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%),
+      url('https://optim.tildacdn.com/tild6431-3938-4365-b663-653866306331/-/format/webp/resident_10.jpg.webp');
   }
 }
 
