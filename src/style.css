@@ -115,6 +115,10 @@ h3 {
   }
 }
 
+.whiteMobile {
+  color: var(--pikBlack);
+}
+
 .number {
   font-size: 70px;
   line-height: 70px;
@@ -435,6 +439,11 @@ h3 {
 
   .A_Plus {
     margin-bottom: 2px;
+  }
+
+  &.whiteBGMobile {
+    background-color: var(--pikBlack);
+    color: var(--white);
   }
 }
 

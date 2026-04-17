@@ -267,6 +267,11 @@
     font-size: 28px;
     line-height: 30px;
   }
+
+  .whiteMobile{
+color: var(--white);
+  }
+
   .number {
     font-size: 42px;
     line-height: 42px;
@@ -412,6 +417,13 @@
     background-repeat: no-repeat;
   
     overflow: hidden;
+  }
+
+  .button{
+  &.whiteBGMobile {
+      background-color: var(--white);
+      color: var(--pikBlack);
+    }
   }
 }
 
