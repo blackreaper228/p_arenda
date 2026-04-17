@@ -12,6 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalCountElement = document.querySelector('.A_Mobilecount:last-child')
   // totalCountElement.textContent = totalOffers;
 
+  // If this slider markup isn't present on the page, do nothing.
+  if (
+    !offersContainer ||
+    totalOffers === 0 ||
+    !leftArrow ||
+    !rightArrow ||
+    !currentCountElement ||
+    !totalCountElement
+  ) {
+    return
+  }
+
+  totalCountElement.textContent = String(totalOffers)
+
   // Function to get the width of a slide including gap
   const getSlideWidth = () => {
     const slide = offers[0]

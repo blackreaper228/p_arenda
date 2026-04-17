@@ -207,7 +207,7 @@ h3 {
   &:is(.first) {
     background-image:
       linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
-      url('https://optim.tildacdn.com/tild3361-3737-4036-b664-336334633764/-/format/webp/arenda_advantages_01.jpg.webp');
+      url('https://optim.tildacdn.com/tild3764-3964-4631-a237-303139353737/-/format/webp/Card.jpg.webp');
   }
   &:is(.second) {
     background-image:
@@ -222,7 +222,7 @@ h3 {
   &:is(.fourth) {
     background-image:
       linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
-      url('https://optim.tildacdn.com/tild6363-3364-4762-b364-313538393666/-/format/webp/arenda_advantages_04.jpg.webp');
+      url('https://optim.tildacdn.com/tild3666-6462-4633-b231-363565663533/-/format/webp/card11.jpg.webp');
   }
 }
 

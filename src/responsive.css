@@ -317,16 +317,16 @@
     overflow: visible;
 
     &:is(.first) {
-      background-image: url('https://optim.tildacdn.com/tild3361-3737-4036-b664-336334633764/-/format/webp/arenda_advantages_01.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild3438-3339-4539-b365-346563633762/-/format/webp/arenda_advantage_01.jpg.webp');
     }
     &:is(.second) {
-      background-image: url('https://optim.tildacdn.com/tild3231-3662-4333-b839-636264396532/-/format/webp/arenda_advantages_02.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild3931-6437-4231-b334-373733326131/-/format/webp/arenda_advantage_02.jpg.webp');
     }
     &:is(.third) {
-      background-image: url('https://optim.tildacdn.com/tild6533-3932-4664-a533-623730353930/-/format/webp/arenda_advantages_03.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild6166-3930-4837-a533-313936383632/-/format/webp/arenda_advantage_03.jpg.webp');
     }
     &:is(.fourth) {
-      background-image: url('https://optim.tildacdn.com/tild6363-3364-4762-b364-313538393666/-/format/webp/arenda_advantages_04.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild3038-3935-4630-b966-636663313461/-/format/webp/arenda_advantage_04.jpg.webp');
     }
   }
 
@@ -334,24 +334,54 @@
     margin-left: 16px;
     overflow: visible;
 
-    &:is(.first) {
-      background-image: url('https://optim.tildacdn.com/tild3933-6538-4339-a236-323538646236/-/format/webp/residents_01.jpg.webp');
+  &:is(.first) {
+      background-image:
+        url('https://optim.tildacdn.com/tild6238-3732-4932-b965-373365373839/-/format/webp/resident_01_mobile.jpg.webp');
     }
-
+  
     &:is(.second) {
-      background-image: url('https://optim.tildacdn.com/tild3765-3337-4133-b764-366537303862/-/format/webp/residents_02.jpg.webp');
+      background-image:
+        url('https://optim.tildacdn.com/tild3437-3238-4834-a465-323739313137/-/format/webp/resident_02_mobile.jpg.webp');
     }
-
+  
     &:is(.third) {
-      background-image: url('https://optim.tildacdn.com/tild3763-3930-4639-a430-346135666566/-/format/webp/residents_03.jpg.webp');
+      background-image:
+        url('https://optim.tildacdn.com/tild3062-3736-4530-a438-393735373334/-/format/webp/resident_03_mobile.jpg.webp');
     }
-
+  
     &:is(.fourth) {
-      background-image: url('https://optim.tildacdn.com/tild6530-3136-4333-b464-373930363231/-/format/webp/residents_04.jpg.webp');
+      background-image:
+        url('https://optim.tildacdn.com/tild6135-6638-4834-b535-313265653439/-/format/webp/resident_04_mobile.jpg.webp');
     }
-
+  
     &:is(.fifth) {
-      background-image: url('https://optim.tildacdn.com/tild6332-3335-4866-a464-636666383261/-/format/webp/residents_05.jpg.webp');
+      background-image:
+        url('https://optim.tildacdn.com/tild3065-6132-4961-b931-613463353930/-/format/webp/resident_05_mobile.jpg.webp');
+    }
+  
+    &:is(.sixth) {
+      background-image:
+        url('https://optim.tildacdn.com/tild6435-3832-4539-b066-373437393462/-/format/webp/resident_06_mobile.jpg.webp');
+    }
+  
+    &:is(.seventh) {
+      background-image:
+        url('https://optim.tildacdn.com/tild3339-3563-4235-a137-653537343437/-/format/webp/resident_07_mobile.jpg.webp');
+    }
+  
+    &:is(.eighth) {
+      background-image:
+        url('https://optim.tildacdn.com/tild6664-6266-4365-a339-663230386337/-/format/webp/resident_08_mobile.jpg.webp');
+    }
+  
+    &:is(.ninth) {
+      background-image:
+        url('https://optim.tildacdn.com/tild3839-3762-4531-a164-646562376132/-/format/webp/resident_09_mobile.jpg.webp');
+    }
+  
+    &:is(.tenth) {
+      background-image:
+        url('https://optim.tildacdn.com/tild3036-6332-4561-a432-646465336265/-/format/webp/resident_10_mobile.jpg.webp');
     }
   }
 
@@ -369,6 +399,19 @@
     &:is(.first) {
       margin-left: 0;
     }
+  }
+
+  .residentMobileText{
+    margin-top: 428px;
+  }
+
+  .loti_fotka {
+    background-image: url('https://optim.tildacdn.com/tild3830-6334-4636-a437-646636386164/-/format/webp/arenda_loti_mobile.jpg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    overflow: hidden;
   }
 }
 
