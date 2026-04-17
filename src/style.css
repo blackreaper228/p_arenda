@@ -447,6 +447,24 @@ h3 {
   }
 }
 
+.firstSlide{
+  background-image: url('https://optim.tildacdn.com/tild3332-3137-4537-a332-383031316637/-/format/webp/arenda_start_01_smal.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.secondSlide{
+  background-image: url('https://optim.tildacdn.com/tild3730-3934-4465-a634-333939323337/-/format/webp/arenda_start_02_smal.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.thirdSlide{
+  background-image: url('https://optim.tildacdn.com/tild3037-6331-4539-b136-316532376232/-/format/webp/titlePic.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 /* Полностью отключить hover эффекты на мобильных устройствах */
 
 /* Дополнительная защита через класс body - полностью отключаем hover эффекты */
