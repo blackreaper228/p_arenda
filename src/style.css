@@ -313,7 +313,7 @@ h3 {
     background-image: url('https://optim.tildacdn.com/tild3533-6431-4231-b065-313432393566/-/format/webp/arenda_gallery_04.jpg.webp');
   }
   &:is(.fifth) {
-    background-image: url('https://optim.tildacdn.com/tild6131-6261-4163-b234-336434666266/-/format/webp/arenda_gallery_05.jpg.webp');
+    background-image: url('https://optim.tildacdn.com/tild3639-3361-4037-b363-326265383738/-/format/webp/arenda_gallery_05.jpg.webp');
   }
   &:is(.sixth) {
     background-image: url('https://optim.tildacdn.com/tild3266-3863-4463-b863-346439656261/-/format/webp/arenda_gallery_06.jpg.webp');
@@ -325,7 +325,7 @@ h3 {
     background-image: url('https://optim.tildacdn.com/tild6366-3436-4061-a466-343536613762/-/format/webp/arenda_gallery_08.jpg.webp');
   }
   &:is(.ninth) {
-    background-image: url('https://optim.tildacdn.com/tild3238-3134-4036-a231-626331316131/-/format/webp/arenda_gallery_09.jpg.webp');
+    background-image: url('https://optim.tildacdn.com/tild6365-6137-4362-b033-383033333335/-/format/webp/arenda_gallery_09.jpg.webp');
   }
 }
 
@@ -448,19 +448,19 @@ h3 {
 }
 
 .firstSlide{
-  background-image: url('https://optim.tildacdn.com/tild3332-3137-4537-a332-383031316637/-/format/webp/arenda_start_01_smal.jpg.webp');
+  background-image: url('https://optim.tildacdn.com/tild3832-6363-4965-a532-613165376137/-/format/webp/ImageCarousel_01_sma.jpg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .secondSlide{
-  background-image: url('https://optim.tildacdn.com/tild3730-3934-4465-a634-333939323337/-/format/webp/arenda_start_02_smal.jpg.webp');
+  background-image: url('https://optim.tildacdn.com/tild6631-6566-4063-b332-353061393335/-/format/webp/ImageCarousel_02_sma.jpg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .thirdSlide{
-  background-image: url('https://optim.tildacdn.com/tild3037-6331-4539-b136-316532376232/-/format/webp/titlePic.jpg.webp');
+  background-image: url('https://optim.tildacdn.com/tild6264-3839-4532-a638-393334613236/-/format/webp/ImageCarousel_03_sma.jpg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

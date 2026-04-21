@@ -5,6 +5,9 @@ import './accordion.js';
 import './projectsAnim.js';
 import './showMore.js';
 import './textSlider.js';
+import './newSlider.js';
+import './adminka.js';
+
 
 const DESIGN_WIDTH = 1440;
 const MIN_SCALE_BREAKPOINT = 769; // start scaling at >= 768px viewport width
@@ -82,6 +85,10 @@ function initSliders() {
 
 function initSliderInstance(sliderRoot) {
   const mode = (sliderRoot.getAttribute('data-mode') || 'translate').toLowerCase();
+  // Mobile carousel is handled by `newSlider.js` (to avoid double-binding arrows / swipe).
+  if (window.innerWidth < 768 && sliderRoot.getAttribute('data-mobile-carousel') === 'true' && mode === 'translate') {
+    return;
+  }
   const track = sliderRoot.querySelector('[data-track]');
   const initialSlides = track ? Array.from(track.querySelectorAll('[data-slide]')) : [];
   if (!track || initialSlides.length === 0) return;
@@ -220,6 +227,8 @@ function initSliderInstance(sliderRoot) {
 
   function onPointerDown(e) {
     if (mode !== 'translate') return;
+    // On mobile (<768px) disable drag/swipe: only arrow buttons should work.
+    if (window.innerWidth < 768) return;
     isDragging = true;
     dragStartX = e.touches ? e.touches[0].clientX : e.clientX;
     dragDeltaX = 0;
