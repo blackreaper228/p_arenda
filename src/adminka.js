@@ -38,6 +38,104 @@ let sheetHeadersKuvekino = [];
 let visibleRowsKuvekino = 7;
 const rowsPerPage = 7;
 
+const sortState = {
+  senkino: { col: null, dir: 'desc' },
+  kuvekino: { col: null, dir: 'desc' },
+};
+
+function parseAreaToNumber(value) {
+  // examples: "1 021 м²", "228", "580 м²"
+  const s = String(value ?? '')
+    .replaceAll('\u00A0', ' ') // nbsp
+    .replaceAll('м²', '')
+    .replaceAll('м2', '')
+    .replaceAll('㎡', '')
+    .trim()
+  const digits = s.replace(/[^\d.,-]/g, '').replace(',', '.')
+  const n = Number.parseFloat(digits)
+  return Number.isFinite(n) ? n : null
+}
+
+function compareValues(a, b) {
+  if (a == null && b == null) return 0
+  if (a == null) return -1
+  if (b == null) return 1
+  if (typeof a === 'number' && typeof b === 'number') return a - b
+  return String(a).localeCompare(String(b), 'ru', { numeric: true, sensitivity: 'base' })
+}
+
+function getSortValue(row, colIndex) {
+  if (colIndex === 0) return parseAreaToNumber(row.area) ?? row.area
+  if (colIndex === 1) return row.date
+  return row.docks
+}
+
+function sortLotsData(data, state, colIndex) {
+  const nextDir =
+    state.col === colIndex ? (state.dir === 'asc' ? 'desc' : 'asc') : 'desc'
+  state.col = colIndex
+  state.dir = nextDir
+
+  const dirMul = nextDir === 'asc' ? 1 : -1
+  return [...data].sort((ra, rb) => {
+    const a = getSortValue(ra, colIndex)
+    const b = getSortValue(rb, colIndex)
+    return compareValues(a, b) * dirMul
+  })
+}
+
+function setupSortableHeaderRow(headerRowEl, tableKey, onSort) {
+  if (!headerRowEl) return
+  if (headerRowEl.dataset.sortBound === 'true') return
+  headerRowEl.dataset.sortBound = 'true'
+
+  const ps = Array.from(headerRowEl.querySelectorAll('p'))
+  ps.forEach((p, idx) => {
+    p.dataset.sortCol = String(idx)
+    p.classList.add('cursor-pointer', 'select-none')
+  })
+
+  headerRowEl.addEventListener('click', (e) => {
+    const p = e.target?.closest?.('p')
+    if (!p) return
+    const col = Number(p.dataset.sortCol)
+    if (!Number.isFinite(col)) return
+    onSort(tableKey, col)
+  })
+}
+
+let sortDelegationBound = false
+function bindSortDelegation() {
+  if (sortDelegationBound) return
+  sortDelegationBound = true
+
+  document.addEventListener('click', (e) => {
+    const p = e.target?.closest?.('p')
+    if (!p) return
+
+    // Only sort when clicking inside a designated header row.
+    const header = p.closest('[data-lots-header="true"]')
+    if (!header) return
+
+    const ps = Array.from(header.querySelectorAll('p'))
+    const colIndex = ps.indexOf(p)
+    if (colIndex < 0) return
+
+    if (header.closest('#lotsSenkino') || header.closest('#lotsSenkinoMobile')) {
+      onSort('senkino', colIndex)
+    } else if (header.closest('#lotsKuvekino') || header.closest('#lotsKuvekinoMobile')) {
+      onSort('kuvekino', colIndex)
+    }
+  })
+}
+
+function markLotsHeaderRow(wrapperEl) {
+  if (!wrapperEl) return
+  const firstRow = wrapperEl.firstElementChild
+  if (!firstRow) return
+  firstRow.dataset.lotsHeader = 'true'
+}
+
 function updateShowMoreButtonSenkino() {
   const btn = document.getElementById('showMoreSenkino')
   if (!btn) return
@@ -266,7 +364,15 @@ function renderLotsSenkino(data) {
     wrapper.innerHTML = rowsHtml
   }
 
+  markLotsHeaderRow(wrapper)
   updateShowMoreButtonSenkino()
+
+  // header row is re-created via innerHTML, so re-bind sorting after render
+  setupSortableHeaderRow(
+    document.querySelector('#lotsSenkino > div > div'),
+    'senkino',
+    onSort
+  )
 }
 
 function renderLotsSenkinoMobile(data) {
@@ -289,6 +395,13 @@ function renderLotsSenkinoMobile(data) {
   } else {
     wrapper.innerHTML = rowsHtml
   }
+
+  markLotsHeaderRow(wrapper)
+  setupSortableHeaderRow(
+    document.querySelector('#lotsSenkinoMobile .listLots > div'),
+    'senkino',
+    onSort
+  )
 }
 
 function renderLotsKuvekino(data) {
@@ -308,7 +421,14 @@ function renderLotsKuvekino(data) {
     wrapper.innerHTML = rowsHtml
   }
 
+  markLotsHeaderRow(wrapper)
   updateShowMoreButtonKuvekino()
+
+  setupSortableHeaderRow(
+    document.querySelector('#lotsKuvekino > div > div'),
+    'kuvekino',
+    onSort
+  )
 }
 
 function renderLotsKuvekinoMobile(data) {
@@ -329,6 +449,13 @@ function renderLotsKuvekinoMobile(data) {
   } else {
     wrapper.innerHTML = rowsHtml
   }
+
+  markLotsHeaderRow(wrapper)
+  setupSortableHeaderRow(
+    document.querySelector('#lotsKuvekinoMobile .listLots > div'),
+    'kuvekino',
+    onSort
+  )
 }
 
 function showMoreRows() {
@@ -343,8 +470,24 @@ function showMoreRowsKuvekino() {
   renderLotsKuvekino(allDataKuvekino)
 }
 
+function onSort(tableKey, colIndex) {
+  if (tableKey === 'senkino') {
+    allData = sortLotsData(allData, sortState.senkino, colIndex)
+    renderLotsSenkino(allData)
+    renderLotsSenkinoMobile(allData)
+    return
+  }
+  if (tableKey === 'kuvekino') {
+    allDataKuvekino = sortLotsData(allDataKuvekino, sortState.kuvekino, colIndex)
+    renderLotsKuvekino(allDataKuvekino)
+    renderLotsKuvekinoMobile(allDataKuvekino)
+  }
+}
+
 async function initApp() {  
   try {
+    bindSortDelegation()
+
     // Senkino (sheet 1)
     const raw = await fetchTableData({ gid: SENKINO_GID });
     sheetHeaders = raw.headers || [];
@@ -353,6 +496,18 @@ async function initApp() {
     visibleRows = 7;
     renderLotsSenkino(allData);
     renderLotsSenkinoMobile(allData);
+
+    // bind sorting for Senkino headers (desktop + mobile)
+    setupSortableHeaderRow(
+      document.querySelector('#lotsSenkino > div > div'),
+      'senkino',
+      onSort
+    )
+    setupSortableHeaderRow(
+      document.querySelector('#lotsSenkinoMobile .listLots > div'),
+      'senkino',
+      onSort
+    )
 
     const btn = document.getElementById('showMoreSenkino')
     if (btn && !btn.dataset.bound) {
@@ -391,6 +546,18 @@ async function initApp() {
     visibleRowsKuvekino = 7
     renderLotsKuvekino(allDataKuvekino)
     renderLotsKuvekinoMobile(allDataKuvekino)
+
+    // bind sorting for Kuvekino headers (desktop + mobile)
+    setupSortableHeaderRow(
+      document.querySelector('#lotsKuvekino > div > div'),
+      'kuvekino',
+      onSort
+    )
+    setupSortableHeaderRow(
+      document.querySelector('#lotsKuvekinoMobile .listLots > div'),
+      'kuvekino',
+      onSort
+    )
 
     const btnK = document.getElementById('showMoreKuvekino')
     if (btnK && !btnK.dataset.bound) {

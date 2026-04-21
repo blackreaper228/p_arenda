@@ -3,6 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('secondAccordion'),
     document.getElementById('lastAccordion'),
   ]
+  const mobileTriggers = [
+    {
+      trigger: document.getElementById('accordionCardMobileSenkino'),
+      acc: document.getElementById('secondAccordion'),
+    },
+    {
+      trigger: document.getElementById('accordionCardMobileKuvekino'),
+      acc: document.getElementById('lastAccordion'),
+    },
+  ]
   const listSenkino = document.getElementById('listSenkino')
   const listKuvekino = document.getElementById('listKuvekino')
   const closeListSenk = document.getElementById('closeListSenk')
@@ -107,9 +117,28 @@ document.addEventListener('DOMContentLoaded', () => {
   closeAll()
 
   // клики
+  const isMobile = () => window.innerWidth < 768
+
+  // Desktop: click on whole row is OK
   accordions.forEach((acc) => {
     if (!acc) return
     acc.addEventListener('click', () => {
+      if (isMobile()) return
+      const card = acc.querySelector('.accordionCard')
+      if (!card) return
+
+      const wasOpen = card.classList.contains('is-open')
+      closeAll()
+      if (!wasOpen) openCard(acc, card)
+    })
+  })
+
+  // Mobile: only click on small header blocks
+  mobileTriggers.forEach(({ trigger, acc }) => {
+    if (!trigger || !acc) return
+    trigger.addEventListener('click', (e) => {
+      if (!isMobile()) return
+      e.stopPropagation()
       const card = acc.querySelector('.accordionCard')
       if (!card) return
 
