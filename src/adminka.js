@@ -92,7 +92,7 @@ function setupSortableHeaderRow(headerRowEl, tableKey, onSort) {
   const ps = Array.from(headerRowEl.querySelectorAll('p'))
   ps.forEach((p, idx) => {
     p.dataset.sortCol = String(idx)
-    p.classList.add('cursor-pointer', 'select-none')
+    p.classList.add('cursor-pointer', 'select-none', 'hover:opacity-50')
   })
 
   headerRowEl.addEventListener('click', (e) => {
