@@ -3,7 +3,6 @@ import './responsive.css';
 import '../slider.js';
 import './accordion.js';
 import './projectsAnim.js';
-import './showMore.js';
 import './textSlider.js';
 import './newSlider.js';
 import './adminka.js';

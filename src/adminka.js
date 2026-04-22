@@ -33,16 +33,16 @@ function buildCsvUrls({ gid, sheetName }) {
 
 let allData = [];
 let sheetHeaders = [];
-let visibleRows = 7;
+let visibleRows = 6;
 
 let allDataKuvekino = [];
 let sheetHeadersKuvekino = [];
-let visibleRowsKuvekino = 7;
+let visibleRowsKuvekino = 6;
 
 let allDataBalashikha = [];
 let sheetHeadersBalashikha = [];
-let visibleRowsBalashikha = 7;
-const rowsPerPage = 7;
+let visibleRowsBalashikha = 6;
+const rowsPerPage = 6;
 
 const sortState = {
   senkino: { col: null, dir: 'desc' },
@@ -532,7 +532,7 @@ async function initApp() {
     sheetHeaders = raw.headers || [];
     applyLotsHeaders(sheetHeaders);
     allData = formatTableData(raw.data || []);
-    visibleRows = 7;
+    visibleRows = 6;
     renderLotsSenkino(allData);
     renderLotsSenkinoMobile(allData);
 
@@ -574,7 +574,7 @@ async function initApp() {
     }
 
     allDataKuvekino = formatTableData(rawK.data || []);
-    visibleRowsKuvekino = 7;
+    visibleRowsKuvekino = 6;
     renderLotsKuvekino(allDataKuvekino);
     renderLotsKuvekinoMobile(allDataKuvekino);
 
@@ -613,7 +613,7 @@ async function initApp() {
     }
 
     allDataBalashikha = formatTableData(rawB.data || []);
-    visibleRowsBalashikha = 7;
+    visibleRowsBalashikha = 6;
     renderLotsBalashikha(allDataBalashikha);
     renderLotsBalashikhaMobile(allDataBalashikha);
 
