@@ -447,19 +447,19 @@ h3 {
   }
 }
 
-.firstSlide{
+.firstSlide {
   background-image: url('https://optim.tildacdn.com/tild3832-6363-4965-a532-613165376137/-/format/webp/ImageCarousel_01_sma.jpg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.secondSlide{
+.secondSlide {
   background-image: url('https://optim.tildacdn.com/tild6631-6566-4063-b332-353061393335/-/format/webp/ImageCarousel_02_sma.jpg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.thirdSlide{
+.thirdSlide {
   background-image: url('https://optim.tildacdn.com/tild6264-3839-4532-a638-393334613236/-/format/webp/ImageCarousel_03_sma.jpg.webp');
   background-size: cover;
   background-position: center;
@@ -871,4 +871,23 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
 
 p.pMed {
   font-weight: 500;
+}
+
+.anim{
+  p{
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0%);
+  }
+
+  &:hover p{
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+p.forAnim{
+  /* transition: transform 0.3s ease-in-out; */
+  position: absolute;
+  /* transform: translateY(200%); */  
+  top: 200%;
 }

@@ -8,8 +8,6 @@ import './textSlider.js';
 import './newSlider.js';
 import './adminka.js';
 
-
-
 const DESIGN_WIDTH = 1440;
 const MIN_SCALE_BREAKPOINT = 769; // start scaling at >= 768px viewport width
 

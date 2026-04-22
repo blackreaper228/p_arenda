@@ -268,8 +268,8 @@
     line-height: 30px;
   }
 
-  .whiteMobile{
-color: var(--white);
+  .whiteMobile {
+    color: var(--white);
   }
 
   .number {
@@ -339,54 +339,44 @@ color: var(--white);
     margin-left: 16px;
     overflow: visible;
 
-  &:is(.first) {
-      background-image:
-        url('https://optim.tildacdn.com/tild6238-3732-4932-b965-373365373839/-/format/webp/resident_01_mobile.jpg.webp');
+    &:is(.first) {
+      background-image: url('https://optim.tildacdn.com/tild6238-3732-4932-b965-373365373839/-/format/webp/resident_01_mobile.jpg.webp');
     }
-  
+
     &:is(.second) {
-      background-image:
-        url('https://optim.tildacdn.com/tild3437-3238-4834-a465-323739313137/-/format/webp/resident_02_mobile.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild3437-3238-4834-a465-323739313137/-/format/webp/resident_02_mobile.jpg.webp');
     }
-  
+
     &:is(.third) {
-      background-image:
-        url('https://optim.tildacdn.com/tild3062-3736-4530-a438-393735373334/-/format/webp/resident_03_mobile.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild3062-3736-4530-a438-393735373334/-/format/webp/resident_03_mobile.jpg.webp');
     }
-  
+
     &:is(.fourth) {
-      background-image:
-        url('https://optim.tildacdn.com/tild6135-6638-4834-b535-313265653439/-/format/webp/resident_04_mobile.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild6135-6638-4834-b535-313265653439/-/format/webp/resident_04_mobile.jpg.webp');
     }
-  
+
     &:is(.fifth) {
-      background-image:
-        url('https://optim.tildacdn.com/tild6435-3832-4539-b066-373437393462/-/format/webp/resident_06_mobile.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild6435-3832-4539-b066-373437393462/-/format/webp/resident_06_mobile.jpg.webp');
     }
-  
+
     &:is(.sixth) {
-      background-image:
-        url('https://optim.tildacdn.com/tild3339-3563-4235-a137-653537343437/-/format/webp/resident_07_mobile.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild3339-3563-4235-a137-653537343437/-/format/webp/resident_07_mobile.jpg.webp');
     }
-  
+
     &:is(.seventh) {
-      background-image:
-        url('https://optim.tildacdn.com/tild3065-6132-4961-b931-613463353930/-/format/webp/resident_05_mobile.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild3065-6132-4961-b931-613463353930/-/format/webp/resident_05_mobile.jpg.webp');
     }
-  
+
     &:is(.eighth) {
-      background-image:
-        url('https://optim.tildacdn.com/tild6664-6266-4365-a339-663230386337/-/format/webp/resident_08_mobile.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild6664-6266-4365-a339-663230386337/-/format/webp/resident_08_mobile.jpg.webp');
     }
-  
+
     &:is(.ninth) {
-      background-image:
-        url('https://optim.tildacdn.com/tild3839-3762-4531-a164-646562376132/-/format/webp/resident_09_mobile.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild3839-3762-4531-a164-646562376132/-/format/webp/resident_09_mobile.jpg.webp');
     }
-  
+
     &:is(.tenth) {
-      background-image:
-        url('https://optim.tildacdn.com/tild3036-6332-4561-a432-646465336265/-/format/webp/resident_10_mobile.jpg.webp');
+      background-image: url('https://optim.tildacdn.com/tild3036-6332-4561-a432-646465336265/-/format/webp/resident_10_mobile.jpg.webp');
     }
   }
 
@@ -406,7 +396,7 @@ color: var(--white);
     }
   }
 
-  .residentMobileText{
+  .residentMobileText {
     margin-top: 428px;
   }
 
@@ -415,28 +405,28 @@ color: var(--white);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  
+
     overflow: hidden;
   }
 
-  .button{
-  &.whiteBGMobile {
+  .button {
+    &.whiteBGMobile {
       background-color: var(--white);
       color: var(--pikBlack);
     }
   }
 
-    .firstSlide {
-      background-image: url('https://optim.tildacdn.com/tild6239-3761-4330-b265-643438626131/-/format/webp/arendaCarouselMobile.jpg.webp');
-    }
-  
-    .secondSlide {
-      background-image: url('https://optim.tildacdn.com/tild3661-6534-4664-a132-656130303639/-/format/webp/arendaCarouselMobile.jpg.webp');
-    }
-  
-    .thirdSlide {
-      background-image: url('https://optim.tildacdn.com/tild3036-3164-4130-b837-326666303237/-/format/webp/arendaCarouselMobile.jpg.webp');
-    }
+  .firstSlide {
+    background-image: url('https://optim.tildacdn.com/tild6239-3761-4330-b265-643438626131/-/format/webp/arendaCarouselMobile.jpg.webp');
+  }
+
+  .secondSlide {
+    background-image: url('https://optim.tildacdn.com/tild3661-6534-4664-a132-656130303639/-/format/webp/arendaCarouselMobile.jpg.webp');
+  }
+
+  .thirdSlide {
+    background-image: url('https://optim.tildacdn.com/tild3036-3164-4130-b837-326666303237/-/format/webp/arendaCarouselMobile.jpg.webp');
+  }
 }
 
 @media (min-width: 768px) {
