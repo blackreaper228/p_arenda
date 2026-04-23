@@ -11,6 +11,20 @@
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: 'TT Firs Neue';
+  src: url('https://static.tildacdn.com/tild3761-6331-4234-b039-346630363437/TTFirsNeue-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'TT Firs Neue';
+  src: url('https://static.tildacdn.com/tild3038-3936-4734-a664-643863393164/TTFirsNeue-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal
+}
+
 :root {
   --black: #000000;
   --pikBlack: #181818;
@@ -430,7 +444,7 @@ h3 {
   }
 }
 
-.firstSlide {
+.thirdSlide {
   background-image: url('https://optim.tildacdn.com/tild3832-6363-4965-a532-613165376137/-/format/webp/ImageCarousel_01_sma.jpg.webp');
   background-size: cover;
   background-position: center;
@@ -442,8 +456,8 @@ h3 {
   background-position: center;
   background-repeat: no-repeat;
 }
-.thirdSlide {
-  background-image: url('https://optim.tildacdn.com/tild6264-3839-4532-a638-393334613236/-/format/webp/ImageCarousel_03_sma.jpg.webp');
+.firstSlide {
+  background-image: url('https://optim.tildacdn.com/tild6430-3866-4636-b464-383361623232/-/format/webp/ImageCarousel_retouc.jpg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
