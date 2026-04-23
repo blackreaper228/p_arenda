@@ -319,10 +319,7 @@ function applyLotsHeaders(headers) {
   if (mobileHeaderRow) {
     const ps = Array.from(mobileHeaderRow.querySelectorAll('p'));
     if (ps[0] && h1) ps[0].textContent = h1;
-    if (ps[1] && h2) {
-      // keep the visual line-break like "дата<br/>доступа"
-      ps[1].innerHTML = escapeHtml(h2).replaceAll(' ', '<br />');
-    }
+    if (ps[1] && h2) ps[1].textContent = h2;
     if (ps[2] && h3) ps[2].textContent = h3;
   }
 }
@@ -333,7 +330,7 @@ function createLotsRow({ area, date, docks }) {
   return `
     <div class="flex justify-between py-[24px] border-b border-[var(--stroke-light)]">
       <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full">${escapeHtml(area)}</p>
-      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[112px] shrink-0">${escapeHtml(date)}</p>
+      <p class="text-[13px] text-[var(--pikBlack)] uppercase w-[124px] shrink-0">${escapeHtml(date)}</p>
       <p class="text-[13px] text-[var(--pikBlack)] uppercase w-full text-right">${escapeHtml(docks)}</p>
     </div>
   `;
@@ -568,7 +565,7 @@ async function initApp() {
       if (mobileHeaderRow) {
         const ps = Array.from(mobileHeaderRow.querySelectorAll('p'));
         if (ps[0] && h1) ps[0].textContent = h1;
-        if (ps[1] && h2) ps[1].innerHTML = escapeHtml(h2).replaceAll(' ', '<br />');
+        if (ps[1] && h2) ps[1].textContent = h2;
         if (ps[2] && h3) ps[2].textContent = h3;
       }
     }
@@ -607,7 +604,7 @@ async function initApp() {
       if (mobileHeaderRow) {
         const ps = Array.from(mobileHeaderRow.querySelectorAll('p'));
         if (ps[0] && h1) ps[0].textContent = h1;
-        if (ps[1] && h2) ps[1].innerHTML = escapeHtml(h2).replaceAll(' ', '<br />');
+        if (ps[1] && h2) ps[1].textContent = h2;
         if (ps[2] && h3) ps[2].textContent = h3;
       }
     }
