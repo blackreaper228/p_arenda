@@ -1,6 +1,6 @@
-import './style.css';
-import './responsive.css';
-import '../slider.js';
+import '../style.css';
+import '../responsive.css';
+import './slider.js';
 import './accordion.js';
 import './projectsAnim.js';
 import './textSlider.js';
@@ -68,7 +68,6 @@ window.addEventListener('resize', updateScale);
 window.addEventListener('orientationchange', updateScale);
 document.addEventListener('DOMContentLoaded', updateScale);
 updateScale();
-
 
 // Generic slider implementation (looping, buttons, counter, drag)
 
