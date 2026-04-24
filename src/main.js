@@ -6,6 +6,7 @@ import './projectsAnim.js';
 import './textSlider.js';
 import './newSlider.js';
 import './adminka.js';
+import './customScroll.js';
 
 const DESIGN_WIDTH = 1440;
 const MIN_SCALE_BREAKPOINT = 769; // start scaling at >= 768px viewport width
@@ -67,6 +68,7 @@ window.addEventListener('resize', updateScale);
 window.addEventListener('orientationchange', updateScale);
 document.addEventListener('DOMContentLoaded', updateScale);
 updateScale();
+
 
 // Generic slider implementation (looping, buttons, counter, drag)
 

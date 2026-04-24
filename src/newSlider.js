@@ -72,10 +72,13 @@ function initSlider(sliderRoot) {
   let currentIndex = 0;
   let animating = false;
   let animTimer = null;
-  let pendingAction = null;
+  /** @type {Array<() => void>} */
+  let actionQueue = [];
   let isDragging = false;
   let startX = 0;
   let deltaX = 0;
+  /** @type {null | { type: 'next' | 'prev'; settled: boolean }} */
+  let inFlight = null;
 
   function updateCounter() {
     currentEls.forEach((el) => {
@@ -93,17 +96,15 @@ function initSlider(sliderRoot) {
   function unlockAnimation() {
     animating = false;
     clearAnimTimer();
-    // If user clicked/swiped during animation, run one queued action.
-    const queued = pendingAction;
-    pendingAction = null;
-    if (queued) {
-      requestAnimationFrame(() => queued());
-    }
+    inFlight = null;
+    // If user clicked/swiped during animation, run queued actions in order.
+    const queued = actionQueue.shift();
+    if (queued) requestAnimationFrame(queued);
   }
 
   function withAnimationLock(run) {
     if (animating) {
-      pendingAction = run;
+      actionQueue.push(run);
       return;
     }
     animating = true;
@@ -111,11 +112,6 @@ function initSlider(sliderRoot) {
     // Safety net: on some mobile browsers `transitionend` can be missed
     // when users interact quickly. Never let the slider get stuck.
     clearAnimTimer();
-    animTimer = setTimeout(() => {
-      setTransform(track, 0, false);
-      unlockAnimation();
-    }, 700);
-
     run();
   }
 
@@ -127,6 +123,17 @@ function initSlider(sliderRoot) {
         unlockAnimation();
         return;
       }
+      inFlight = { type: 'next', settled: false };
+
+      const settleNext = () => {
+        if (!inFlight || inFlight.type !== 'next' || inFlight.settled) return;
+        inFlight.settled = true;
+        const firstChild = track.querySelector('[data-slide]');
+        if (firstChild) track.appendChild(firstChild);
+        setTransform(track, 0, false);
+        unlockAnimation();
+      };
+
       setTransform(track, 0, false);
       requestAnimationFrame(() => {
         setTransform(track, -stepPx, true);
@@ -134,24 +141,29 @@ function initSlider(sliderRoot) {
 
       const onEnd = (e) => {
         if (e && e.target !== track) return;
+        if (e && e.propertyName && e.propertyName !== 'transform') return;
         track.removeEventListener('transitionend', onEnd);
         track.removeEventListener('transitioncancel', onCancel);
-        const firstChild = track.querySelector('[data-slide]');
-        if (firstChild) track.appendChild(firstChild);
-        setTransform(track, 0, false);
-        unlockAnimation();
+        settleNext();
       };
 
       const onCancel = (e) => {
         if (e && e.target !== track) return;
         track.removeEventListener('transitionend', onEnd);
         track.removeEventListener('transitioncancel', onCancel);
-        setTransform(track, 0, false);
-        unlockAnimation();
+        // If the transition was canceled, still settle to keep logical & visual state in sync.
+        settleNext();
       };
 
       track.addEventListener('transitionend', onEnd);
       track.addEventListener('transitioncancel', onCancel);
+
+      // Safety net: on some mobile browsers `transitionend` can be missed.
+      // If that happens, we still need to rotate DOM (otherwise the slider "sticks" on the same slide).
+      clearAnimTimer();
+      animTimer = setTimeout(() => {
+        settleNext();
+      }, 700);
 
       currentIndex = wrapIndex(currentIndex + 1, totalCount);
       updateCounter();
@@ -165,6 +177,7 @@ function initSlider(sliderRoot) {
         unlockAnimation();
         return;
       }
+      inFlight = { type: 'prev', settled: false };
       const slideEls = track.querySelectorAll('[data-slide]');
       const lastChild = slideEls[slideEls.length - 1];
       if (lastChild) track.insertBefore(lastChild, track.firstChild);
@@ -174,23 +187,35 @@ function initSlider(sliderRoot) {
         setTransform(track, 0, true);
       });
 
+      const settlePrev = () => {
+        if (!inFlight || inFlight.type !== 'prev' || inFlight.settled) return;
+        inFlight.settled = true;
+        setTransform(track, 0, false);
+        unlockAnimation();
+      };
+
       const onEnd = (e) => {
         if (e && e.target !== track) return;
+        if (e && e.propertyName && e.propertyName !== 'transform') return;
         track.removeEventListener('transitionend', onEnd);
         track.removeEventListener('transitioncancel', onCancel);
-        unlockAnimation();
+        settlePrev();
       };
 
       const onCancel = (e) => {
         if (e && e.target !== track) return;
         track.removeEventListener('transitionend', onEnd);
         track.removeEventListener('transitioncancel', onCancel);
-        setTransform(track, 0, false);
-        unlockAnimation();
+        settlePrev();
       };
 
       track.addEventListener('transitionend', onEnd);
       track.addEventListener('transitioncancel', onCancel);
+
+      clearAnimTimer();
+      animTimer = setTimeout(() => {
+        settlePrev();
+      }, 700);
 
       currentIndex = wrapIndex(currentIndex - 1, totalCount);
       updateCounter();
