@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const accordions = [
-    document.getElementById('secondAccordion'),
-    document.getElementById('lastAccordion'),
-    document.getElementById('balashikhaAccordion'),
-  ];
+  const accordions = [document.getElementById('secondAccordion'), document.getElementById('lastAccordion'), document.getElementById('balashikhaAccordion')];
   const mobileTriggers = [
     {
       trigger: document.getElementById('accordionCardMobileSenkino'),

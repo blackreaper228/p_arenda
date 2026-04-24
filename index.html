@@ -418,12 +418,18 @@
                   /
                   <span data-total>3</span>
                 </p>
-                <div class="hidden max-md:flex flex-row gap-[5px]">
-                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-prev>
-                    <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
+                <div class="hidden max-md:flex flex-row gap-[5px] max-md:gap-[12px]">
+                  <div
+                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer"
+                    data-prev
+                  >
+                    <img class="invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
                   </div>
-                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer" data-next>
-                    <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
+                  <div
+                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer"
+                    data-next
+                  >
+                    <img class="invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -473,36 +479,10 @@
               <div class="flex flex-row gap-[40px] items-center">
                 <h2 class="title">Типовые планировки</h2>
               </div>
-              <div class="hidden max-md:flex flex-col justify-center items-center gap-[10px]">
-                <!-- counter -->
-                <p class="text-[13px] max-md:text-[11px] text-[var(--grey)]" data-counter>
-                  <span class="text-[var(--pikBlack)]" data-current>1</span>
-                  /
-                  <span data-total>3</span>
-                </p>
-                <div class="flex flex-row gap-[5px]">
-                  <div class="flex items-center justify-center w-[30px] h-[30px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-prev>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                      <path
-                        d="M7.3587 0.857708L2.32312 5.89328L13.001 5.89328V7.10672L2.32312 7.10672L7.3587 12.1423L6.50099 13L0.429842 6.92885L0 6.5L0.429842 6.07115L6.50099 0L7.3587 0.857708Z"
-                        fill="#181818"
-                      />
-                    </svg>
-                  </div>
-                  <div class="flex items-center justify-center w-[30px] h-[30px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-next>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                      <path
-                        d="M5.64228 0.857708L10.6779 5.89328L-1.21004e-05 5.89328V7.10672L10.6779 7.10672L5.64228 12.1423L6.49999 13L12.5711 6.92885L13.001 6.5L12.5711 6.07115L6.49999 0L5.64228 0.857708Z"
-                        fill="#181818"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="flex flex-row max-md:flex-col-reverse w-full h-fit overflow-x-hidden">
               <div
-                class="flex flex-col justify-between relative flex flex-col gap-[40px] w-1/2 max-md:w-full p-[40px] max-md:py-[40px] max-md:px-[16px] bg-[#181818] max-md:min-h-[178px]"
+                class="flex flex-col justify-between relative flex flex-col gap-[40px] w-1/2 max-md:w-full p-[40px] max-md:py-[24px] max-md:px-[16px] bg-[#181818] max-md:min-h-[178px]"
               >
                 <div class="flex items-center justify-between flex-row gap-[12px] max-md:flex-row">
                   <h2 class="font-medium text-[28px] max-md:text-[17px] text-white uppercase">от 580 м² до 3 000 м²</h2>
@@ -526,7 +506,30 @@
                 <p class="text-[36px] max-md:text-[16px] leading-[120%] text-white w-full leading-[40px]">
                   Помещения с офисами и производственно-складскими площадями
                 </p>
+                <!-- counter mobile -->
+                <div class="hidden max-md:flex w-full justify-between items-center">
+                  <p class="max-md:pt-[4px] text-[46px] font-normal text-[var(--grey)]" data-counter>
+                    <span class="text-[var(--white)]" data-current>1</span>
+                    /
+                    <span data-total>3</span>
+                  </p>
+                  <div class="hidden max-md:flex flex-row gap-[5px] max-md:gap-[12px]">
+                    <div
+                      class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--white)] cursor-pointer"
+                      data-prev
+                    >
+                      <img src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
+                    </div>
+                    <div
+                      class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--white)] cursor-pointer"
+                      data-next
+                    >
+                      <img src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
               </div>
+
               <div class="flex w-1/2 max-md:w-full h-[540px] max-md:h-[300px] relative overflow-hidden">
                 <div class="bg-[var(--lightGrey)] absolute top-0 left-0 w-full min-w-fit h-full flex flex-row" data-track>
                   <img
@@ -597,12 +600,18 @@
                   /
                   <span data-total>3</span>
                 </p>
-                <div class="hidden max-md:flex flex-row gap-[5px]">
-                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-prev>
-                    <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
+                <div class="hidden max-md:flex flex-row gap-[5px] max-md:gap-[12px] max-md:pb-[0px]">
+                  <div
+                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer"
+                    data-prev
+                  >
+                    <img class="invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
                   </div>
-                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer" data-next>
-                    <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
+                  <div
+                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer"
+                    data-next
+                  >
+                    <img class="invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -1406,12 +1415,18 @@
                   /
                   <span data-total>3</span>
                 </p>
-                <div class="hidden max-md:flex flex-row gap-[5px]">
-                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer" data-prev>
-                    <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
+                <div class="hidden max-md:flex flex-row gap-[5px] max-md:gap-[12px]">
+                  <div
+                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer"
+                    data-prev
+                  >
+                    <img class="invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
                   </div>
-                  <div class="flex items-center justify-center w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer" data-next>
-                    <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
+                  <div
+                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer"
+                    data-next
+                  >
+                    <img class="invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
                   </div>
                 </div>
               </div>
