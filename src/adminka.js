@@ -470,9 +470,7 @@ function renderLotsBalashikhaMobile(data) {
   const wrapper = container.querySelector(':scope > div');
   if (!wrapper) return;
 
-  const rowsHtml = data
-    .map((row, idx) => createLotsRowMobile(row, { isLast: idx === data.length - 1 }))
-    .join('');
+  const rowsHtml = data.map((row, idx) => createLotsRowMobile(row, { isLast: idx === data.length - 1 })).join('');
   if (headerRow) {
     wrapper.innerHTML = headerRow.outerHTML + rowsHtml;
   } else {
