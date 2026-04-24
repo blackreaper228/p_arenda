@@ -416,16 +416,16 @@
     }
   }
 
-  .thirdSlide {
-    background-image: url('https://optim.tildacdn.com/tild6239-3761-4330-b265-643438626131/-/format/webp/arendaCarouselMobile.jpg.webp');
+  .firstSlide {
+    background-image: url('https://optim.tildacdn.com/tild6632-3130-4135-a663-333562663438/-/format/webp/arendaCarouselMobile.jpg.webp');
   }
 
   .secondSlide {
     background-image: url('https://optim.tildacdn.com/tild3661-6534-4664-a132-656130303639/-/format/webp/arendaCarouselMobile.jpg.webp');
   }
 
-  .firstSlide {
-    background-image: url('https://optim.tildacdn.com/tild6632-3130-4135-a663-333562663438/-/format/webp/arendaCarouselMobile.jpg.webp');
+  .thirdSlide {
+    background-image: url('https://optim.tildacdn.com/tild6239-3761-4330-b265-643438626131/-/format/webp/arendaCarouselMobile.jpg.webp');
   }
 }
 

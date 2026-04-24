@@ -15,15 +15,19 @@
   font-family: 'TT Firs Neue';
   src: url('https://static.tildacdn.com/tild3761-6331-4234-b039-346630363437/TTFirsNeue-Regular.woff') format('woff');
   font-weight: 400;
-  font-style: normal
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'TT Firs Neue';
   src: url('https://static.tildacdn.com/tild3038-3936-4734-a664-643863393164/TTFirsNeue-Medium.woff') format('woff');
   font-weight: 500;
-  font-style: normal
+  font-style: normal;
 }
+
+/* body::-webkit-scrollbar {
+  display: none;
+} */
 
 :root {
   --black: #000000;
@@ -444,24 +448,27 @@ h3 {
   }
 }
 
-.thirdSlide {
-  background-image: url('https://optim.tildacdn.com/tild3832-6363-4965-a532-613165376137/-/format/webp/ImageCarousel_01_sma.jpg.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.secondSlide {
-  background-image: url('https://optim.tildacdn.com/tild6631-6566-4063-b332-353061393335/-/format/webp/ImageCarousel_02_sma.jpg.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 .firstSlide {
   background-image: url('https://optim.tildacdn.com/tild6430-3866-4636-b464-383361623232/-/format/webp/ImageCarousel_retouc.jpg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.secondSlide {
+  background-image: url('https://optim.tildacdn.com/tild6631-6566-4063-b332-353061393335/-/format/webp/ImageCarousel_02_sma.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thirdSlide {
+  background-image: url('https://optim.tildacdn.com/tild3832-6363-4965-a532-613165376137/-/format/webp/ImageCarousel_01_sma.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Полностью отключить hover эффекты на мобильных устройствах */
 
 /* Дополнительная защита через класс body - полностью отключаем hover эффекты */
@@ -870,21 +877,21 @@ p.pMed {
   font-weight: 500;
 }
 
-.anim{
-  p{
+.anim {
+  p {
     transition: transform 0.3s ease-in-out;
     transform: translateY(0%);
   }
 
-  &:hover p{
+  &:hover p {
     transform: translateY(-200%);
     transition: transform 0.3s ease-in-out;
   }
 }
 
-p.forAnim{
+p.forAnim {
   /* transition: transform 0.3s ease-in-out; */
   position: absolute;
-  /* transform: translateY(200%); */  
+  /* transform: translateY(200%); */
   top: 200%;
 }
