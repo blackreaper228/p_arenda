@@ -298,9 +298,13 @@
                 </div>
               </div>
             </div>
-            <div class="relative w-full max-md:h-[500px] h-[580px] overflow-x-hidden max-md:flex max-md:flex-col max-md:justify-end max-md:px-[16px]">
-              <div class="max-md:h-[194px] absolute h-[580px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]" data-track>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage first group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+            <div class="max-md:h-fit relative w-full h-[580px] overflow-x-hidden max-md:flex max-md:flex-col max-md:justify-end max-md:px-[16px]]">
+              <div class="max-md:h-[auto] h-[580px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]" data-track>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] advantage first group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
+                  <!-- десктоп-карточка -->
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -318,7 +322,11 @@
                       функции.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <!-- мобайл-карточка -->
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage firstMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>4 функции в 1 помещении</p>
                     </div>
@@ -328,12 +336,16 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage second group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] advantage second group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
+                  <!-- десктоп-карточка -->
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
                     <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Готовая отделка</p>
+                      <p>4 функции в 1 помещении</p>
                       <div>
                         <!-- button icon -->
                         <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
@@ -342,19 +354,28 @@
                       </div>
                     </div>
                     <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
-                      Каждый блок имеет индивидуальный вход, двухуровневый офис с качественной отделкой, санузлами и большими окнами.
+                      Гибкий формат организации пространства позволяет совмещать на одной территории производственные, складские, офисные и представительские
+                      функции.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <!-- мобайл-карточка -->
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage secondMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Готовая отделка</p>
                     </div>
                     <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
-                      Каждый блок имеет индивидуальный вход, двухуровневый офис с качественной отделкой, санузлами и большими окнами.
+                      Каждый блок имеет индивидуальный вход, двухуровневый офис с качественной отделкой, санузлами и большими окнами.
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage third group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] advantage third group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
+                  <!-- десктоп-карточка -->
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -368,11 +389,15 @@
                       </div>
                     </div>
                     <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
-                      Профессиональная управляющая компания с широким спектром услуг возьмет на себя заботы об эксплуатации и техническому обслуживанию вашего
+                      Профессиональная управляющая компания с широким спектром услуг возьмет на себя заботы об эксплуатации и техническому обслуживанию вашего
                       помещения.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <!-- мобайл-карточка -->
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage thirdMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Профессиональная ук</p>
                     </div>
@@ -382,12 +407,16 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage fourth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] advantage fourth group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
+                  <!-- десктоп-карточка -->
                   <div
-                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[50px] transition-tranform duration-500 ease-(--parametr-ease)"
+                    class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[0px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
                     <div class="uppercase bold flex flex-row justify-between text-white">
-                      <p>Свобода в планировании бизнес процессов</p>
+                      <p>Свобода в планировании бизнес процессов</p>
                       <div>
                         <!-- button icon -->
                         <div class="w-[20px] h-[20px] rounded-full bg-[#ffffff]">
@@ -396,23 +425,27 @@
                       </div>
                     </div>
                     <p class="h-[100px] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-(--parametr-ease)">
-                      Благодаря гибкому подходу к делению зданий на блоки, резиденты могут выбрать помещение, максимально соответствующее их бизнес-процессам,
-                      с оптимальным сочетанием площади, количества ворот и доков.
+                      Благодаря гибкому подходу к делению зданий на блоки, резиденты могут выбрать помещение, максимально соответствующее их бизнес-процессам, с
+                      оптимальным сочетанием площади, количества ворот и доков.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-204px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <!-- мобайл-карточка -->
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] advantage fourthMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
-                      <p>Свобода в планировании бизнес процессов</p>
+                      <p>Свобода в планировании бизнес процессов</p>
                     </div>
                     <p class="text-[16px] leading-[130%] text-[var(--pikBlack)]">
-                      Благодаря гибкому подходу к делению зданий на блоки, резиденты могут выбрать помещение, максимально соответствующее их бизнес-процессам,
-                      с оптимальным сочетанием площади, количества ворот и доков.
+                      Благодаря гибкому подходу к делению зданий на блоки, резиденты могут выбрать помещение, максимально соответствующее их бизнес-процессам, с
+                      оптимальным сочетанием площади, количества ворот и доков.
                     </p>
                   </div>
                 </div>
               </div>
               <!-- counter mobile -->
-              <div class="hidden max-md:flex w-full justify-between items-center pb-[12px]">
+              <div class="hidden max-md:flex w-full justify-between items-center pb-[12px] px-[16px] pt-[24px]">
                 <p class="max-md:pt-[4px] text-[46px] font-normal text-[var(--grey)]" data-counter>
                   <span class="text-[var(--pikBlack)]" data-current>1</span>
                   /
@@ -1111,9 +1144,12 @@
                 </div>
               </div>
             </div>
-            <div class="relative w-full max-md:h-[600px] h-[580px] overflow-x-hidden max-md:flex max-md:flex-col max-md:justify-end max-md:px-[16px]">
-              <div class="max-md:h-[194px] absolute h-[580px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]" data-track>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident first group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+            <div class="relative w-full max-md:h-[fit-content] h-[580px] overflow-x-hidden max-md:flex max-md:flex-col max-md:justify-end">
+              <div class="max-md:h-[auto] h-[580px] left-0 top-0 min-w-fit w-fit max-w-fit flex flex-row gap-[2px]" data-track>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident first group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[80px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1131,7 +1167,10 @@
                       кондитерских фабрик, молочных и мясных предприятий, а также для производителей напитков и полиграфических компаний.
                     </p>
                   </div>
-                  <div class="bottom-[-260px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident firstMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Производство упаковки</p>
                     </div>
@@ -1141,7 +1180,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident second group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident second group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[60px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1159,7 +1201,10 @@
                       МРТ, защитной экипировки, медицинских перчаток с использованием собственных технологий.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-284px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident secondMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Производство медицинского оборудования</p>
                     </div>
@@ -1169,7 +1214,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident third group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident third group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[60px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1187,7 +1235,10 @@
                       специализируются на создании решений для крупнейших телекоммуникационных компаний.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-224px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident thirdMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Сборка электроники</p>
                     </div>
@@ -1197,7 +1248,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident fourth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident fourth group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[128px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1216,7 +1270,10 @@
                       с использованием современных технологий.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-284px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident fourthMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Хранение и логистика</p>
                     </div>
@@ -1227,7 +1284,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident fifth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident fifth group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[122px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1246,7 +1306,10 @@
                       требованиям безопасности и эффективности.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-324px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident fifthMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Строительные и коммунальные технологии</p>
                     </div>
@@ -1257,7 +1320,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident sixth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident sixth group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[152px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1276,7 +1342,10 @@
                       50 стран и используется в косметологических процедурах.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-264px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident sixthMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Косметика и уход</p>
                     </div>
@@ -1287,7 +1356,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident seventh group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident seventh group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[112px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1306,7 +1378,10 @@
                       свою продукцию в несколько стран.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-264px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident seventhMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Произовдство чая</p>
                     </div>
@@ -1317,7 +1392,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident eighth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident eighth group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[142px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1336,7 +1414,10 @@
                       также разрабатывают системы, адаптированные под индивидуальные требования клиентов.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-304px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident eighthMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Измерительные системы и технологии</p>
                     </div>
@@ -1347,7 +1428,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident ninth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident ninth group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[112px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1366,7 +1450,10 @@
                       и минимизацию рисков.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-264px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident ninthMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Энергетические решения</p>
                     </div>
@@ -1377,7 +1464,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident tenth group flex flex-col justify-end w-[412px] h-[580px]" data-slide>
+                <div
+                  class="max-md:justify-start max-md:h-[auto] max-md:w-[calc(100vw-32px)] resident tenth group flex flex-col justify-end w-[412px] h-[580px] max-md:gap-[24px]"
+                  data-slide
+                >
                   <div
                     class="max-md:hidden relative gap-4 flex flex-col p-[40px] -translate-y-[-100px] group-hover:-translate-y-[152px] transition-tranform duration-500 ease-(--parametr-ease)"
                   >
@@ -1396,7 +1486,10 @@
                       обеспечивая высококачественную продукцию для текстильной и швейной отрасли.
                     </p>
                   </div>
-                  <div class="absolute bottom-[-294px] max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
+                  <div
+                    class="hidden max-md:flex max-md:h-[194px] max-md:w-[calc(100vw-32px)] resident tenthMobile group flex flex-col justify-end w-[412px] h-[580px]"
+                  ></div>
+                  <div class="max-md:flex hidden relative gap-4 max-md:gap-[20px] flex flex-col">
                     <div class="text-[28px] leading-[115%] bold flex flex-row justify-between text-[var(--pikBlack)]">
                       <p>Текстиль и швейные изделия</p>
                     </div>
@@ -1409,7 +1502,7 @@
                 </div>
               </div>
               <!-- counter mobile -->
-              <div class="hidden max-md:flex w-full justify-between items-center pb-[12px]">
+              <div class="hidden max-md:flex w-full justify-between items-center pb-[12px] max-md:px-[16px]">
                 <p class="max-md:pt-[4px] text-[46px] font-normal text-[var(--grey)]" data-counter>
                   <span class="text-[var(--pikBlack)]" data-current>1</span>
                   /

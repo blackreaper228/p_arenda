@@ -888,3 +888,7 @@ p.forAnim {
   /* transform: translateY(200%); */
   top: 200%;
 }
+
+.marg {
+  margin-top: 400px;
+}
