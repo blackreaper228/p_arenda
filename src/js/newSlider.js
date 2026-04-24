@@ -13,6 +13,15 @@ function isMobile() {
   return window.innerWidth <= MOBILE_MAX_WIDTH;
 }
 
+function isIOSSafari() {
+  const ua = navigator.userAgent || '';
+  const isIOS = /iP(hone|ad|od)/.test(ua);
+  const isWebKit = /WebKit/i.test(ua);
+  const isNotOtherIOSBrowser = !/CriOS|FxiOS|OPiOS|EdgiOS/i.test(ua);
+  // iOS browsers are WebKit, but we want to target Safari-like transition quirks.
+  return isIOS && isWebKit && isNotOtherIOSBrowser;
+}
+
 function wrapIndex(index, length) {
   if (length === 0) return 0;
   const result = index % length;
@@ -29,8 +38,62 @@ function getStepPx(track) {
 }
 
 function setTransform(track, x, withTransition) {
-  track.style.transition = withTransition ? 'transform 400ms cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
-  track.style.transform = `translate3d(${Math.round(x)}px, 0, 0)`;
+  track.style.transition = withTransition ? 'transform 550ms cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+  // Avoid rounding during gesture moves: it causes visible "stepping" on mobile.
+  const value = withTransition ? Math.round(x) : x;
+  track.style.transform = `translate3d(${value}px, 0, 0)`;
+}
+
+function forceReflow(el) {
+  // iOS Safari can "skip" transitions if style changes are batched.
+  // A read forces it to commit the previous style before animating.
+  void el.offsetHeight;
+}
+
+function animateTransform(track, fromX, toX) {
+  setTransform(track, fromX, false);
+  forceReflow(track);
+  requestAnimationFrame(() => {
+    setTransform(track, toX, true);
+  });
+}
+
+function preloadSlideAssets(slideEl) {
+  if (!slideEl) return;
+
+  // Common lazy-loading patterns used by sliders/landing pages.
+  // We keep this defensive and no-op if attributes don't exist.
+  const sources = Array.from(slideEl.querySelectorAll('source'));
+  sources.forEach((s) => {
+    const ds = s.getAttribute('data-srcset');
+    if (ds && !s.getAttribute('srcset')) s.setAttribute('srcset', ds);
+  });
+
+  const imgs = Array.from(slideEl.querySelectorAll('img'));
+  imgs.forEach((img) => {
+    // Hint the browser to fetch now.
+    try {
+      if (img.loading === 'lazy') img.loading = 'eager';
+    } catch {
+      // ignore
+    }
+
+    const dataSrc = img.getAttribute('data-src');
+    if (dataSrc && (!img.getAttribute('src') || img.getAttribute('src') === '')) {
+      img.setAttribute('src', dataSrc);
+    }
+
+    const dataSrcset = img.getAttribute('data-srcset');
+    if (dataSrcset && !img.getAttribute('srcset')) img.setAttribute('srcset', dataSrcset);
+
+    // Kick decode so the image is ready by the time it becomes visible.
+    // Some browsers throw if decode is called too early; ignore.
+    try {
+      if (typeof img.decode === 'function') img.decode().catch(() => {});
+    } catch {
+      // ignore
+    }
+  });
 }
 
 /** @type {WeakMap<Element, () => void>} */
@@ -74,9 +137,16 @@ function initSlider(sliderRoot) {
   let animTimer = null;
   /** @type {Array<() => void>} */
   let actionQueue = [];
+  /** @type {null | 'next' | 'prev'} */
+  let queuedType = null;
+  let lastNavTs = 0;
   let isDragging = false;
   let startX = 0;
   let deltaX = 0;
+  let rafDrag = 0;
+  let pendingDragX = 0;
+  let dragPrepared = false;
+  let dragPrependedEl = null;
   /** @type {null | { type: 'next' | 'prev'; settled: boolean }} */
   let inFlight = null;
 
@@ -99,12 +169,15 @@ function initSlider(sliderRoot) {
     inFlight = null;
     // If user clicked/swiped during animation, run queued actions in order.
     const queued = actionQueue.shift();
+    queuedType = null;
     if (queued) requestAnimationFrame(queued);
   }
 
   function withAnimationLock(run) {
     if (animating) {
-      actionQueue.push(run);
+      // Coalesce rapid inputs: keep only the latest action.
+      // Otherwise spamming buttons creates a long backlog of animations.
+      actionQueue[0] = run;
       return;
     }
     animating = true;
@@ -115,7 +188,7 @@ function initSlider(sliderRoot) {
     run();
   }
 
-  function handleNext() {
+  function handleNext(startOffsetX = 0) {
     withAnimationLock(() => {
       // ensure we always start from a clean baseline
       if (!stepPx || stepPx <= 0) {
@@ -125,19 +198,27 @@ function initSlider(sliderRoot) {
       }
       inFlight = { type: 'next', settled: false };
 
+      // After "next", the visible slide becomes the current second slide.
+      // Preload it so we don't see a blank while the image loads.
+      const slideElsBefore = track.querySelectorAll('[data-slide]');
+      preloadSlideAssets(slideElsBefore[1] || slideElsBefore[0]);
+
       const settleNext = () => {
         if (!inFlight || inFlight.type !== 'next' || inFlight.settled) return;
         inFlight.settled = true;
         const firstChild = track.querySelector('[data-slide]');
         if (firstChild) track.appendChild(firstChild);
         setTransform(track, 0, false);
+        track.style.willChange = '';
+        // Also preload the new "next" slide after rotation.
+        const slideElsAfter = track.querySelectorAll('[data-slide]');
+        preloadSlideAssets(slideElsAfter[1] || slideElsAfter[0]);
         unlockAnimation();
       };
 
-      setTransform(track, 0, false);
-      requestAnimationFrame(() => {
-        setTransform(track, -stepPx, true);
-      });
+      // Start from current gesture offset (if any) to avoid a visual "snap back" to 0.
+      track.style.willChange = 'transform';
+      animateTransform(track, startOffsetX, -stepPx);
 
       const onEnd = (e) => {
         if (e && e.target !== track) return;
@@ -149,6 +230,9 @@ function initSlider(sliderRoot) {
 
       const onCancel = (e) => {
         if (e && e.target !== track) return;
+        // iOS Safari can emit `transitioncancel` mid-flight spuriously, which causes a visible "teleport"
+        // when we settle (DOM rotation + transform reset). Prefer timeout/transitionend there.
+        if (isIOSSafari()) return;
         track.removeEventListener('transitionend', onEnd);
         track.removeEventListener('transitioncancel', onCancel);
         // If the transition was canceled, still settle to keep logical & visual state in sync.
@@ -163,14 +247,14 @@ function initSlider(sliderRoot) {
       clearAnimTimer();
       animTimer = setTimeout(() => {
         settleNext();
-      }, 700);
+      }, 1100);
 
       currentIndex = wrapIndex(currentIndex + 1, totalCount);
       updateCounter();
     });
   }
 
-  function handlePrev() {
+  function handlePrev(startOffsetX = 0) {
     withAnimationLock(() => {
       if (!stepPx || stepPx <= 0) {
         recompute();
@@ -178,19 +262,12 @@ function initSlider(sliderRoot) {
         return;
       }
       inFlight = { type: 'prev', settled: false };
-      const slideEls = track.querySelectorAll('[data-slide]');
-      const lastChild = slideEls[slideEls.length - 1];
-      if (lastChild) track.insertBefore(lastChild, track.firstChild);
-
-      setTransform(track, -stepPx, false);
-      requestAnimationFrame(() => {
-        setTransform(track, 0, true);
-      });
 
       const settlePrev = () => {
         if (!inFlight || inFlight.type !== 'prev' || inFlight.settled) return;
         inFlight.settled = true;
         setTransform(track, 0, false);
+        track.style.willChange = '';
         unlockAnimation();
       };
 
@@ -204,6 +281,7 @@ function initSlider(sliderRoot) {
 
       const onCancel = (e) => {
         if (e && e.target !== track) return;
+        if (isIOSSafari()) return;
         track.removeEventListener('transitionend', onEnd);
         track.removeEventListener('transitioncancel', onCancel);
         settlePrev();
@@ -212,10 +290,38 @@ function initSlider(sliderRoot) {
       track.addEventListener('transitionend', onEnd);
       track.addEventListener('transitioncancel', onCancel);
 
+      const doPrependLast = () => {
+        const slideEls = track.querySelectorAll('[data-slide]');
+        const lastChild = slideEls[slideEls.length - 1];
+        preloadSlideAssets(lastChild);
+        if (lastChild) track.insertBefore(lastChild, track.firstChild);
+      };
+
+      if (startOffsetX) {
+        // When swiping back, we're currently at `startOffsetX`.
+        // Prepending changes layout; adjust transform by `-stepPx` in the same frame
+        // so the user doesn't see a snap and we keep the transition intact.
+        setTransform(track, startOffsetX, false);
+        requestAnimationFrame(() => {
+          doPrependLast();
+          setTransform(track, startOffsetX - stepPx, false);
+          forceReflow(track);
+          requestAnimationFrame(() => {
+            track.style.willChange = 'transform';
+            setTransform(track, 0, true);
+          });
+        });
+      } else {
+        // Button click: start from the canonical baseline `-stepPx` then animate to 0.
+        doPrependLast();
+        track.style.willChange = 'transform';
+        animateTransform(track, -stepPx, 0);
+      }
+
       clearAnimTimer();
       animTimer = setTimeout(() => {
         settlePrev();
-      }, 700);
+      }, 1100);
 
       currentIndex = wrapIndex(currentIndex - 1, totalCount);
       updateCounter();
@@ -227,32 +333,158 @@ function initSlider(sliderRoot) {
     setTransform(track, 0, false);
   }
 
-  prevButtons.forEach((btn) => btn.addEventListener('click', handlePrev));
-  nextButtons.forEach((btn) => btn.addEventListener('click', handleNext));
+  function nav(type) {
+    const now = Date.now();
+    // Hard throttle for click-spam (esp. iOS Safari can choke on bursts of events).
+    if (now - lastNavTs < 120) return;
+    lastNavTs = now;
+
+    if (animating) {
+      // If the same direction is already queued, ignore extra clicks.
+      if (queuedType === type) return;
+      queuedType = type;
+      withAnimationLock(() => (type === 'next' ? handleNext(0) : handlePrev(0)));
+      return;
+    }
+    queuedType = null;
+    type === 'next' ? handleNext(0) : handlePrev(0);
+  }
+
+  prevButtons.forEach((btn) =>
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nav('prev');
+    })
+  );
+  nextButtons.forEach((btn) =>
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nav('next');
+    })
+  );
+
+  function prepareDragLoop() {
+    if (dragPrepared) return;
+    if (!stepPx || stepPx <= 0) recompute();
+
+    // Make previous slide exist to the left during drag:
+    // move last -> first, then offset by -stepPx so the visible slide doesn't change.
+    const slideEls = track.querySelectorAll('[data-slide]');
+    const lastChild = slideEls[slideEls.length - 1];
+    if (lastChild) {
+      preloadSlideAssets(lastChild);
+      track.insertBefore(lastChild, track.firstChild);
+      dragPrependedEl = lastChild;
+      setTransform(track, -stepPx, false);
+      dragPrepared = true;
+    }
+  }
+
+  function cleanupDragLoop() {
+    dragPrepared = false;
+    dragPrependedEl = null;
+  }
 
   function onPointerMove(e) {
     if (!isDragging || animating) return;
     const x = e.clientX;
     deltaX = x - startX;
-    setTransform(track, deltaX, false);
+    pendingDragX = deltaX;
+    if (rafDrag) return;
+    rafDrag = requestAnimationFrame(() => {
+      rafDrag = 0;
+      // During drag we keep the "current" slide aligned at -stepPx baseline.
+      // This allows dragging both directions without blank space.
+      setTransform(track, -stepPx + pendingDragX, false);
+    });
   }
 
   function endDrag() {
     if (!isDragging || animating) return;
     isDragging = false;
+    if (rafDrag) {
+      cancelAnimationFrame(rafDrag);
+      rafDrag = 0;
+    }
     const threshold = Math.max(30, stepPx * 0.25);
     const direction = deltaX > threshold ? 'prev' : deltaX < -threshold ? 'next' : 'snap';
 
-    // Normalize to a clean baseline before triggering the animated step.
-    // Without this, on some mobile browsers the next transition may start
-    // from a mid-drag transform and visually desync (text "moves" but image seems stuck).
-    setTransform(track, 0, false);
+    withAnimationLock(() => {
+      // We'll drive the transition ourselves since drag uses a different baseline (-stepPx).
+      inFlight = { type: direction === 'snap' ? 'next' : direction, settled: false };
 
-    requestAnimationFrame(() => {
-      if (direction === 'prev') handlePrev();
-      else if (direction === 'next') handleNext();
-      else setTransform(track, 0, true);
+      const settle = () => {
+        if (!inFlight || inFlight.settled) return;
+        inFlight.settled = true;
+        track.removeEventListener('transitionend', onEnd);
+        track.removeEventListener('transitioncancel', onCancel);
+        clearAnimTimer();
+
+        if (direction === 'prev') {
+          // After animating to 0, the first slide is the previous one (already in place).
+          setTransform(track, 0, false);
+          currentIndex = wrapIndex(currentIndex - 1, totalCount);
+          updateCounter();
+          cleanupDragLoop();
+          track.style.willChange = '';
+          unlockAnimation();
+          return;
+        }
+
+        if (direction === 'next') {
+          // At -2*stepPx we show the next slide (which is currently the 3rd item).
+          // Normalize: move the prepended slide back to end, then rotate "next" (move first to end).
+          const first = track.querySelector('[data-slide]');
+          if (first) track.appendChild(first); // move prepended back
+          const newFirst = track.querySelector('[data-slide]');
+          if (newFirst) track.appendChild(newFirst); // rotate next
+          setTransform(track, 0, false);
+          currentIndex = wrapIndex(currentIndex + 1, totalCount);
+          updateCounter();
+          cleanupDragLoop();
+          track.style.willChange = '';
+          unlockAnimation();
+          return;
+        }
+
+        // snap
+        if (dragPrepared && dragPrependedEl) {
+          // undo the temporary prepend
+          const first = track.querySelector('[data-slide]');
+          if (first) track.appendChild(first);
+        }
+        setTransform(track, 0, false);
+        cleanupDragLoop();
+        track.style.willChange = '';
+        unlockAnimation();
+      };
+
+      const onEnd = (e) => {
+        if (e && e.target !== track) return;
+        if (e && e.propertyName && e.propertyName !== 'transform') return;
+        settle();
+      };
+      const onCancel = (e) => {
+        if (e && e.target !== track) return;
+        if (isIOSSafari()) return;
+        settle();
+      };
+
+      track.addEventListener('transitionend', onEnd);
+      track.addEventListener('transitioncancel', onCancel);
+
+      // Animate from current drag position (-stepPx + deltaX) to target.
+      const fromX = -stepPx + deltaX;
+      const toX = direction === 'prev' ? 0 : direction === 'next' ? -2 * stepPx : -stepPx;
+      track.style.willChange = 'transform';
+      animateTransform(track, fromX, toX);
+
+      clearAnimTimer();
+      animTimer = setTimeout(() => {
+        settle();
+      }, 1100);
     });
+
     deltaX = 0;
     window.removeEventListener('pointermove', onPointerMove);
     window.removeEventListener('pointerup', endDrag);
@@ -264,6 +496,7 @@ function initSlider(sliderRoot) {
     // left mouse only (when emulating mobile in devtools)
     if (e.pointerType === 'mouse' && e.button !== 0) return;
     isDragging = true;
+    prepareDragLoop();
     startX = e.clientX;
     deltaX = 0;
     try {
@@ -271,7 +504,8 @@ function initSlider(sliderRoot) {
     } catch {
       // ignore
     }
-    setTransform(track, 0, false);
+    // Drag baseline is -stepPx (see prepareDragLoop).
+    setTransform(track, -stepPx, false);
     window.addEventListener('pointermove', onPointerMove, { passive: true });
     window.addEventListener('pointerup', endDrag, { passive: true });
     window.addEventListener('pointercancel', endDrag, { passive: true });
@@ -304,6 +538,7 @@ function initSlider(sliderRoot) {
     window.removeEventListener('pointercancel', endDrag);
     window.removeEventListener('resize', onResize);
     window.removeEventListener('orientationchange', onResize);
+    if (rafDrag) cancelAnimationFrame(rafDrag);
     track.style.transition = '';
     track.style.transform = '';
     track.style.touchAction = '';
