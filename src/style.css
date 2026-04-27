@@ -61,6 +61,12 @@ body {
   height: fit-content;
 }
 
+/* Swiper (CDN) integration: keep original slide widths for our mobile carousels.
+   Swiper's default `.swiper-slide { width: 100% }` breaks fixed/auto-width cards. */
+[data-slider][data-mobile-carousel='true'] .swiper-slide {
+  width: auto;
+}
+
 p {
   font-weight: 500;
 }

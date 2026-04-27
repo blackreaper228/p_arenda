@@ -4,7 +4,7 @@ import './slider.js';
 import './accordion.js';
 import './projectsAnim.js';
 import './textSlider.js';
-import './newSlider.js';
+import './swiperMobileCarousels.js';
 import './adminka.js';
 import './customScroll.js';
 

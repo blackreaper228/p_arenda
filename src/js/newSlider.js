@@ -38,7 +38,7 @@ function getStepPx(track) {
 }
 
 function setTransform(track, x, withTransition) {
-  track.style.transition = withTransition ? 'transform 550ms cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+  track.style.transition = withTransition ? 'transform 420ms cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
   // Avoid rounding during gesture moves: it causes visible "stepping" on mobile.
   const value = withTransition ? Math.round(x) : x;
   track.style.transform = `translate3d(${value}px, 0, 0)`;
@@ -149,6 +149,27 @@ function initSlider(sliderRoot) {
   let dragPrependedEl = null;
   /** @type {null | { type: 'next' | 'prev'; settled: boolean }} */
   let inFlight = null;
+  /** @type {null | (() => void)} */
+  let activeSettle = null;
+  /** @type {null | ((e: TransitionEvent) => void)} */
+  let activeOnEnd = null;
+  /** @type {null | ((e: TransitionEvent) => void)} */
+  let activeOnCancel = null;
+
+  function unbindTransitionHandlers() {
+    if (activeOnEnd) track.removeEventListener('transitionend', activeOnEnd);
+    if (activeOnCancel) track.removeEventListener('transitioncancel', activeOnCancel);
+    activeOnEnd = null;
+    activeOnCancel = null;
+  }
+
+  function bindTransitionHandlers(onEnd, onCancel) {
+    unbindTransitionHandlers();
+    activeOnEnd = onEnd;
+    activeOnCancel = onCancel;
+    track.addEventListener('transitionend', onEnd);
+    track.addEventListener('transitioncancel', onCancel);
+  }
 
   function updateCounter() {
     currentEls.forEach((el) => {
@@ -167,6 +188,8 @@ function initSlider(sliderRoot) {
     animating = false;
     clearAnimTimer();
     inFlight = null;
+    activeSettle = null;
+    unbindTransitionHandlers();
     // If user clicked/swiped during animation, run queued actions in order.
     const queued = actionQueue.shift();
     queuedType = null;
@@ -215,6 +238,7 @@ function initSlider(sliderRoot) {
         preloadSlideAssets(slideElsAfter[1] || slideElsAfter[0]);
         unlockAnimation();
       };
+      activeSettle = settleNext;
 
       // Start from current gesture offset (if any) to avoid a visual "snap back" to 0.
       track.style.willChange = 'transform';
@@ -223,8 +247,7 @@ function initSlider(sliderRoot) {
       const onEnd = (e) => {
         if (e && e.target !== track) return;
         if (e && e.propertyName && e.propertyName !== 'transform') return;
-        track.removeEventListener('transitionend', onEnd);
-        track.removeEventListener('transitioncancel', onCancel);
+        unbindTransitionHandlers();
         settleNext();
       };
 
@@ -233,21 +256,19 @@ function initSlider(sliderRoot) {
         // iOS Safari can emit `transitioncancel` mid-flight spuriously, which causes a visible "teleport"
         // when we settle (DOM rotation + transform reset). Prefer timeout/transitionend there.
         if (isIOSSafari()) return;
-        track.removeEventListener('transitionend', onEnd);
-        track.removeEventListener('transitioncancel', onCancel);
+        unbindTransitionHandlers();
         // If the transition was canceled, still settle to keep logical & visual state in sync.
         settleNext();
       };
 
-      track.addEventListener('transitionend', onEnd);
-      track.addEventListener('transitioncancel', onCancel);
+      bindTransitionHandlers(onEnd, onCancel);
 
       // Safety net: on some mobile browsers `transitionend` can be missed.
       // If that happens, we still need to rotate DOM (otherwise the slider "sticks" on the same slide).
       clearAnimTimer();
       animTimer = setTimeout(() => {
         settleNext();
-      }, 1100);
+      }, 400);
 
       currentIndex = wrapIndex(currentIndex + 1, totalCount);
       updateCounter();
@@ -270,25 +291,23 @@ function initSlider(sliderRoot) {
         track.style.willChange = '';
         unlockAnimation();
       };
+      activeSettle = settlePrev;
 
       const onEnd = (e) => {
         if (e && e.target !== track) return;
         if (e && e.propertyName && e.propertyName !== 'transform') return;
-        track.removeEventListener('transitionend', onEnd);
-        track.removeEventListener('transitioncancel', onCancel);
+        unbindTransitionHandlers();
         settlePrev();
       };
 
       const onCancel = (e) => {
         if (e && e.target !== track) return;
         if (isIOSSafari()) return;
-        track.removeEventListener('transitionend', onEnd);
-        track.removeEventListener('transitioncancel', onCancel);
+        unbindTransitionHandlers();
         settlePrev();
       };
 
-      track.addEventListener('transitionend', onEnd);
-      track.addEventListener('transitioncancel', onCancel);
+      bindTransitionHandlers(onEnd, onCancel);
 
       const doPrependLast = () => {
         const slideEls = track.querySelectorAll('[data-slide]');
@@ -321,7 +340,7 @@ function initSlider(sliderRoot) {
       clearAnimTimer();
       animTimer = setTimeout(() => {
         settlePrev();
-      }, 1100);
+      }, 800);
 
       currentIndex = wrapIndex(currentIndex - 1, totalCount);
       updateCounter();
@@ -416,8 +435,7 @@ function initSlider(sliderRoot) {
       const settle = () => {
         if (!inFlight || inFlight.settled) return;
         inFlight.settled = true;
-        track.removeEventListener('transitionend', onEnd);
-        track.removeEventListener('transitioncancel', onCancel);
+        unbindTransitionHandlers();
         clearAnimTimer();
 
         if (direction === 'prev') {
@@ -458,6 +476,7 @@ function initSlider(sliderRoot) {
         track.style.willChange = '';
         unlockAnimation();
       };
+      activeSettle = settle;
 
       const onEnd = (e) => {
         if (e && e.target !== track) return;
@@ -470,8 +489,7 @@ function initSlider(sliderRoot) {
         settle();
       };
 
-      track.addEventListener('transitionend', onEnd);
-      track.addEventListener('transitioncancel', onCancel);
+      bindTransitionHandlers(onEnd, onCancel);
 
       // Animate from current drag position (-stepPx + deltaX) to target.
       const fromX = -stepPx + deltaX;
@@ -482,7 +500,7 @@ function initSlider(sliderRoot) {
       clearAnimTimer();
       animTimer = setTimeout(() => {
         settle();
-      }, 1100);
+      }, 800);
     });
 
     deltaX = 0;
@@ -492,9 +510,12 @@ function initSlider(sliderRoot) {
   }
 
   function onPointerDown(e) {
-    if (!isMobile() || animating) return;
+    if (!isMobile()) return;
     // left mouse only (when emulating mobile in devtools)
     if (e.pointerType === 'mouse' && e.button !== 0) return;
+    // Allow "grabbing" the slider while it is still animating (PIK-like behavior).
+    // We finish/cancel the current animation immediately so drag can start right away.
+    if (animating && activeSettle) activeSettle();
     isDragging = true;
     prepareDragLoop();
     startX = e.clientX;
