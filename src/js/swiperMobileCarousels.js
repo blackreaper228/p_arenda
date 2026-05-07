@@ -59,6 +59,14 @@ function initOne(sliderRoot) {
   const { container } = structure;
   const { prevEl, nextEl } = pickVisibleNav(sliderRoot);
   const loop = sliderRoot.getAttribute('data-infinite') === 'true';
+  const currentEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-current]'));
+  const totalEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-total]'));
+  const slidesCount = Array.from(sliderRoot.querySelectorAll('[data-track] [data-slide]')).length;
+  totalEls.forEach((el) => (el.textContent = String(slidesCount || 0)));
+  // Swiper warns when loop is enabled but there aren't enough slides.
+  // With `slidesPerView: 'auto'` exact threshold depends on viewport (how many slides fit).
+  // Use a conservative threshold to avoid noisy warnings.
+  const loopEnabled = loop && slidesCount >= 5;
 
   // Prevent double init.
   if (container.__swiperInstance) return container.__swiperInstance;
@@ -66,7 +74,7 @@ function initOne(sliderRoot) {
   const instance = new Swiper(container, {
     slidesPerView: 'auto',
     spaceBetween: 0,
-    loop,
+    loop: loopEnabled,
     speed: 380,
     resistanceRatio: 0.85,
     followFinger: true,
@@ -74,6 +82,16 @@ function initOne(sliderRoot) {
     grabCursor: false,
     preventInteractionOnTransition: false,
     navigation: prevEl && nextEl ? { prevEl, nextEl } : undefined,
+    on: {
+      init(sw) {
+        const realIndex = typeof sw.realIndex === 'number' ? sw.realIndex : 0;
+        currentEls.forEach((el) => (el.textContent = String(realIndex + 1)));
+      },
+      slideChange(sw) {
+        const realIndex = typeof sw.realIndex === 'number' ? sw.realIndex : 0;
+        currentEls.forEach((el) => (el.textContent = String(realIndex + 1)));
+      },
+    },
   });
 
   container.__swiperInstance = instance;
