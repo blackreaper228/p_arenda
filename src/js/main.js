@@ -7,6 +7,7 @@ import './textSlider.js';
 import './swiperMobileCarousels.js';
 import './adminka.js';
 import './customScroll.js';
+import './scrollToTop.js';
 
 const DESIGN_WIDTH = 1440;
 const MIN_SCALE_BREAKPOINT = 769; // start scaling at >= 768px viewport width
@@ -84,7 +85,10 @@ function initSliders() {
 
 function initSliderInstance(sliderRoot) {
   const mode = (sliderRoot.getAttribute('data-mode') || 'translate').toLowerCase();
-  // Mobile carousel is handled by `newSlider.js` (to avoid double-binding arrows / swipe).
+  const swiperAllScreens =
+    sliderRoot.getAttribute('data-mobile-carousel') === 'true' && mode === 'translate' && sliderRoot.getAttribute('data-swiper-all-screens') === 'true';
+  // Swiper owns translate carousels with `data-swiper-all-screens` (all viewports) or mobile-only carousels.
+  if (swiperAllScreens) return;
   if (window.innerWidth < 768 && sliderRoot.getAttribute('data-mobile-carousel') === 'true' && mode === 'translate') {
     return;
   }
@@ -126,6 +130,33 @@ function initSliderInstance(sliderRoot) {
     translateStepPx = delta > 0 ? delta : first.offsetWidth;
   }
 
+  /** Left edge of slide relative to the track's content box (walk offsetParent chain). */
+  function slideLeftInTrack(slide) {
+    let x = 0;
+    let node = slide;
+    while (node && node !== track) {
+      x += node.offsetLeft;
+      node = node.offsetParent;
+    }
+    if (node !== track) {
+      const tr = track.getBoundingClientRect();
+      const sr = slide.getBoundingClientRect();
+      return sr.left - tr.left;
+    }
+    return x;
+  }
+
+  function translateContainer() {
+    return track.parentElement;
+  }
+
+  /** Max scroll so the right end of the track aligns with the right edge of the visible container. */
+  function maxTranslateX() {
+    const container = translateContainer();
+    const cw = container ? container.clientWidth : track.clientWidth;
+    return Math.max(0, track.scrollWidth - cw);
+  }
+
   function applyFade() {
     const fadeSlides = getSlides();
     fadeSlides.forEach((slideEl, idx) => {
@@ -151,8 +182,27 @@ function initSliderInstance(sliderRoot) {
   }
 
   function applyTranslate(withTransition = true) {
-    const baseX = -currentIndex * translateStepPx;
-    const x = Math.round(baseX + dragDeltaX);
+    const liveSlides = getSlides();
+    let baseX;
+    if (infinite) {
+      baseX = -currentIndex * translateStepPx;
+    } else if (liveSlides.length === 0) {
+      baseX = 0;
+    } else {
+      const last = liveSlides.length - 1;
+      const clamped = Math.max(0, Math.min(last, currentIndex));
+      if (clamped === last) {
+        baseX = -maxTranslateX();
+      } else {
+        baseX = -slideLeftInTrack(liveSlides[clamped]);
+      }
+    }
+    const xRaw = Math.round(baseX + dragDeltaX);
+    let x = xRaw;
+    if (!infinite) {
+      const m = maxTranslateX();
+      x = Math.min(0, Math.max(-m, xRaw));
+    }
     setTransform(x, withTransition);
   }
 
@@ -163,7 +213,11 @@ function initSliderInstance(sliderRoot) {
   }
 
   function goTo(index) {
-    currentIndex = wrapIndex(index, totalCount);
+    if (!infinite) {
+      currentIndex = Math.max(0, Math.min(totalCount - 1, index));
+    } else {
+      currentIndex = wrapIndex(index, totalCount);
+    }
     updateCounter();
     if (mode === 'fade') {
       applyFade();
