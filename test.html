@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arenda</title>
+    <title>Arenda Test</title>
     <link rel="shortcut icon" href="https://static.tildacdn.com/tild6465-3931-4239-b237-613736386361/typetemp.svg" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script type="module" crossorigin src="/p_arenda/assets/main-BMmmJkG3.js"></script>
+    <script type="module" crossorigin src="/p_arenda/assets/test-CJDmGmCl.js"></script>
     <link rel="modulepreload" crossorigin href="/p_arenda/assets/scrollToTop-CsnB9Hlz.js">
     <link rel="stylesheet" crossorigin href="/p_arenda/assets/scrollToTop-ziwu98gK.css">
   </head>
@@ -739,9 +739,8 @@
     <div id="scale-wrapper" style="padding-top: 80px; overflow-x: hidden">
       <div id="scale-container">
         <div id="scale-content">
-
           <!-- Первый экран с заголовком -->
-          <section class="max-md:absolute z-100">
+          <section class="hero-first-screen max-md:absolute z-100">
             <div class="max-md:h-[456px] flex flex-col gap-[80px] px-[40px] py-[60px] max-md:px-[16px] max-md:py-[24px] max-md:gap-[24px]">
               <h1 class="title whiteMobile">Аренда складов и производств в москве и области</h1>
               <div class="max-md:h-full flex flex-row gap-[240px] justify-between max-md:flex-col max-md:gap-[60px]">
@@ -764,7 +763,13 @@
           </section>
 
           <!-- Фото-слайдер с баннером -->
-          <section class="relative flex flex-col w-full aspect-video max-md:w-full max-md:h-[654px] bg-black" data-slider data-mode="fade">
+          <section
+            class="relative flex flex-col w-full aspect-video max-md:w-full max-md:h-[654px] bg-black"
+            data-slider
+            data-mode="translate"
+            data-swiper-fade="true"
+            data-infinite="true"
+          >
             <!-- slider -->
             <div
               class="max-md:gap-[40px] max-md:bg-[var(--pikBlack)] main-slider justify-between absolute top-[40px] left-[40px] max-md:top-[auto] max-md:bottom-[0] max-md:left-[0] max-md:py-[24px] flex flex-row max-md:flex-col max-md:items-end w-[680px] h-[270px] max-md:w-full max-md:h-[auto] p-[40px] max-md:px-[16px] z-100"
@@ -781,7 +786,7 @@
                 </p>
               </div>
               <!-- counter and slider buttons -->
-              <div class="flex flex-row items-center h-fit gap-[10px] top-[8%] max-md:w-full max-md:justify-between" data-slider-controls>
+              <div class="flex flex-row items-center h-fit gap-[10px] top-[8%] max-md:w-full max-md:justify-between shrink-0" data-slider-controls>
                 <p class="text-[13px] max-md:text-[46px] text-[#9CA8AE] text-nowrap" data-counter>
                   <span class="text-white" data-current>1</span>
                   /
@@ -803,156 +808,11 @@
                 </div>
               </div>
             </div>
-            <div class="relative w-full h-full" data-track>
-              <!-- circle through opacity -->
-              <div
-                class="firstSlide absolute w-full h-full max-md:h-[full] max-md:aspect-[4/3] object-cover opacity-100 transition-all duration-200 ease-in"
-                data-slide
-              ></div>
-              <div
-                class="secondSlide absolute w-full h-full max-md:h-[full] max-md:aspect-[4/3] object-cover opacity-0 transition-all duration-200 ease-in"
-                data-slide
-              ></div>
-              <div
-                class="thirdSlide absolute w-full h-full max-md:h-[full] max-md:aspect-[4/3] object-cover opacity-0 transition-all duration-200 ease-in"
-                data-slide
-              ></div>
-            </div>
-          </section>
-
-          <!-- Расположение -->
-          <section id="Territory" class="flex flex-row max-md:flex-col w-full h-fit border-b-[1px] border-[#18181815]">
-            <div class="hidden max-md:flex flex-row w-full px-[16px] pt-[40px] pb-[24px] items-center justify-between">
-              <div class="flex flex-row gap-[40px] items-center">
-                <h2 class="title">Расположение</h2>
-              </div>
-            </div>
-            <div class="gap-[60px] w-1/2 max-md:w-full aspect-square bg-white flex items-center justify-center" id="map"></div>
-            <div
-              class="flex max-md:hidden flex-col w-1/2 max-h-[720px] overflow-y-scroll max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]"
-            >
-              <div class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
-                <img
-                  class="w-full h-[280px]"
-                  src="https://optim.tildacdn.com/tild3734-6235-4566-a431-373930653834/-/format/webp/arenda_info_01.jpg.webp"
-                  alt=""
-                />
-                <div class="flex flex-col w-full h-fit gap-[24px]">
-                  <div class="flex flex-row w-full justify-between">
-                    <div class="flex flex-col">
-                      <p class="text-[13px] text-[var(--grey)] uppercase">Промышленный парк</p>
-                      <div class="flex flex-row items-center gap-[10px]">
-                        <h3 class="text-[28px] uppercase leading-[30px]">Сенькино</h3>
-                        <!-- <div class="pb-[3px]">
-                          <div class="w-[20px] rounded-full bg-[#181818]">
-                            <img
-                              class="w-[20px] h-[20px]"
-                              src="https://static.tildacdn.com/tild3761-3933-4162-b335-333139326538/IconPlus.svg"
-                              alt="" />
-                          </div>
-                        </div> -->
-                      </div>
-                    </div>
-                    <div class="flex flex-col">
-                      <p class="text-[13px] uppercase">лайт индастриал</p>
-                      <p class="text-[13px] text-[var(--grey)] uppercase text_right">от 580 м²</p>
-                    </div>
-                  </div>
-                  <div class="flex flex-col w-full">
-                    <div class="py-[26px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] uppercase">1-я линия ЦКАД и А-107, Троицк</p>
-                    </div>
-                    <div class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] uppercase">5 км до калужского шоссе</p>
-                      <p class="text-[13px] uppercase text-[var(--grey)]">10 минут</p>
-                    </div>
-                    <div class="flex flex-row justify-between pt-[26px]">
-                      <p class="text-[13px] uppercase">14 км до киевского шоссе</p>
-                      <p class="text-[13px] uppercase text-[var(--grey)]">15 минут</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
-                <img
-                  class="w-full h-[280px]"
-                  src="https://optim.tildacdn.com/tild6263-3665-4562-a435-633537383834/-/format/webp/arenda_info_02.jpg.webp"
-                  alt=""
-                />
-                <div class="flex flex-col w-full h-fit gap-[24px]">
-                  <div class="flex flex-row w-full justify-between">
-                    <div class="flex flex-col">
-                      <p class="text-[13px] text-[var(--grey)] uppercase">Промышленный парк</p>
-                      <div class="flex flex-row items-center gap-[10px]">
-                        <h3 class="text-[28px] uppercase leading-[30px]">Кувекино</h3>
-                        <!-- <div class="pb-[3px]">
-                          <div class="w-[20px] rounded-full bg-[#181818]">
-                            <img
-                              class="w-[20px] h-[20px]"
-                              src="https://static.tildacdn.com/tild3761-3933-4162-b335-333139326538/IconPlus.svg"
-                              alt="" />
-                          </div>
-                        </div> -->
-                      </div>
-                    </div>
-                    <div class="flex flex-col">
-                      <p class="text-[13px] uppercase">лайт индастриал</p>
-                      <p class="text-[13px] text-[var(--grey)] uppercase text_right">от 580 м²</p>
-                    </div>
-                  </div>
-                  <div class="flex flex-col w-full">
-                    <div class="py-[26px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] uppercase">16 км от МКАД, Троицк</p>
-                    </div>
-                    <div class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] uppercase">5 км до калужского шоссе</p>
-                    </div>
-                    <div class="flex flex-row justify-between pt-[26px]">
-                      <p class="text-[13px] uppercase">10 км до Варшавского шоссе</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px]">
-                <img
-                  class="w-full h-[280px]"
-                  src="https://optim.tildacdn.com/tild3264-3262-4035-a430-356463333138/-/format/webp/arenda_info_03.jpg.webp"
-                  alt=""
-                />
-                <div class="flex flex-col w-full h-fit gap-[24px]">
-                  <div class="flex flex-row w-full justify-between">
-                    <div class="flex flex-col">
-                      <p class="text-[13px] text-[var(--grey)] uppercase">Промышленный парк</p>
-                      <div class="flex flex-row items-center gap-[10px]">
-                        <h3 class="text-[28px] uppercase leading-[30px]">балашиха</h3>
-                        <!-- <div class="pb-[3px]">
-                          <div class="w-[20px] rounded-full bg-[#181818]">
-                            <img
-                              class="w-[20px] h-[20px]"
-                              src="https://static.tildacdn.com/tild3761-3933-4162-b335-333139326538/IconPlus.svg"
-                              alt="" />
-                          </div>
-                        </div> -->
-                      </div>
-                    </div>
-                    <div class="flex flex-col">
-                      <p class="text-[13px] uppercase">лайт индастриал</p>
-                      <p class="text-[13px] text-[var(--grey)] uppercase text_right">скоро</p>
-                    </div>
-                  </div>
-                  <div class="flex flex-col w-full">
-                    <div class="py-[26px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] uppercase">15 минут до МКАД, шоссе Энтузиастов</p>
-                    </div>
-                    <div class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
-                      <p class="text-[13px] uppercase">ПРЯМОЙ ЗАЕЗД И ВЫЕЗД НА М-7</p>
-                      <p class="text-[13px] uppercase text-[var(--grey)]">Рядом трасса М-12</p>
-                    </div>
-                    <div class="flex flex-row justify-between pt-[26px]">
-                      <p class="text-[13px] uppercase">15 мин до ж/д станции Балашиха</p>
-                    </div>
-                  </div>
-                </div>
+            <div class="absolute inset-0 w-full h-full overflow-hidden">
+              <div class="w-full h-full" data-track>
+                <div class="firstSlide w-full h-full" data-slide></div>
+                <div class="secondSlide w-full h-full" data-slide></div>
+                <div class="thirdSlide w-full h-full" data-slide></div>
               </div>
             </div>
           </section>
@@ -1007,7 +867,7 @@
             class="max-md:border-b-[1px] border-[var(--stroke-light)] flex flex-col w-full h-fit"
             data-slider
             data-mode="translate"
-            data-infinite="false"
+            data-infinite="true"
             data-mobile-carousel="true"
             data-swiper-all-screens="true"
             data-swiper-edge="0"
@@ -1258,41 +1118,6 @@
             </div>
           </section>
 
-          <!-- УК -->
-          <section class="flex flex-row max-md:flex-col w-full h-fit border-b-[1px] border-[#18181815]">
-            <div
-              class="flex flex-col gap-[60px] max-md:gap-[24px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[16px] max-md:pt-[40px] max-md:pb-[24px] max-md:border-b-[1px] border-[var(--stroke-light)]"
-            >
-              <h2 class="title">управляющая компания</h2>
-              <p class="text">Профессиональная управляющая компания осуществляет техническую эксплуатацию и содержание комплекса</p>
-            </div>
-            <div class="flex flex-col py-[20px] max-md:py-[24px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] border-b-[1px] border-[#18181815] max-md:h-[fit-content] max-md:pb-[24px] max-md:pt-[0px]"
-              >
-                <p class="row_text">Клининг</p>
-              </div>
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] border-b-[1px] border-[#18181815] max-md:h-[fit-content] max-md:py-[24px]"
-              >
-                <p class="row_text">Техническая эксплуатация</p>
-              </div>
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] border-b-[1px] border-[#18181815] max-md:h-[fit-content] max-md:py-[24px]"
-              >
-                <p class="row_text">Безопасность и контроль доступа</p>
-              </div>
-              <div
-                class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] border-b-[1px] border-[#18181815] max-md:h-[fit-content] max-md:py-[24px]"
-              >
-                <p class="row_text">Уборка территории</p>
-              </div>
-              <div class="flex items-center w-full h-[90px] px-[40px] max-md:px-[16px] max-md:h-[fit-content] max-md:pt-[24px] max-md:pb-[ 0px]">
-                <p class="row_text">Возможность заключения контракта на обслуживание помещений собственников / арендаторов</p>
-              </div>
-            </div>
-          </section>
-
           <!-- Типовые планировки -->
           <section class="flex flex-col w-full h-fit" data-slider data-mode="translate" data-infinite="true" data-mobile-carousel="true">
             <div
@@ -1383,168 +1208,75 @@
             </div>
           </section>
 
-          <!-- Галерея -->
-          <section
-            id="SectionGallery"
-            class="flex flex-col w-full h-fit"
-            data-slider
-            data-mode="translate"
-            data-infinite="false"
-            data-mobile-carousel="true"
-            data-swiper-all-screens="true"
-            data-swiper-wide-slides="true"
-            data-swiper-edge="0"
-            data-swiper-offset-after-desktop="40"
-          >
-            <div
-              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:pt-[40px] max-md:pb-[24px] max-md:px-[16px] max-md:gap-[20px] items-center max-md:flex-row justify-between"
-            >
-              <div class="flex flex-row gap-[40px] items-center">
-                <h2 class="title">фото реализованных проектов</h2>
-              </div>
-              <!-- counter -->
-              <div class="max-md:hidden flex flex-row gap-[5px]">
-                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-prev>
-                  <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
-                </div>
-                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-next>
-                  <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div
-              class="relative w-full h-[580px] max-md:h-[470px] overflow-x-hidden max-md:flex max-md:flex-col max-md:justify-between max-md:items-end max-md:pb-[12px] max-md:px-[16px]"
-            >
-              <div
-                class="h-full pb-[60px] max-md:pb-[0px] min-h-0 min-w-fit w-fit max-w-fit flex flex-row items-stretch max-md:flex-1 max-md:min-h-0"
-                data-track
-              >
-                <div class="galleryItem first group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
-                <div class="galleryItem second group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
-                <div class="galleryItem third group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
-                <div class="galleryItem fourth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
-                <div class="galleryItem fifth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
-                <div class="galleryItem sixth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
-                <div class="galleryItem seventh group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
-                <div class="galleryItem eighth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
-                <div class="galleryItem ninth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
-              </div>
-              <!-- counter mobile -->
-              <div class="hidden max-md:flex w-full justify-between items-center py-[12px] max-md:px-[16px]">
-                <p class="max-md:pt-[4px] text-[46px] font-normal text-[var(--grey)]" data-counter>
-                  <span class="text-[var(--pikBlack)]" data-current>1</span>
-                  /
-                  <span data-total>9</span>
-                </p>
-                <div class="hidden max-md:flex flex-row gap-[5px] max-md:gap-[12px] max-md:pb-[0px]">
-                  <div
-                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer"
-                    data-prev
-                  >
-                    <img class="invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
-                  </div>
-                  <div
-                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer"
-                    data-next
-                  >
-                    <img class="invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Аренда помещений, тёмный блок -->
-          <section class="bg-[var(--pikBlack)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[0px] border-b-[1px] border-[#18181815]">
-            <div class="flex flex-col gap-[60px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[16px] max-md:py-[40px]">
-              <h2 class="title white">Аренда помещений лайт индастриал</h2>
-            </div>
-            <div
-              class="flex flex-col py-[20px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[var(--stroke-dark)] max-md:py-[0px] max-md:border-t-[1px] max-md:border-t-[var(--stroke-dark)]"
-            >
-              <div
-                class="h-auto flex flex-col gap-[40px] max-md:gap-[24px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[var(--stroke-dark)] max-md:px-[16px]"
-              >
-                <p class="textSubtitle white">Готово ко въезду</p>
-                <p class="row_text_small white">Помещения с финишной отделкой</p>
-              </div>
-              <div
-                class="h-auto flex flex-col gap-[40px] max-md:gap-[24px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[var(--stroke-dark)] max-md:px-[16px]"
-              >
-                <p class="textSubtitle white">Удобный выезд на федеральные трассы</p>
-                <p class="row_text_small white">Комфорт для логистики и доступа персонала на объект</p>
-              </div>
-              <div class="h-auto flex flex-col gap-[40px] max-md:gap-[24px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] max-md:px-[16px]">
-                <p class="textSubtitle white">Арендные каникулы</p>
-                <p class="row_text_small white">30 дней</p>
-              </div>
-            </div>
-          </section>
-
           <!-- Доступные лоты -->
           <section id="Sales" class="flex flex-col max-md:flex-col w-full h-[900px] max-md:h-[fit-content] border-b-[1px] border-[#18181815]">
             <div class="flex flex-row gap-[40px] items-center w-full px-[40px] pt-[60px] pb-[40px] max-md:px-[16px] max-md:pt-[40px] max-md:pb-[24px]">
               <h2 class="title">Доступные лоты</h2>
             </div>
-            <div class="flex flex-row w-full h-full border-t border-[var(--stroke-light)] max-md:flex-col">
-              <div class="flex flex-col w-1/2 max-md:w-full border-l-[1px] border-[#18181815] max-md:border-l-[0px]">
-                <div class="flex flex-col w-full max-md:px-[0] h-full">
+            <img
+              class="min-md:hidden w-full aspect-video object-cover"
+              src="https://optim.tildacdn.com/tild6639-6636-4436-a332-376666323338/-/format/webp/lotsMobile.jpg.webp"
+              alt="Промпарк"
+            />
+            <div
+              class="lotsPic flex flex-row w-full min-md:h-[720px] max-md:h-[fit-content] border-t max-md:border-t-[0px] border-[var(--stroke-light)] max-md:flex-col min-md:p-[40px]"
+            >
+              <div class="flex flex-col w-1/2 max-md:w-full bg-[var(--pikBlack)] text-[var(--white)] h-fit">
+                <div class="flex flex-col w-full max-md:px-[0] h-fit">
                   <!-- Промпарк Сенькино -->
                   <div
-                    class="cursor-pointer financeProgram flex w-full justify-between px-[40px] py-[60px] border-b-[1px] border-[#18181815] max-md:px-[0px] max-md:py-[40px]"
+                    class="cursor-pointer financeProgram flex w-full justify-between px-[40px] py-[40px] border-b-[1px] border-[var(--stroke-dark)] max-md:px-[0px] max-md:pt-[40px] max-md:pb-[0px]"
                     id="secondAccordion"
                   >
                     <div class="w-full flex flex-col">
                       <div id="accordionCardMobileSenkino" class="flex gap-[24px] items-center max-md:flex-col max-md:items-start max-md:gap-[18px]">
-                        <div class="flex flex-row justify-between items-center max-md:items-start w-full max-md:px-[16px]">
-                          <div class="flex gap-[12px] items-center max-md:flex-col max-md:items-start">
+                        <div class="flex flex-row justify-between items-start max-md:items-start w-full max-md:px-[16px] max-md:pb-[40px]">
+                          <div class="flex gap-[12px] items-start flex-col">
                             <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Промпарк Сенькино</h2>
                             <div
-                              class="leading-[130%] flex items-center gap-[10px] relative px-[14px] py-[4px] max-md:py-[8px] rounded-full border-[1px] border-[var(--pikBlack)]"
+                              class="leading-[130%] max-md:leading-[90%] flex items-center gap-[10px] relative px-[14px] py-[4px] max-md:py-[8px] rounded-full border-[1px] border-[var(--white)]"
                             >
                               Калужское шоссе
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                                 <path
                                   d="M9.54502 0.120354C10.9323 -0.41293 12.3111 0.916837 11.8282 2.3225L9.18466 10.0178C8.89231 10.8689 8.09884 11.2296 7.40244 11.2131C6.71139 11.1966 5.94738 10.8106 5.64463 9.99926C5.43554 9.43863 5.20866 8.90666 4.97373 8.47485C4.72759 8.02248 4.51562 7.76165 4.37021 7.65453C4.24381 7.56166 3.93197 7.42965 3.39658 7.29516C2.88896 7.16767 2.26673 7.05798 1.5997 6.96606C0.652841 6.83537 0.125837 6.05956 0.0206022 5.3391C-0.085201 4.6145 0.206666 3.70975 1.12509 3.35668L9.54502 0.120354ZM10.0831 1.52074L1.66318 4.75707C1.59359 4.78388 1.55875 4.82252 1.53525 4.87035C1.50703 4.928 1.48955 5.01659 1.50498 5.12231C1.53822 5.34992 1.6732 5.46152 1.80478 5.47973C2.49848 5.57532 3.17991 5.69393 3.76181 5.84008C4.31508 5.97904 4.87976 6.16678 5.26084 6.4475C5.68129 6.75743 6.02075 7.26116 6.29111 7.75805C6.57285 8.2759 6.82795 8.87972 7.0499 9.47485C7.09762 9.60275 7.23503 9.7093 7.43857 9.7141C7.6368 9.7187 7.73226 9.6279 7.76572 9.53051L10.4093 1.8352C10.4783 1.63439 10.2813 1.44456 10.0831 1.52074Z"
-                                  fill="#181818"
+                                  fill="var(--white)"
                                 />
                               </svg>
                             </div>
                           </div>
-                          <div class="cursor-pointer openBtnWrap h-full">
-                            <div class="openBtn"></div>
+                          <div class="hidden max-md:flex w-[22px] aspect-square justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="7" viewBox="0 0 16 7" fill="none">
+                              <path d="M8 7L7.20001e-07 1.61725L1.22633 -6.45778e-07L8 4.55762L14.7737 -5.36046e-08L16 1.61725L8 7Z" fill="white" />
+                            </svg>
+                          </div>
+                          <div class="max-md:hidden cursor-pointer flex items-center gap-[12px]">
+                            <p>Выбрать лот</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                              <path d="M9 7.5L1.39529 15L0 13.6239L6.20942 7.5L0 1.37608L1.39529 0L9 7.5Z" fill="white" />
+                            </svg>
                           </div>
                         </div>
                       </div>
                       <div class="accordionCard flex flex-col gap-[44px] max-md:gap-6">
                         <div class="flex flex-col">
-                          <!-- мобильное фото -->
-                          <div class="hidden max-md:flex w-full flex-col py-[40px] gap-[24px] max-md:px-[16px]">
-                            <img
-                              src="https://optim.tildacdn.com/tild3734-6235-4566-a431-373930653834/-/format/webp/arenda_info_01.jpg.webp"
-                              alt="Склад Лайт индастриал Сенькино"
-                              class="h-[194px] object-cover"
-                            />
-                            <div class="flex flex-col uppercase">
-                              <p class="text-[var(--pikBlack)] text-[12px] pMed">лайт индастриал</p>
-                              <p class="text-[var(--grey)] text-[12px] pMed">от 580 м²</p>
-                            </div>
-                          </div>
                           <div class="flex flex-col w-full max-md:px-[16px] max-md:pb-[40px]">
-                            <div
-                              class="py-[40px] border-b border-[var(--stroke-light)] max-md:pb-[24px] max-md:pt-[24px] max-md:border-t max-md:border-[var(--stroke-light)]"
-                            >
+                            <div class="py-[40px] border-b border-[var(--stroke-dark)] max-md:pb-[24px] max-md:pt-[0px]">
                               <p class="leading-[130%]">г. Москва, пос. Краснопахорское, квартал №61</p>
                             </div>
-                            <div class="py-[40px] max-md:pt-[24px] max-md:pb-[0px]">
+                            <div class="pt-[40px] max-md:pt-[24px] max-md:pb-[0px]">
                               <p class="leading-[130%]">Близость к городу Троицк. 1-я линия ЦКАД</p>
                             </div>
                           </div>
                           <!-- мобильный список лотов Сенькино -->
-                          <div class="hidden max-md:flex py-[40px] max-md:px-[16px] border-t border-[var(--stroke-light)]">
+                          <div
+                            class="hidden bg-[var(--white)] max-md:flex py-[40px] max-md:px-[16px] border-t border-[var(--stroke-light)] text-[var(--pikBlack)]"
+                          >
                             <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Список лотов</h2>
                           </div>
-                          <div class="hidden max-md:flex border-[var(--stroke-light)] w-full gap-[40px] flex flex-col max-md:px-[16px]">
+                          <div
+                            class="hidden max-md:flex bg-[var(--white)] border-[var(--stroke-light)] w-full gap-[40px] flex flex-col max-md:px-[16px] pb-[20px]"
+                          >
                             <div
                               id="lotsSenkinoMobile"
                               class="flex flex-col h-full overflow-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -1565,67 +1297,62 @@
                   </div>
                   <!-- Промпарк Кувекино -->
                   <div
-                    class="cursor-pointer financeProgram flex w-full justify-between px-[40px] py-[60px] border-b-[1px] border-[#18181815] max-md:px-[0px] max-md:py-[40px]"
+                    class="cursor-pointer financeProgram flex w-full justify-between px-[40px] py-[40px] border-b-[1px] border-[var(--stroke-dark)] max-md:px-[0px] max-md:pt-[40px] max-md:pb-[0px]"
                     id="lastAccordion"
                   >
                     <div class="w-full flex flex-col">
-                      <div
-                        id="accordionCardMobileKuvekino"
-                        class="flex gap-[24px] items-center max-md:flex-col max-md:items-start max-md:gap-[18px] max-md:px-[16px]"
-                      >
-                        <div class="flex flex-row justify-between items-center max-md:items-start w-full">
-                          <div class="flex gap-[12px] items-center max-md:flex-col max-md:items-start">
+                      <div id="accordionCardMobileKuvekino" class="flex gap-[24px] items-center max-md:flex-col max-md:items-start max-md:gap-[18px]">
+                        <div class="flex flex-row justify-between items-start max-md:items-start w-full max-md:px-[16px] max-md:pb-[40px]">
+                          <div class="flex gap-[12px] items-start flex-col">
                             <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Промпарк Кувекино</h2>
                             <div
-                              class="leading-[130%] flex items-center gap-[10px] relative px-[14px] py-[4px] max-md:py-[8px] rounded-full border-[1px] border-[var(--pikBlack)]"
+                              class="leading-[130%] max-md:leading-[90%] flex items-center gap-[10px] relative px-[14px] py-[4px] max-md:py-[8px] rounded-full border-[1px] border-[var(--white)]"
                             >
                               Варшавское шоссе
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                                 <path
                                   d="M9.54502 0.120354C10.9323 -0.41293 12.3111 0.916837 11.8282 2.3225L9.18466 10.0178C8.89231 10.8689 8.09884 11.2296 7.40244 11.2131C6.71139 11.1966 5.94738 10.8106 5.64463 9.99926C5.43554 9.43863 5.20866 8.90666 4.97373 8.47485C4.72759 8.02248 4.51562 7.76165 4.37021 7.65453C4.24381 7.56166 3.93197 7.42965 3.39658 7.29516C2.88896 7.16767 2.26673 7.05798 1.5997 6.96606C0.652841 6.83537 0.125837 6.05956 0.0206022 5.3391C-0.085201 4.6145 0.206666 3.70975 1.12509 3.35668L9.54502 0.120354ZM10.0831 1.52074L1.66318 4.75707C1.59359 4.78388 1.55875 4.82252 1.53525 4.87035C1.50703 4.928 1.48955 5.01659 1.50498 5.12231C1.53822 5.34992 1.6732 5.46152 1.80478 5.47973C2.49848 5.57532 3.17991 5.69393 3.76181 5.84008C4.31508 5.97904 4.87976 6.16678 5.26084 6.4475C5.68129 6.75743 6.02075 7.26116 6.29111 7.75805C6.57285 8.2759 6.82795 8.87972 7.0499 9.47485C7.09762 9.60275 7.23503 9.7093 7.43857 9.7141C7.6368 9.7187 7.73226 9.6279 7.76572 9.53051L10.4093 1.8352C10.4783 1.63439 10.2813 1.44456 10.0831 1.52074Z"
-                                  fill="#181818"
+                                  fill="var(--white)"
                                 />
                               </svg>
                             </div>
                           </div>
-                          <div class="cursor-pointer openBtnWrap h-full">
-                            <div class="openBtn"></div>
+                          <div class="hidden max-md:flex w-[22px] aspect-square justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="7" viewBox="0 0 16 7" fill="none">
+                              <path d="M8 7L7.20001e-07 1.61725L1.22633 -6.45778e-07L8 4.55762L14.7737 -5.36046e-08L16 1.61725L8 7Z" fill="white" />
+                            </svg>
+                          </div>
+                          <div class="max-md:hidden cursor-pointer flex items-center gap-[12px]">
+                            <p>Выбрать лот</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                              <path d="M9 7.5L1.39529 15L0 13.6239L6.20942 7.5L0 1.37608L1.39529 0L9 7.5Z" fill="white" />
+                            </svg>
                           </div>
                         </div>
                       </div>
                       <div class="accordionCard flex flex-col gap-[44px] max-md:gap-6">
                         <div class="flex flex-col">
-                          <!-- мобильное фото -->
-                          <div class="hidden max-md:flex w-full flex-col py-[40px] gap-[24px] max-md:px-[16px]">
-                            <img
-                              src="https://optim.tildacdn.com/tild3734-6235-4566-a431-373930653834/-/format/webp/arenda_info_01.jpg.webp"
-                              alt="Склад Лайт индастриал Сенькино"
-                              class="h-[194px] object-cover"
-                            />
-                            <div class="flex flex-col uppercase">
-                              <p class="text-[var(--pikBlack)] text-[12px] pMed">лайт индастриал</p>
-                              <p class="text-[var(--grey)] text-[12px] pMed">от 579 м²</p>
-                            </div>
-                          </div>
                           <div class="flex flex-col w-full max-md:px-[16px] max-md:pb-[40px]">
-                            <div
-                              class="py-[40px] border-b border-[var(--stroke-light)] max-md:pb-[24px] max-md:pt-[24px] max-md:border-t max-md:border-[var(--stroke-light)]"
-                            >
+                            <div class="py-[40px] border-b border-[var(--stroke-dark)] max-md:pb-[24px] max-md:pt-[0px]">
                               <p class="leading-[130%]">
                                 г. Москва, поселение Десеновское,
                                 <br />
                                 вблизи деревень Кувекино и Евсеево
                               </p>
                             </div>
-                            <div class="py-[40px] max-md:pt-[24px] max-md:pb-[0px]">
-                              <p class="leading-[130%]">16 км от МКАД по Калужскому или Варшавскому ш.</p>
+                            <div class="pt-[40px] max-md:pt-[24px] max-md:pb-[0px]">
+                              <p class="leading-[130%]">16 км от МКАД по Калужскому или Варшавскому ш.</p>
                             </div>
                           </div>
                           <!-- мобильный список лотов Кувекино -->
-                          <div class="hidden max-md:flex py-[40px] max-md:px-[16px] border-t border-[var(--stroke-light)]">
+                          <div
+                            class="hidden bg-[var(--white)] max-md:flex py-[40px] max-md:px-[16px] border-t border-[var(--stroke-light)] text-[var(--pikBlack)]"
+                          >
                             <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Список лотов</h2>
                           </div>
-                          <div class="hidden max-md:flex border-[var(--stroke-light)] w-full gap-[40px] flex flex-col max-md:px-[16px]">
+                          <div
+                            class="hidden bg-[var(--white)] max-md:flex border-[var(--stroke-light)] w-full gap-[40px] flex flex-col max-md:px-[16px] pb-[20px]"
+                          >
                             <div
                               id="lotsKuvekinoMobile"
                               class="flex flex-col h-full overflow-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -1649,63 +1376,58 @@
                   </div>
                   <!-- Промпарк Балашиха -->
                   <div
-                    class="cursor-pointer financeProgram flex w-full justify-between px-[40px] py-[60px] border-b-[1px] border-[#18181815] max-md:px-[0px] max-md:py-[40px]"
+                    class="cursor-pointer financeProgram flex w-full justify-between px-[40px] py-[40px] max-md:border-b-[1px] border-[var(--stroke-light)] max-md:px-[0px] max-md:pt-[40px] max-md:pb-[0px]"
                     id="balashikhaAccordion"
                   >
                     <div class="w-full flex flex-col">
-                      <div
-                        id="accordionCardMobileBalashikha"
-                        class="flex gap-[24px] items-center max-md:flex-col max-md:items-start max-md:gap-[18px] max-md:px-[16px]"
-                      >
-                        <div class="flex flex-row justify-between items-center max-md:items-start w-full">
-                          <div class="flex gap-[12px] items-center max-md:flex-col max-md:items-start">
+                      <div id="accordionCardMobileBalashikha" class="flex gap-[24px] items-center max-md:flex-col max-md:items-start max-md:gap-[18px]">
+                        <div class="flex flex-row justify-between items-start max-md:items-start w-full max-md:px-[16px] max-md:pb-[40px]">
+                          <div class="flex gap-[12px] items-start flex-col">
                             <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Промпарк Балашиха</h2>
                             <div
-                              class="leading-[130%] flex items-center gap-[10px] relative px-[14px] py-[4px] max-md:py-[8px] rounded-full border-[1px] border-[var(--pikBlack)]"
+                              class="leading-[130%] max-md:leading-[90%] flex items-center gap-[10px] relative px-[14px] py-[4px] max-md:py-[8px] rounded-full border-[1px] border-[var(--white)]"
                             >
                               Шоссе Энтузиастов
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                                 <path
                                   d="M9.54502 0.120354C10.9323 -0.41293 12.3111 0.916837 11.8282 2.3225L9.18466 10.0178C8.89231 10.8689 8.09884 11.2296 7.40244 11.2131C6.71139 11.1966 5.94738 10.8106 5.64463 9.99926C5.43554 9.43863 5.20866 8.90666 4.97373 8.47485C4.72759 8.02248 4.51562 7.76165 4.37021 7.65453C4.24381 7.56166 3.93197 7.42965 3.39658 7.29516C2.88896 7.16767 2.26673 7.05798 1.5997 6.96606C0.652841 6.83537 0.125837 6.05956 0.0206022 5.3391C-0.085201 4.6145 0.206666 3.70975 1.12509 3.35668L9.54502 0.120354ZM10.0831 1.52074L1.66318 4.75707C1.59359 4.78388 1.55875 4.82252 1.53525 4.87035C1.50703 4.928 1.48955 5.01659 1.50498 5.12231C1.53822 5.34992 1.6732 5.46152 1.80478 5.47973C2.49848 5.57532 3.17991 5.69393 3.76181 5.84008C4.31508 5.97904 4.87976 6.16678 5.26084 6.4475C5.68129 6.75743 6.02075 7.26116 6.29111 7.75805C6.57285 8.2759 6.82795 8.87972 7.04990 9.47485C7.09762 9.60275 7.23503 9.70930 7.43857 9.71410C7.63680 9.71870 7.73226 9.62790 7.76572 9.53051L10.4093 1.83520C10.4783 1.63439 10.2813 1.44456 10.0831 1.52074Z"
-                                  fill="#181818"
+                                  fill="var(--white)"
                                 />
                               </svg>
                             </div>
                           </div>
-                          <div class="cursor-pointer openBtnWrap h-full">
-                            <div class="openBtn"></div>
+                          <div class="hidden max-md:flex w-[22px] aspect-square justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="7" viewBox="0 0 16 7" fill="none">
+                              <path d="M8 7L7.20001e-07 1.61725L1.22633 -6.45778e-07L8 4.55762L14.7737 -5.36046e-08L16 1.61725L8 7Z" fill="white" />
+                            </svg>
+                          </div>
+                          <div class="max-md:hidden cursor-pointer flex items-center gap-[12px]">
+                            <p>Выбрать лот</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                              <path d="M9 7.5L1.39529 15L0 13.6239L6.20942 7.5L0 1.37608L1.39529 0L9 7.5Z" fill="white" />
+                            </svg>
                           </div>
                         </div>
                       </div>
                       <div class="accordionCard flex flex-col gap-[44px] max-md:gap-6">
                         <div class="flex flex-col">
-                          <!-- мобильное фото -->
-                          <div class="hidden max-md:flex w-full flex-col py-[40px] gap-[24px] max-md:px-[16px]">
-                            <img
-                              src="https://optim.tildacdn.com/tild3734-6235-4566-a431-373930653834/-/format/webp/arenda_info_01.jpg.webp"
-                              alt="Склад Лайт индастриал Сенькино"
-                              class="h-[194px] object-cover"
-                            />
-                            <div class="flex flex-col uppercase">
-                              <p class="text-[var(--pikBlack)] text-[12px] pMed">лайт индастриал</p>
-                              <p class="text-[var(--grey)] text-[12px] pMed">от 579 м²</p>
-                            </div>
-                          </div>
                           <div class="flex flex-col w-full max-md:px-[16px] max-md:pb-[40px]">
-                            <div
-                              class="py-[40px] border-b border-[var(--stroke-light)] max-md:pb-[24px] max-md:pt-[24px] max-md:border-t max-md:border-[var(--stroke-light)]"
-                            >
+                            <div class="py-[40px] border-b border-[var(--stroke-dark)] max-md:pb-[24px] max-md:pt-[0px]">
                               <p class="leading-[130%]">МО, город Балашиха</p>
                             </div>
-                            <div class="py-[40px] max-md:pt-[24px] max-md:pb-[0px]">
+                            <div class="pt-[40px] max-md:pt-[24px] max-md:pb-[0px]">
                               <p class="leading-[130%]">15 минут до МКАД, шоссе Энтузиастов</p>
                             </div>
                           </div>
                           <!-- мобильный список лотов Балашиха -->
-                          <div class="hidden max-md:flex py-[40px] max-md:px-[16px] border-t border-[var(--stroke-light)]">
+                          <div
+                            class="hidden bg-[var(--white)] max-md:flex py-[40px] max-md:px-[16px] border-t border-[var(--stroke-light)] text-[var(--pikBlack)]"
+                          >
                             <h2 class="cursor-pointer leading-none font-medium text-[28px] max-md:text-[20px] uppercase">Список лотов</h2>
                           </div>
-                          <div class="hidden max-md:flex border-[var(--stroke-light)] w-full gap-[40px] flex flex-col max-md:px-[16px]">
+                          <div
+                            class="hidden bg-[var(--white)] max-md:flex border-[var(--stroke-light)] w-full gap-[40px] flex flex-col max-md:px-[16px] pb-[20px]"
+                          >
                             <div
                               id="lotsBalashikhaMobile"
                               class="flex flex-col h-full overflow-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -1729,7 +1451,7 @@
                   </div>
                 </div>
               </div>
-              <div class="loti_fotka w-1/2 max-md:w-full relative max-md:h-[194px]">
+              <div class="w-1/2 max-md:w-full relative max-md:h-[194px] max-md:hidden">
                 <div
                   id="listSenkino"
                   class="border-l border-[var(--stroke-light)] absolute bg-[var(--white)] w-full h-full px-[40px] py-[60px] gap-[40px] flex flex-col"
@@ -1844,92 +1566,12 @@
             </div>
           </section>
 
-          <!-- Форма для презентации -->
-          <section
-            class="bg-[var(--lightGrey)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[16px] border-b-[1px] border-t-[1px] border-[var(--stroke-light)]"
-          >
-            <div class="flex flex-col gap-[60px] w-1/2 max-md:w-full px-[40px] py-[60px] max-md:px-[0] max-md:pt-[40px] max-md:pb-[24px]">
-              <h2 class="title">Получить презентацию о формате лайт индастриал</h2>
-            </div>
-            <div class="relative flex flex-col w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]">
-              <div class="W_FormPart h-full">
-                <div class="custom-form h-full">
-                  <form
-                    id="presentation-send"
-                    action="#"
-                    method="post"
-                    novalidate
-                    class="custom-form__form js-custom-form__form flex flex-col justify-between h-full"
-                  >
-                    <div class="px-[40px] py-[38px] max-md:px-[0px] max-md:pt-[40px] max-md:pb-[0px]">
-                      <div class="flex items-center w-full h-[60px] max-md:px-[0] border-b-[1px] max-md:pb-[24px] border-[#18181815] max-md:h-fit">
-                        <input
-                          type="email"
-                          autocomplete="email"
-                          name="email"
-                          required
-                          placeholder="Электронная почта"
-                          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$"
-                          data-error-required="Пожалуйста, заполните все обязательные поля"
-                          data-error-pattern="Укажите, пожалуйста, корректный email"
-                          class="custom-form__input"
-                        />
-                      </div>
-                    </div>
-                    <div class="captcha-container js-captcha-container"></div>
-                    <input type="hidden" name="utm_source" />
-                    <input type="hidden" name="utm_medium" />
-                    <input type="hidden" name="utm_campaign" />
-                    <input type="hidden" name="utm_term" />
-                    <input type="hidden" name="utm_content" />
-                    <input type="hidden" name="cid" />
-                    <input type="hidden" name="id" value="Кувекино" />
-                    <input type="hidden" name="hostname" />
-                    <input type="hidden" name="request_url" />
-                    <input type="hidden" name="ct_session_id" />
-                    <div
-                      class="flex flex-row max-md:flex-col justify-between items-center max-md:items-start max-md:gap-[30px] w-full px-[40px] py-[60px] max-md:px-[0] max-md:pt-[40px] max-md:pb-[40px]"
-                    >
-                      <label class="custom-form__checkbox" style="width: 100%">
-                        <input
-                          type="checkbox"
-                          class="custom-form__checkbox-input js-custom-form__input"
-                          required
-                          data-error-required="Дайте согласие на обработку данных"
-                        />
-                        <span class="custom-form__checkbox-icon"></span>
-                        <p class="text-[11px] leading-[16px] text-[var(--grey)] uppercase" style="margin-left: 20px; width: 100%">
-                          Соглашаюсь на обработку,
-                          <br />
-                          <a class="underline text-[#181818]" target="_blank" href="https://parametr.space/agreement">персональных данных</a>
-                        </p>
-                      </label>
-                      <button class="button primary">
-                        Отправить
-                        <!-- button icon -->
-                        <div class="relative w-[20px] h-[20px] rounded-full bg-white">
-                          <!-- <img class="w-[20px] h-[20px] invert" src="https://static.tildacdn.com/tild3761-3933-4162-b335-333139326538/IconPlus.svg" alt="" /> -->
-                          <svg class="centered" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path
-                              d="M12.6084 7.60929L13 8L12.6084 8.39071L7.99955 13L7.2182 12.2186L10.8837 8.55275H3V7.44725H10.8837L7.2182 3.78142L7.99955 3L12.6084 7.60929Z"
-                              fill="var(--pikBlack)"
-                            />
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </section>
-
           <!-- Наши резиденты -->
           <section
             class="max-md:border-b-[1px] border-[var(--stroke-light)] flex flex-col w-full h-fit"
             data-slider
             data-mode="translate"
-            data-infinite="false"
+            data-infinite="true"
             data-mobile-carousel="true"
             data-swiper-all-screens="true"
             data-swiper-edge="0"
@@ -2481,6 +2123,241 @@
             </div>
           </section>
 
+          <!-- Аренда помещений, тёмный блок -->
+          <section class="bg-[var(--pikBlack)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[0px] border-b-[1px] border-[#18181815]">
+            <div class="flex flex-col gap-[60px] w-1/2 max-md:w-full py-[60px] px-[40px] max-md:px-[16px] max-md:py-[40px]">
+              <h2 class="title white">Аренда помещений лайт индастриал</h2>
+            </div>
+            <div
+              class="flex flex-col py-[20px] w-1/2 max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[var(--stroke-dark)] max-md:py-[0px] max-md:border-t-[1px] max-md:border-t-[var(--stroke-dark)]"
+            >
+              <div
+                class="h-auto flex flex-col gap-[40px] max-md:gap-[24px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[var(--stroke-dark)] max-md:px-[16px]"
+              >
+                <p class="textSubtitle white">Готово ко въезду</p>
+                <p class="row_text_small white">Помещения с финишной отделкой</p>
+              </div>
+              <div
+                class="h-auto flex flex-col gap-[40px] max-md:gap-[24px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] border-b-[1px] border-[var(--stroke-dark)] max-md:px-[16px]"
+              >
+                <p class="textSubtitle white">Удобный выезд на федеральные трассы</p>
+                <p class="row_text_small white">Комфорт для логистики и доступа персонала на объект</p>
+              </div>
+              <div class="h-auto flex flex-col gap-[40px] max-md:gap-[24px] w-full h-[90px] px-[40px] py-[40px] max-md:px-[0] max-md:px-[16px]">
+                <p class="textSubtitle white">Арендные каникулы</p>
+                <p class="row_text_small white">30 дней</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Галерея -->
+          <section
+            id="SectionGallery"
+            class="flex flex-col w-full h-fit"
+            data-slider
+            data-mode="translate"
+            data-infinite="true"
+            data-mobile-carousel="true"
+            data-swiper-all-screens="true"
+            data-swiper-wide-slides="true"
+            data-swiper-edge="0"
+            data-swiper-offset-after-desktop="40"
+          >
+            <div
+              class="flex flex-row w-full px-[40px] pt-[60px] pb-[40px] max-md:pt-[40px] max-md:pb-[24px] max-md:px-[16px] max-md:gap-[20px] items-center max-md:flex-row justify-between"
+            >
+              <div class="flex flex-row gap-[40px] items-center">
+                <h2 class="title">фото реализованных проектов</h2>
+              </div>
+              <!-- counter -->
+              <div class="max-md:hidden flex flex-row gap-[5px]">
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-prev>
+                  <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
+                </div>
+                <div class="flex items-center justify-center w-[40px] h-[40px] rounded-full border-[1px] border-[#181818] cursor-pointer" data-next>
+                  <img class="w-[40px] h-[40px] invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative w-full h-[580px] max-md:h-[470px] overflow-x-hidden max-md:flex max-md:flex-col max-md:justify-between max-md:items-end max-md:pb-[12px] max-md:px-[16px]"
+            >
+              <div
+                class="h-full pb-[60px] max-md:pb-[0px] min-h-0 min-w-fit w-fit max-w-fit flex flex-row items-stretch max-md:flex-1 max-md:min-h-0"
+                data-track
+              >
+                <div class="galleryItem first group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem second group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem third group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem fourth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem fifth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem sixth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem seventh group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem eighth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+                <div class="galleryItem ninth group w-[884px] max-md:w-[100vw] h-full" data-slide></div>
+              </div>
+              <!-- counter mobile -->
+              <div class="hidden max-md:flex w-full justify-between items-center py-[12px] max-md:px-[16px]">
+                <p class="max-md:pt-[4px] text-[46px] font-normal text-[var(--grey)]" data-counter>
+                  <span class="text-[var(--pikBlack)]" data-current>1</span>
+                  /
+                  <span data-total>9</span>
+                </p>
+                <div class="hidden max-md:flex flex-row gap-[5px] max-md:gap-[12px] max-md:pb-[0px]">
+                  <div
+                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack)] cursor-pointer"
+                    data-prev
+                  >
+                    <img class="invert" src="https://static.tildacdn.com/tild3038-3466-4532-b264-626237366461/IconLeft.svg" alt="" />
+                  </div>
+                  <div
+                    class="flex items-center justify-center max-md:w-[50px] max-md:h-[50px] w-[42px] h-[42px] rounded-full border-[1px] border-[var(--pikBlack) ] cursor-pointer"
+                    data-next
+                  >
+                    <img class="invert" src="https://static.tildacdn.com/tild3435-3333-4462-a135-393165356164/IconRight.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Расположение -->
+          <section id="Territory" class="flex flex-row max-md:flex-col w-full h-fit border-b-[1px] border-[#18181815]">
+            <div class="hidden max-md:flex flex-row w-full px-[16px] pt-[40px] pb-[24px] items-center justify-between">
+              <div class="flex flex-row gap-[40px] items-center">
+                <h2 class="title">Расположение</h2>
+              </div>
+            </div>
+            <div class="gap-[60px] w-1/2 max-md:w-full aspect-square bg-white flex items-center justify-center" id="map"></div>
+            <div
+              class="flex max-md:hidden flex-col w-1/2 max-h-[720px] overflow-y-scroll max-md:w-full border-l-[1px] max-md:border-l-[0px] border-[#18181815]"
+            >
+              <div class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
+                <img
+                  class="w-full h-[280px]"
+                  src="https://optim.tildacdn.com/tild3734-6235-4566-a431-373930653834/-/format/webp/arenda_info_01.jpg.webp"
+                  alt=""
+                />
+                <div class="flex flex-col w-full h-fit gap-[24px]">
+                  <div class="flex flex-row w-full justify-between">
+                    <div class="flex flex-col">
+                      <p class="text-[13px] text-[var(--grey)] uppercase">Промышленный парк</p>
+                      <div class="flex flex-row items-center gap-[10px]">
+                        <h3 class="text-[28px] uppercase leading-[30px]">Сенькино</h3>
+                        <!-- <div class="pb-[3px]">
+                                    <div class="w-[20px] rounded-full bg-[#181818]">
+                                      <img
+                                        class="w-[20px] h-[20px]"
+                                        src="https://static.tildacdn.com/tild3761-3933-4162-b335-333139326538/IconPlus.svg"
+                                        alt="" />
+                                    </div>
+                                  </div> -->
+                      </div>
+                    </div>
+                    <div class="flex flex-col">
+                      <p class="text-[13px] uppercase">лайт индастриал</p>
+                      <p class="text-[13px] text-[var(--grey)] uppercase text_right">от 580 м²</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col w-full">
+                    <div class="py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">1-я линия ЦКАД и А-107, Троицк</p>
+                    </div>
+                    <div class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">5 км до калужского шоссе</p>
+                      <p class="text-[13px] uppercase text-[var(--grey)]">10 минут</p>
+                    </div>
+                    <div class="flex flex-row justify-between pt-[26px]">
+                      <p class="text-[13px] uppercase">14 км до киевского шоссе</p>
+                      <p class="text-[13px] uppercase text-[var(--grey)]">15 минут</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px] border-b-[1px] border-[#18181815]">
+                <img
+                  class="w-full h-[280px]"
+                  src="https://optim.tildacdn.com/tild6263-3665-4562-a435-633537383834/-/format/webp/arenda_info_02.jpg.webp"
+                  alt=""
+                />
+                <div class="flex flex-col w-full h-fit gap-[24px]">
+                  <div class="flex flex-row w-full justify-between">
+                    <div class="flex flex-col">
+                      <p class="text-[13px] text-[var(--grey)] uppercase">Промышленный парк</p>
+                      <div class="flex flex-row items-center gap-[10px]">
+                        <h3 class="text-[28px] uppercase leading-[30px]">Кувекино</h3>
+                        <!-- <div class="pb-[3px]">
+                                    <div class="w-[20px] rounded-full bg-[#181818]">
+                                      <img
+                                        class="w-[20px] h-[20px]"
+                                        src="https://static.tildacdn.com/tild3761-3933-4162-b335-333139326538/IconPlus.svg"
+                                        alt="" />
+                                    </div>
+                                  </div> -->
+                      </div>
+                    </div>
+                    <div class="flex flex-col">
+                      <p class="text-[13px] uppercase">лайт индастриал</p>
+                      <p class="text-[13px] text-[var(--grey)] uppercase text_right">от 580 м²</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col w-full">
+                    <div class="py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">16 км от МКАД, Троицк</p>
+                    </div>
+                    <div class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">5 км до калужского шоссе</p>
+                    </div>
+                    <div class="flex flex-row justify-between pt-[26px]">
+                      <p class="text-[13px] uppercase">10 км до Варшавского шоссе</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="group flex flex-col p-[38px] max-md:p-[30px] gap-[40px]">
+                <img
+                  class="w-full h-[280px]"
+                  src="https://optim.tildacdn.com/tild3264-3262-4035-a430-356463333138/-/format/webp/arenda_info_03.jpg.webp"
+                  alt=""
+                />
+                <div class="flex flex-col w-full h-fit gap-[24px]">
+                  <div class="flex flex-row w-full justify-between">
+                    <div class="flex flex-col">
+                      <p class="text-[13px] text-[var(--grey)] uppercase">Промышленный парк</p>
+                      <div class="flex flex-row items-center gap-[10px]">
+                        <h3 class="text-[28px] uppercase leading-[30px]">балашиха</h3>
+                        <!-- <div class="pb-[3px]">
+                                    <div class="w-[20px] rounded-full bg-[#181818]">
+                                      <img
+                                        class="w-[20px] h-[20px]"
+                                        src="https://static.tildacdn.com/tild3761-3933-4162-b335-333139326538/IconPlus.svg"
+                                        alt="" />
+                                    </div>
+                                  </div> -->
+                      </div>
+                    </div>
+                    <div class="flex flex-col">
+                      <p class="text-[13px] uppercase">лайт индастриал</p>
+                      <p class="text-[13px] text-[var(--grey)] uppercase text_right">скоро</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-col w-full">
+                    <div class="py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">15 минут до МКАД, шоссе Энтузиастов</p>
+                    </div>
+                    <div class="flex flex-row justify-between py-[26px] border-b border-[var(--stroke-light)]">
+                      <p class="text-[13px] uppercase">ПРЯМОЙ ЗАЕЗД И ВЫЕЗД НА М-7</p>
+                      <p class="text-[13px] uppercase text-[var(--grey)]">Рядом трасса М-12</p>
+                    </div>
+                    <div class="flex flex-row justify-between pt-[26px]">
+                      <p class="text-[13px] uppercase">15 мин до ж/д станции Балашиха</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <!-- ФОС -->
           <section id="fos" class="bg-[var(--lightGrey)] flex flex-row max-md:flex-col w-full h-fit max-md:px-[16px] border-b-[1px] border-[#18181815]">
             <div class="flex flex-col gap-[60px] w-1/2 max-md:w-full px-[40px] py-[60px] max-md:px-[0] max-md:pt-[40px] max-md:pb-[24px]">
@@ -2607,11 +2484,11 @@
     <!-- подвал -->
     <section id="footer" class="w-full">
       <!-- десктоп-подвал -->
-      <div
-        class="max-[768px]:hidden relative w-full p-[60px] bg-[var(--pikBlack)] flex flex-col gap-[60px] uppercase text-[13px]">
+      <div class="max-[768px]:hidden relative w-full p-[60px] bg-[var(--pikBlack)] flex flex-col gap-[60px] uppercase text-[13px]">
         <div
           class="cursor-pointer absolute top-[60px] max-[1440px]:right-[32px] right-[60px] rounded-full border-[1px] border-[var(--white)] w-[32px] h-[32px] flex items-center justify-center mx-auto"
-          data-scroll-top>
+          data-scroll-top
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M10 16L10 4M16 10L10 4L4 10" stroke="white" stroke-width="1.2" />
           </svg>
@@ -2621,60 +2498,72 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="153" height="20" viewBox="0 0 153 20" fill="none">
               <path
                 d="M31.2041 9.84567C31.2041 9.51171 31.1391 9.181 31.0129 8.87254C30.8866 8.56407 30.7016 8.28383 30.4685 8.0479C30.2353 7.81197 29.9584 7.62498 29.6538 7.49752C29.3493 7.37023 29.0231 7.30505 28.6935 7.30573H24.3079C23.6433 7.30573 23.006 7.57331 22.5363 8.04979C22.0664 8.52609 21.8024 9.17211 21.8024 9.84567C21.8039 10.5189 22.0682 11.1641 22.5378 11.6402C23.0074 12.1162 23.6438 12.3843 24.3079 12.3856H28.6935C29.3584 12.3856 29.9962 12.1182 30.467 11.6421C30.9376 11.1658 31.2028 10.5198 31.2041 9.84567ZM37.4702 3.49324V16.1981H33.7094V13.6476C33.1266 14.4388 32.3697 15.0813 31.4988 15.524C30.6281 15.9666 29.6677 16.1976 28.6935 16.1981H24.3079C22.646 16.1981 21.0522 15.5288 19.877 14.3375C18.7019 13.1463 18.0418 11.5305 18.0418 9.84567C18.0418 8.16099 18.7019 6.54508 19.877 5.35381C21.0522 4.16254 22.646 3.49324 24.3079 3.49324H28.6935C29.6679 3.49256 30.6288 3.72284 31.4997 4.16578C32.3707 4.60855 33.1274 5.25166 33.7094 6.04379V3.49324H37.4702Z"
-                fill="white" />
+                fill="white"
+              />
               <path
                 d="M68.8633 9.84567C68.8633 9.51171 68.7984 9.181 68.6721 8.87254C68.546 8.56407 68.3609 8.28383 68.1277 8.0479C67.8944 7.81197 67.6178 7.62498 67.3131 7.49752C67.0085 7.37023 66.6822 7.30505 66.3529 7.30573H61.967C61.3026 7.30573 60.6654 7.57331 60.1954 8.04979C59.7257 8.52609 59.4617 9.17211 59.4617 9.84567C59.4631 10.5189 59.7274 11.1641 60.197 11.6402C60.6666 12.1162 61.303 12.3843 61.967 12.3856H66.3529C67.0178 12.3856 67.6555 12.1182 68.1262 11.6421C68.5969 11.1658 68.8619 10.5198 68.8633 9.84567ZM75.1294 3.49324V16.1981H71.3688V13.6476C70.7857 14.4388 70.0288 15.0813 69.1582 15.524C68.2875 15.9666 67.3269 16.1976 66.3529 16.1981H61.967C60.3053 16.1981 58.7114 15.5288 57.5364 14.3375C56.3612 13.1463 55.701 11.5305 55.701 9.84567C55.701 8.16099 56.3612 6.54508 57.5364 5.35381C58.7114 4.16254 60.3053 3.49324 61.967 3.49324H66.3529C67.327 3.49256 68.288 3.72284 69.159 4.16578C70.0299 4.60855 70.7866 5.25166 71.3688 6.04379V3.49324H75.1294Z"
-                fill="white" />
-              <path
-                d="M97.9083 3.49324V16.1981H94.1479V7.30043H89.7628V16.1981H86.0023V7.30043H81.6161V16.1981H77.8554V3.49324H97.9083Z"
-                fill="white" />
+                fill="white"
+              />
+              <path d="M97.9083 3.49324V16.1981H94.1479V7.30043H89.7628V16.1981H86.0023V7.30043H81.6161V16.1981H77.8554V3.49324H97.9083Z" fill="white" />
               <path d="M118.94 0V16.1979H133.982V12.3855H122.7V7.30025H133.982V3.49307H122.7V0H118.94Z" fill="white" />
-              <path
-                d="M143.531 3.49324L140.469 12.1832V3.49324H136.707V16.1981H143.047L146.178 7.30043H153V3.49324H143.531Z"
-                fill="white" />
-              <path
-                d="M47.0137 3.49324L43.9568 12.1832V3.49324H40.1962V16.1981H46.5304L49.6661 7.30043H55.1811V3.49324H47.0137Z"
-                fill="white" />
+              <path d="M143.531 3.49324L140.469 12.1832V3.49324H136.707V16.1981H143.047L146.178 7.30043H153V3.49324H143.531Z" fill="white" />
+              <path d="M47.0137 3.49324L43.9568 12.1832V3.49324H40.1962V16.1981H46.5304L49.6661 7.30043H55.1811V3.49324H47.0137Z" fill="white" />
               <path
                 d="M112.758 8.61043H104.19C104.19 7.54542 105.53 6.98632 106.359 6.98632H112.758V8.61043ZM106.186 3.49324C104.525 3.49324 102.93 4.16254 101.756 5.35381C100.581 6.54508 99.9199 8.16099 99.9199 9.84567C99.9199 11.5305 100.581 13.1463 101.756 14.3375C102.93 15.5288 104.525 16.1981 106.186 16.1981H116.213V13.0299H106.365C105.53 13.0299 104.19 12.4441 104.19 11.4005H116.213V3.49324H106.186Z"
-                fill="white" />
+                fill="white"
+              />
               <path
                 d="M10.1317 3.49324H0V20H3.85002V16.1981H10.1528C11.8147 16.1981 13.4085 15.5288 14.5834 14.3375C15.7586 13.1463 16.4189 11.5305 16.4189 9.84567C16.4189 8.16099 15.7586 6.54508 14.5834 5.35381C13.4085 4.16254 11.8147 3.49324 10.1528 3.49324M10.1528 12.3856H3.85002V7.30573H10.1528C10.8172 7.30573 11.4544 7.57331 11.9244 8.04979C12.3941 8.52609 12.6581 9.17211 12.6581 9.84567C12.6567 10.5189 12.3924 11.1641 11.9228 11.6402C11.4532 12.1162 10.8168 12.3843 10.1528 12.3856Z"
-                fill="white" />
+                fill="white"
+              />
             </svg>
             <div class="flex gap-[12px]">
               <a href="https://t.me/prompik" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <rect width="32" height="32" rx="16" fill="white" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
                     d="M22.2391 9.10262C22.4481 9.01176 22.6769 8.98042 22.9016 9.01187C23.1263 9.04331 23.3388 9.1364 23.5169 9.28144C23.6949 9.42647 23.8321 9.61815 23.9141 9.83653C23.9961 10.0549 24.02 10.292 23.9832 10.5231L22.0648 22.5415C21.8788 23.7008 20.6473 24.3656 19.6179 23.7881C18.7568 23.305 17.478 22.5607 16.3276 21.7841C15.7525 21.3953 13.9906 20.1504 14.2072 19.2645C14.3932 18.5071 17.3536 15.6609 19.0453 13.9687C19.7092 13.3038 19.4064 12.9203 18.6224 13.5319C16.6753 15.0502 13.5491 17.3592 12.5155 18.0092C11.6037 18.5823 11.1284 18.6801 10.56 18.5823C9.52299 18.404 8.56129 18.128 7.77637 17.7916C6.71571 17.3373 6.7673 15.8312 7.77552 15.3927L22.2391 9.10262Z"
-                    fill="#181818" />
+                    fill="#181818"
+                  />
                 </svg>
               </a>
               <a href="https://max.ru/u/f9LHodD0cOIGdG71us6Q2KUplFIhpfNZleILEWuMZb8Hw4rEzUFUktEJggM" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <rect width="32" height="32" rx="16" fill="white" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
                     d="M16.2149 25.9429C14.2521 25.9429 13.34 25.6551 11.7545 24.504C10.7517 25.799 7.57594 26.8111 7.43743 25.0796C7.43743 23.7798 7.1509 22.6815 6.82616 21.4824C6.43935 20.0051 6 18.36 6 15.9763C6 10.2831 10.6514 6 16.1623 6C21.6781 6 25.9999 10.4941 25.9999 16.029C26.0184 21.4783 21.6406 25.9139 16.2149 25.9429ZM16.2961 10.921C13.6122 10.7819 11.5205 12.6476 11.0573 15.5734C10.6752 17.9955 11.3534 20.9452 11.9312 21.0987C12.2082 21.1658 12.9054 20.5999 13.34 20.1634C14.0586 20.662 14.8954 20.9614 15.766 21.0315C18.5469 21.1659 20.9231 19.0396 21.1098 16.2497C21.2185 13.4538 19.0773 11.0858 16.2961 10.9258V10.921Z"
-                    fill="#181818" />
+                    fill="#181818"
+                  />
                 </svg>
               </a>
               <a href="https://rutube.ru/channel/65039289/" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <g clip-path="url(#clip0_214_385)">
                     <rect width="32" height="32" rx="16" fill="white" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
                       d="M24.1275 0H16.7028C16.639 0.57104 16.6061 1.15198 16.6061 1.74094C16.6061 3.81721 17.0141 5.79388 17.7509 7.58816L19.0182 7.58684H20.5242C21.4148 7.58684 22.2022 7.68712 22.8843 7.89489L22.9121 7.90339L22.9397 7.91299C23.6562 8.163 24.2738 8.54739 24.8186 9.08586L24.8485 9.1155L24.8769 9.1468C25.3883 9.71066 25.7691 10.3656 25.9913 11.1267C26.1972 11.8324 26.2916 12.6651 26.2916 13.6098V14.7224C26.2916 15.0863 26.2781 15.4468 26.2475 15.7995C27.6782 16.3059 29.2111 16.5806 30.8056 16.5806C31.2078 16.5806 31.6062 16.5631 32 16.5288V8.22748C32 3.68357 28.4753 0 24.1275 0ZM20.5238 9.16172H8V24H11.5582V19.1725H18.1155L21.227 24H25.2114L21.7809 19.1499C23.0456 18.954 23.6135 18.5489 24.0819 17.8813C24.5503 17.2138 24.7852 16.1465 24.7852 14.7221V13.6095C24.7852 12.7647 24.6996 12.0971 24.5503 11.5855C24.401 11.0738 24.1458 10.6288 23.7833 10.229C23.4004 9.85062 22.9742 9.58411 22.4624 9.40557C21.9506 9.24968 21.3112 9.16172 20.5238 9.16172ZM19.9482 15.9026H11.5582V12.4329H19.9482C20.4382 12.4329 20.779 12.5222 20.95 12.6781C21.121 12.834 21.227 13.1231 21.227 13.5455V14.7914C21.227 15.2364 21.121 15.5256 20.95 15.6815C20.779 15.8373 20.4382 15.9026 19.9482 15.9026Z"
-                      fill="white" />
+                      fill="white"
+                    />
                     <path
                       d="M19.9482 15.9026H11.5582V12.4329H19.9482C20.4382 12.4329 20.779 12.5222 20.95 12.6781C21.121 12.834 21.227 13.1231 21.227 13.5455V14.7914C21.227 15.2364 21.121 15.5256 20.95 15.6815C20.779 15.8373 20.4382 15.9026 19.9482 15.9026ZM20.5238 9.16172H8V24H11.5582V19.1725H18.1155L21.227 24H25.2114L21.7809 19.1499C23.0456 18.954 23.6135 18.5489 24.0819 17.8813C24.5503 17.2138 24.7852 16.1465 24.7852 14.7221V13.6095C24.7852 12.7647 24.6996 12.0971 24.5503 11.5855C24.401 11.0738 24.1458 10.6288 23.7833 10.229C23.4004 9.85062 22.9742 9.58411 22.4624 9.40557C21.9506 9.24968 21.3112 9.16172 20.5238 9.16172Z"
-                      fill="#181818" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      fill="#181818"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
                       d="M16.7028 0H24.1275C28.4753 0 32 3.68357 32 8.22748V16.5288C31.6062 16.5631 31.2078 16.5806 30.8056 16.5806C29.2111 16.5806 27.6782 16.3059 26.2475 15.7995C26.2781 15.4468 26.2916 15.0863 26.2916 14.7224V13.6098C26.2916 12.6651 26.1972 11.8324 25.9913 11.1267C25.7691 10.3656 25.3883 9.71066 24.8769 9.1468L24.8485 9.1155L24.8186 9.08586C24.2738 8.54739 23.6562 8.163 22.9397 7.91299L22.9121 7.90339L22.8843 7.89489C22.2022 7.68712 21.4148 7.58684 20.5242 7.58684H19.0182L17.7509 7.58816C17.0141 5.79388 16.6061 3.81721 16.6061 1.74094C16.6061 1.15198 16.639 0.57104 16.7028 0Z"
-                      fill="#181818" />
+                      fill="#181818"
+                    />
                     <path
                       d="M30.6667 16C30.6667 7.89982 24.1002 1.33333 16 1.33333C7.89982 1.33333 1.33333 7.89982 1.33333 16C1.33333 24.1002 7.89982 30.6667 16 30.6667V32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32V30.6667C24.1002 30.6667 30.6667 24.1002 30.6667 16Z"
-                      fill="white" />
+                      fill="white"
+                    />
                   </g>
                   <defs>
                     <clipPath id="clip0_214_385">
@@ -2713,23 +2602,23 @@
         </div>
         <div class="h-[1px] bg-[var(--grey)]"></div>
         <div class="max-w-[1142px] flex justify-between max-[1024px]:justify-start">
-          <div
-            class="max-w-[330px] max-[1024px]:max-w-[280px] text-[13px] leading-[17px] flex flex-col justify-end max-w-[330px] w-full">
+          <div class="max-w-[330px] max-[1024px]:max-w-[280px] text-[13px] leading-[17px] flex flex-col justify-end max-w-[330px] w-full">
             <div class="text-[var(--grey)]">© 2026 PArametr</div>
             <a href="https://parametr.space/privacy-policy" class="text-[var(--white)]">Политика конфиденциальности</a>
           </div>
-          <div class="max-w-[702px] text-[13px] leading-[17px] text-[var(--grey)] max-[1024px]:max-w-[326px] ">ООО «ПИК
-            КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ» 123242, РОССИЯ, Г.МОСКВА, УЛ. БАРРИКАДНАЯ, ДОМ 19, СТРОЕНИЕ 1. ОГРН 1227700702888,
-            ДАТА РЕГИСТРАЦИИ 31.10.2022 Г.</div>
+          <div class="max-w-[702px] text-[13px] leading-[17px] text-[var(--grey)] max-[1024px]:max-w-[326px]">
+            ООО «ПИК КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ» 123242, РОССИЯ, Г.МОСКВА, УЛ. БАРРИКАДНАЯ, ДОМ 19, СТРОЕНИЕ 1. ОГРН 1227700702888, ДАТА РЕГИСТРАЦИИ 31.10.2022
+            Г.
+          </div>
         </div>
       </div>
-    
+
       <!-- мобилка-подвал -->
-      <div
-        class="min-[768px]:hidden relative w-full p-[24px] bg-[var(--pikBlack)] flex flex-col gap-[40px] uppercase text-[13px]">
+      <div class="min-[768px]:hidden relative w-full p-[24px] bg-[var(--pikBlack)] flex flex-col gap-[40px] uppercase text-[13px]">
         <div
           class="cursor-pointer absolute top-[18px] right-[24px] rounded-full border-[1px] border-[var(--white)] w-[32px] h-[32px] flex items-center justify-center mx-auto"
-          data-scroll-top>
+          data-scroll-top
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M10 16L10 4M16 10L10 4L4 10" stroke="white" stroke-width="1.2" />
           </svg>
@@ -2737,25 +2626,24 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="153" height="20" viewBox="0 0 153 20" fill="none">
           <path
             d="M31.2041 9.84567C31.2041 9.51171 31.1391 9.181 31.0129 8.87254C30.8866 8.56407 30.7016 8.28383 30.4685 8.0479C30.2353 7.81197 29.9584 7.62498 29.6538 7.49752C29.3493 7.37023 29.0231 7.30505 28.6935 7.30573H24.3079C23.6433 7.30573 23.006 7.57331 22.5363 8.04979C22.0664 8.52609 21.8024 9.17211 21.8024 9.84567C21.8039 10.5189 22.0682 11.1641 22.5378 11.6402C23.0074 12.1162 23.6438 12.3843 24.3079 12.3856H28.6935C29.3584 12.3856 29.9962 12.1182 30.467 11.6421C30.9376 11.1658 31.2028 10.5198 31.2041 9.84567ZM37.4702 3.49324V16.1981H33.7094V13.6476C33.1266 14.4388 32.3697 15.0813 31.4988 15.524C30.6281 15.9666 29.6677 16.1976 28.6935 16.1981H24.3079C22.646 16.1981 21.0522 15.5288 19.877 14.3375C18.7019 13.1463 18.0418 11.5305 18.0418 9.84567C18.0418 8.16099 18.7019 6.54508 19.877 5.35381C21.0522 4.16254 22.646 3.49324 24.3079 3.49324H28.6935C29.6679 3.49256 30.6288 3.72284 31.4997 4.16578C32.3707 4.60855 33.1274 5.25166 33.7094 6.04379V3.49324H37.4702Z"
-            fill="white" />
+            fill="white"
+          />
           <path
             d="M68.8633 9.84567C68.8633 9.51171 68.7984 9.181 68.6721 8.87254C68.546 8.56407 68.3609 8.28383 68.1277 8.0479C67.8944 7.81197 67.6178 7.62498 67.3131 7.49752C67.0085 7.37023 66.6822 7.30505 66.3529 7.30573H61.967C61.3026 7.30573 60.6654 7.57331 60.1954 8.04979C59.7257 8.52609 59.4617 9.17211 59.4617 9.84567C59.4631 10.5189 59.7274 11.1641 60.197 11.6402C60.6666 12.1162 61.303 12.3843 61.967 12.3856H66.3529C67.0178 12.3856 67.6555 12.1182 68.1262 11.6421C68.5969 11.1658 68.8619 10.5198 68.8633 9.84567ZM75.1294 3.49324V16.1981H71.3688V13.6476C70.7857 14.4388 70.0288 15.0813 69.1582 15.524C68.2875 15.9666 67.3269 16.1976 66.3529 16.1981H61.967C60.3053 16.1981 58.7114 15.5288 57.5364 14.3375C56.3612 13.1463 55.701 11.5305 55.701 9.84567C55.701 8.16099 56.3612 6.54508 57.5364 5.35381C58.7114 4.16254 60.3053 3.49324 61.967 3.49324H66.3529C67.327 3.49256 68.288 3.72284 69.159 4.16578C70.0299 4.60855 70.7866 5.25166 71.3688 6.04379V3.49324H75.1294Z"
-            fill="white" />
-          <path
-            d="M97.9083 3.49324V16.1981H94.1479V7.30043H89.7628V16.1981H86.0023V7.30043H81.6161V16.1981H77.8554V3.49324H97.9083Z"
-            fill="white" />
+            fill="white"
+          />
+          <path d="M97.9083 3.49324V16.1981H94.1479V7.30043H89.7628V16.1981H86.0023V7.30043H81.6161V16.1981H77.8554V3.49324H97.9083Z" fill="white" />
           <path d="M118.94 0V16.1979H133.982V12.3855H122.7V7.30025H133.982V3.49307H122.7V0H118.94Z" fill="white" />
-          <path d="M143.531 3.49324L140.469 12.1832V3.49324H136.707V16.1981H143.047L146.178 7.30043H153V3.49324H143.531Z"
-            fill="white" />
-          <path
-            d="M47.0137 3.49324L43.9568 12.1832V3.49324H40.1962V16.1981H46.5304L49.6661 7.30043H55.1811V3.49324H47.0137Z"
-            fill="white" />
+          <path d="M143.531 3.49324L140.469 12.1832V3.49324H136.707V16.1981H143.047L146.178 7.30043H153V3.49324H143.531Z" fill="white" />
+          <path d="M47.0137 3.49324L43.9568 12.1832V3.49324H40.1962V16.1981H46.5304L49.6661 7.30043H55.1811V3.49324H47.0137Z" fill="white" />
           <path
             d="M112.758 8.61043H104.19C104.19 7.54542 105.53 6.98632 106.359 6.98632H112.758V8.61043ZM106.186 3.49324C104.525 3.49324 102.93 4.16254 101.756 5.35381C100.581 6.54508 99.9199 8.16099 99.9199 9.84567C99.9199 11.5305 100.581 13.1463 101.756 14.3375C102.93 15.5288 104.525 16.1981 106.186 16.1981H116.213V13.0299H106.365C105.53 13.0299 104.19 12.4441 104.19 11.4005H116.213V3.49324H106.186Z"
-            fill="white" />
+            fill="white"
+          />
           <path
             d="M10.1317 3.49324H0V20H3.85002V16.1981H10.1528C11.8147 16.1981 13.4085 15.5288 14.5834 14.3375C15.7586 13.1463 16.4189 11.5305 16.4189 9.84567C16.4189 8.16099 15.7586 6.54508 14.5834 5.35381C13.4085 4.16254 11.8147 3.49324 10.1528 3.49324M10.1528 12.3856H3.85002V7.30573H10.1528C10.8172 7.30573 11.4544 7.57331 11.9244 8.04979C12.3941 8.52609 12.6581 9.17211 12.6581 9.84567C12.6567 10.5189 12.3924 11.1641 11.9228 11.6402C11.4532 12.1162 10.8168 12.3843 10.1528 12.3856Z"
-            fill="white" />
+            fill="white"
+          />
         </svg>
         <div class="max-w-[246px] text-[var(--white)] leading-[17px] gap-[10px] flex flex-col">
           <a href="#Territory" class="">расположение</a>
@@ -2782,41 +2670,59 @@
               <a href="mailto:parametr.mto@pik.ru" class="h-[12px] leading-[17px]">parametr.mto@pik.ru</a>
             </div>
           </div>
-          <p class="text-[var(--grey)] leading-[17px]">Улица Баррикадная, 19, стр. 1 <br> Москва</p>
+          <p class="text-[var(--grey)] leading-[17px]">
+            Улица Баррикадная, 19, стр. 1
+            <br />
+            Москва
+          </p>
           <div class="flex flex-col justify-between max-w-[330px] max-[1024px]:max-w-[280px] w-full">
             <div class="flex gap-[12px]">
               <a href="https://t.me/prompik" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <rect width="32" height="32" rx="16" fill="white" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
                     d="M22.2391 9.10262C22.4481 9.01176 22.6769 8.98042 22.9016 9.01187C23.1263 9.04331 23.3388 9.1364 23.5169 9.28144C23.6949 9.42647 23.8321 9.61815 23.9141 9.83653C23.9961 10.0549 24.02 10.292 23.9832 10.5231L22.0648 22.5415C21.8788 23.7008 20.6473 24.3656 19.6179 23.7881C18.7568 23.305 17.478 22.5607 16.3276 21.7841C15.7525 21.3953 13.9906 20.1504 14.2072 19.2645C14.3932 18.5071 17.3536 15.6609 19.0453 13.9687C19.7092 13.3038 19.4064 12.9203 18.6224 13.5319C16.6753 15.0502 13.5491 17.3592 12.5155 18.0092C11.6037 18.5823 11.1284 18.6801 10.56 18.5823C9.52299 18.404 8.56129 18.128 7.77637 17.7916C6.71571 17.3373 6.7673 15.8312 7.77552 15.3927L22.2391 9.10262Z"
-                    fill="#181818" />
+                    fill="#181818"
+                  />
                 </svg>
               </a>
               <a href="https://max.ru/u/f9LHodD0cOIGdG71us6Q2KUplFIhpfNZleILEWuMZb8Hw4rEzUFUktEJggM" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <rect width="32" height="32" rx="16" fill="white" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
                     d="M16.2149 25.9429C14.2521 25.9429 13.34 25.6551 11.7545 24.504C10.7517 25.799 7.57594 26.8111 7.43743 25.0796C7.43743 23.7798 7.1509 22.6815 6.82616 21.4824C6.43935 20.0051 6 18.36 6 15.9763C6 10.2831 10.6514 6 16.1623 6C21.6781 6 25.9999 10.4941 25.9999 16.029C26.0184 21.4783 21.6406 25.9139 16.2149 25.9429ZM16.2961 10.921C13.6122 10.7819 11.5205 12.6476 11.0573 15.5734C10.6752 17.9955 11.3534 20.9452 11.9312 21.0987C12.2082 21.1658 12.9054 20.5999 13.34 20.1634C14.0586 20.662 14.8954 20.9614 15.766 21.0315C18.5469 21.1659 20.9231 19.0396 21.1098 16.2497C21.2185 13.4538 19.0773 11.0858 16.2961 10.9258V10.921Z"
-                    fill="#181818" />
+                    fill="#181818"
+                  />
                 </svg>
               </a>
               <a href="https://rutube.ru/channel/65039289/" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <g clip-path="url(#clip0_214_385)">
                     <rect width="32" height="32" rx="16" fill="white" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
                       d="M24.1275 0H16.7028C16.639 0.57104 16.6061 1.15198 16.6061 1.74094C16.6061 3.81721 17.0141 5.79388 17.7509 7.58816L19.0182 7.58684H20.5242C21.4148 7.58684 22.2022 7.68712 22.8843 7.89489L22.9121 7.90339L22.9397 7.91299C23.6562 8.163 24.2738 8.54739 24.8186 9.08586L24.8485 9.1155L24.8769 9.1468C25.3883 9.71066 25.7691 10.3656 25.9913 11.1267C26.1972 11.8324 26.2916 12.6651 26.2916 13.6098V14.7224C26.2916 15.0863 26.2781 15.4468 26.2475 15.7995C27.6782 16.3059 29.2111 16.5806 30.8056 16.5806C31.2078 16.5806 31.6062 16.5631 32 16.5288V8.22748C32 3.68357 28.4753 0 24.1275 0ZM20.5238 9.16172H8V24H11.5582V19.1725H18.1155L21.227 24H25.2114L21.7809 19.1499C23.0456 18.954 23.6135 18.5489 24.0819 17.8813C24.5503 17.2138 24.7852 16.1465 24.7852 14.7221V13.6095C24.7852 12.7647 24.6996 12.0971 24.5503 11.5855C24.401 11.0738 24.1458 10.6288 23.7833 10.229C23.4004 9.85062 22.9742 9.58411 22.4624 9.40557C21.9506 9.24968 21.3112 9.16172 20.5238 9.16172ZM19.9482 15.9026H11.5582V12.4329H19.9482C20.4382 12.4329 20.779 12.5222 20.95 12.6781C21.121 12.834 21.227 13.1231 21.227 13.5455V14.7914C21.227 15.2364 21.121 15.5256 20.95 15.6815C20.779 15.8373 20.4382 15.9026 19.9482 15.9026Z"
-                      fill="white" />
+                      fill="white"
+                    />
                     <path
                       d="M19.9482 15.9026H11.5582V12.4329H19.9482C20.4382 12.4329 20.779 12.5222 20.95 12.6781C21.121 12.834 21.227 13.1231 21.227 13.5455V14.7914C21.227 15.2364 21.121 15.5256 20.95 15.6815C20.779 15.8373 20.4382 15.9026 19.9482 15.9026ZM20.5238 9.16172H8V24H11.5582V19.1725H18.1155L21.227 24H25.2114L21.7809 19.1499C23.0456 18.954 23.6135 18.5489 24.0819 17.8813C24.5503 17.2138 24.7852 16.1465 24.7852 14.7221V13.6095C24.7852 12.7647 24.6996 12.0971 24.5503 11.5855C24.401 11.0738 24.1458 10.6288 23.7833 10.229C23.4004 9.85062 22.9742 9.58411 22.4624 9.40557C21.9506 9.24968 21.3112 9.16172 20.5238 9.16172Z"
-                      fill="#181818" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      fill="#181818"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
                       d="M16.7028 0H24.1275C28.4753 0 32 3.68357 32 8.22748V16.5288C31.6062 16.5631 31.2078 16.5806 30.8056 16.5806C29.2111 16.5806 27.6782 16.3059 26.2475 15.7995C26.2781 15.4468 26.2916 15.0863 26.2916 14.7224V13.6098C26.2916 12.6651 26.1972 11.8324 25.9913 11.1267C25.7691 10.3656 25.3883 9.71066 24.8769 9.1468L24.8485 9.1155L24.8186 9.08586C24.2738 8.54739 23.6562 8.163 22.9397 7.91299L22.9121 7.90339L22.8843 7.89489C22.2022 7.68712 21.4148 7.58684 20.5242 7.58684H19.0182L17.7509 7.58816C17.0141 5.79388 16.6061 3.81721 16.6061 1.74094C16.6061 1.15198 16.639 0.57104 16.7028 0Z"
-                      fill="#181818" />
+                      fill="#181818"
+                    />
                     <path
                       d="M30.6667 16C30.6667 7.89982 24.1002 1.33333 16 1.33333C7.89982 1.33333 1.33333 7.89982 1.33333 16C1.33333 24.1002 7.89982 30.6667 16 30.6667V32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32V30.6667C24.1002 30.6667 30.6667 24.1002 30.6667 16Z"
-                      fill="white" />
+                      fill="white"
+                    />
                   </g>
                   <defs>
                     <clipPath id="clip0_214_385">
@@ -2830,11 +2736,11 @@
         </div>
         <div class="h-[1px] bg-[var(--grey)]"></div>
         <div class="max-w-[1142px] flex flex-col gap-[32px] max-[1024px]:justify-start">
-          <div class="max-w-[702px] text-[13px] leading-[17px] text-[var(--grey)] max-[1024px]:max-w-[326px] ">ООО «ПИК
-            КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ» 123242, РОССИЯ, Г.МОСКВА, УЛ. БАРРИКАДНАЯ, ДОМ 19, СТРОЕНИЕ 1. ОГРН 1227700702888,
-            ДАТА РЕГИСТРАЦИИ 31.10.2022 Г.</div>
-          <div
-            class="max-w-[330px] max-[1024px]:max-w-[280px] text-[13px] leading-[17px] flex flex-col justify-end max-w-[330px] w-full">
+          <div class="max-w-[702px] text-[13px] leading-[17px] text-[var(--grey)] max-[1024px]:max-w-[326px]">
+            ООО «ПИК КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ» 123242, РОССИЯ, Г.МОСКВА, УЛ. БАРРИКАДНАЯ, ДОМ 19, СТРОЕНИЕ 1. ОГРН 1227700702888, ДАТА РЕГИСТРАЦИИ 31.10.2022
+            Г.
+          </div>
+          <div class="max-w-[330px] max-[1024px]:max-w-[280px] text-[13px] leading-[17px] flex flex-col justify-end max-w-[330px] w-full">
             <div class="text-[var(--grey)]">© 2026 PArametr</div>
             <a href="https://parametr.space/privacy-policy" class="text-[var(--white)]">Политика конфиденциальности</a>
           </div>
