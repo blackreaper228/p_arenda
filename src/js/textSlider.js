@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const mainSlider = document.querySelector('.main-slider');
 
   if (!mainSlider) return;
+  if (mainSlider.closest('[data-swiper-fade="true"]')) return;
 
   // Находим элементы внутри этого контейнера
   const textSlides = mainSlider.querySelectorAll('[data-text-slide]');

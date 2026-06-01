@@ -1,13 +1,15 @@
+/** Entry для test.html: аккордеон и таблицы лотов из js-test/, остальное — из src/js/. */
 import '../style.css';
 import '../responsive.css';
-import './slider.js';
-import './accordion.js';
-import './projectsAnim.js';
-import './textSlider.js';
-import './swiperMobileCarousels.js';
-import './adminka.js';
-import './customScroll.js';
-import './scrollToTop.js';
+import '../js/slider.js';
+import './accordion-test.js';
+import '../js/projectsAnim.js';
+import '../js/textSlider.js';
+import '../js/swiperMobileCarousels.js';
+import './swiperHeroFade.js';
+import './adminka-test.js';
+import '../js/customScroll.js';
+import '../js/scrollToTop.js';
 
 const DESIGN_WIDTH = 1440;
 const MIN_SCALE_BREAKPOINT = 769; // start scaling at >= 768px viewport width
@@ -84,6 +86,8 @@ function initSliders() {
 }
 
 function initSliderInstance(sliderRoot) {
+  if (sliderRoot.getAttribute('data-swiper-fade') === 'true') return;
+
   const mode = (sliderRoot.getAttribute('data-mode') || 'translate').toLowerCase();
   const swiperAllScreens =
     sliderRoot.getAttribute('data-mobile-carousel') === 'true' && mode === 'translate' && sliderRoot.getAttribute('data-swiper-all-screens') === 'true';
@@ -102,12 +106,13 @@ function initSliderInstance(sliderRoot) {
     return isPlansSlider && window.innerWidth < 768;
   }
 
+  const infinite =
+    sliderRoot.getAttribute('data-infinite') === 'true' && mode === 'translate' && !isPlansMobileNow();
+
   const prevButtons = Array.from(sliderRoot.querySelectorAll('[data-prev]'));
   const nextButtons = Array.from(sliderRoot.querySelectorAll('[data-next]'));
   const currentEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-current]'));
   const totalEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-total]'));
-  const infinite =
-    sliderRoot.getAttribute('data-infinite') === 'true' && mode === 'translate' && !isPlansMobileNow();
 
   let currentIndex = 0;
   let translateStepPx = 0; // used in translate mode

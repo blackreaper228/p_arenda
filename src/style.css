@@ -32,8 +32,9 @@
 :root {
   --black: #000000;
   --pikBlack: #181818;
-  --white: #ffffff;
+  --lighterBlack: #242222;
 
+  --white: #ffffff;
   --lightGrey: #f7f7f7;
   --grey: #888888;
 
@@ -54,6 +55,8 @@
   --secondary-light: #f7f7f7;
 
   --parametr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --tw-invert: 
 }
 
 body {
@@ -128,6 +131,40 @@ body {
     width: 884px !important;
     max-width: 884px !important;
   }
+}
+
+/* Планировки: кастомный слайдер (десктоп + мобилка), без Swiper */
+#SectionPlans [data-track] {
+  background-color: var(--lightGrey);
+  touch-action: pan-y;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  #SectionPlans [data-track] {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #SectionPlans [data-track] > img[data-slide] {
+    flex: 0 0 100%;
+    flex-shrink: 0;
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 300px;
+    min-height: 300px;
+    background-color: var(--lightGrey);
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+#SectionPlans .pic-ungrag,
+#SectionPlans img[data-slide] {
+  background-color: var(--lightGrey);
 }
 
 p {
@@ -400,6 +437,10 @@ h3 {
   }
 }
 
+.card-expand-icon__minus {
+  pointer-events: none;
+}
+
 .project_color {
   transition: background-color 0.3s;
 }
@@ -537,6 +578,79 @@ h3 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+[data-swiper-fade='true'] .swiper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+[data-swiper-fade='true'] [data-track].swiper-wrapper {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+[data-swiper-fade='true'] .swiper-slide {
+  flex-shrink: 0;
+  height: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  section[data-swiper-fade='true'] {
+    height: 654px;
+    min-height: 654px;
+  }
+
+  section[data-swiper-fade='true'] > .absolute.inset-0 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  [data-swiper-fade='true'] .swiper,
+  [data-swiper-fade='true'] [data-track].swiper-wrapper,
+  [data-swiper-fade='true'] .swiper-slide {
+    height: 100% !important;
+    min-height: 100% !important;
+  }
+}
+
+[data-swiper-fade='true'] .main-slider {
+  pointer-events: none;
+  z-index: 2;
+}
+
+[data-swiper-fade='true'] .main-slider [data-prev],
+[data-swiper-fade='true'] .main-slider [data-next] {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .hero-first-screen {
+    pointer-events: none;
+  }
+
+  .hero-first-screen a,
+  .hero-first-screen button {
+    pointer-events: auto;
+  }
 }
 
 /* Полностью отключить hover эффекты на мобильных устройствах */
@@ -871,7 +985,7 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
 }
 
 .financeProgram.prior {
-  background-color: var(--secondary-light);
+  background-color: var(--lighterBlack);
 }
 
 .divGrey {
@@ -892,6 +1006,16 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
 
 .financeProgram.prior .openBtn {
   transform: rotate(180deg);
+}
+
+@media (max-width: 767px) {
+  #Sales .sales-acc-chevron svg {
+    transition: transform 0.3s ease;
+  }
+
+  #Sales .sales-acc-chevron-open svg {
+    transform: rotate(180deg);
+  }
 }
 
 .openBtnWrap {
@@ -970,7 +1094,14 @@ p.forAnim {
   margin-top: 400px;
 }
 
-
-a:visited{
+a:visited {
   color: inherit;
 }
+
+.lotsPic {
+  background-image: url('https://optim.tildacdn.com/tild3130-3432-4239-b430-376464356665/-/format/webp/lotsPic.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+

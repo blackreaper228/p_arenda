@@ -27,10 +27,92 @@
     container.classList.add('swiper');
     track.classList.add('swiper-wrapper');
 
-    const slides = Array.from(track.querySelectorAll('[data-slide]'));
-    slides.forEach((s) => s.classList.add('swiper-slide'));
+    getOriginalSlides(track).forEach((s) => s.classList.add('swiper-slide'));
 
     return { container, track };
+  }
+
+  const LOOP_CLONE_ATTR = 'data-swiper-loop-clone';
+
+  function removeLoopClones(track) {
+    if (!track) return;
+    track.querySelectorAll(`[${LOOP_CLONE_ATTR}]`).forEach((el) => el.remove());
+  }
+
+  function getOriginalSlides(track) {
+    return Array.from(track.querySelectorAll(`[data-slide]:not([${LOOP_CLONE_ATTR}])`));
+  }
+
+  function measureVisibleSlides(container, slides) {
+    if (!slides.length) return 1;
+
+    const containerWidth = container.clientWidth;
+    if (!containerWidth) return 1;
+
+    let visible = 0;
+    let widthSum = 0;
+
+    for (const slide of slides) {
+      let w = slide.getBoundingClientRect().width || slide.offsetWidth;
+      if (w <= 0) {
+        const style = window.getComputedStyle(slide);
+        w = parseFloat(style.width) || parseFloat(style.maxWidth) || parseFloat(style.minWidth) || 0;
+      }
+      if (w <= 0) continue;
+      widthSum += w;
+      visible += 1;
+      if (widthSum >= containerWidth) break;
+    }
+
+    if (!visible) {
+      const style = window.getComputedStyle(slides[0]);
+      const estSlideWidth =
+        parseFloat(style.width) || parseFloat(style.maxWidth) || parseFloat(style.minWidth) || containerWidth;
+      return Math.max(1, Math.ceil(containerWidth / Math.max(1, estSlideWidth)));
+    }
+
+    return Math.max(1, visible);
+  }
+
+  /** Для loop на десктопе: если слайдов мало, добавляем клоны (иначе Swiper loop не включается). */
+  function prepareLoopSlides(container, track, sliderRoot, loopRequested) {
+    removeLoopClones(track);
+
+    const originals = getOriginalSlides(track);
+    const originalCount = originals.length;
+    if (!loopRequested || originalCount < 2) {
+      return { originalCount, loopEnabled: false };
+    }
+
+    const visibleCount = measureVisibleSlides(container, originals);
+    const wideSlides = sliderRoot.getAttribute('data-swiper-wide-slides') === 'true';
+    const nativeLoopOk = wideSlides || originalCount > visibleCount;
+
+    if (nativeLoopOk) {
+      return { originalCount, loopEnabled: true };
+    }
+
+    const minRequired = visibleCount * 2;
+    let total = originals.length;
+    let cloneIndex = 0;
+    while (total < minRequired) {
+      const source = originals[cloneIndex % originalCount];
+      const clone = source.cloneNode(true);
+      clone.setAttribute(LOOP_CLONE_ATTR, 'true');
+      clone.removeAttribute('id');
+      clone.classList.add('swiper-slide');
+      track.appendChild(clone);
+      cloneIndex += 1;
+      total += 1;
+    }
+
+    return { originalCount, loopEnabled: true };
+  }
+
+  function loopDisplayIndex(sw, originalCount) {
+    if (!originalCount) return 0;
+    const raw = typeof sw.realIndex === 'number' ? sw.realIndex : sw.activeIndex;
+    return ((raw % originalCount) + originalCount) % originalCount;
   }
 
   function isVisible(el) {
@@ -81,7 +163,14 @@
     return sliderRoot.getAttribute('data-swiper-all-screens') === 'true';
   }
 
+  function slideIndex(sw, loopEnabled, originalCount) {
+    if (loopEnabled && originalCount) return loopDisplayIndex(sw, originalCount);
+    return typeof sw.activeIndex === 'number' ? sw.activeIndex : 0;
+  }
+
   function initOne(sliderRoot) {
+    if (sliderRoot.id === 'SectionPlans') return null;
+
     const allScreens = swiperAllScreens(sliderRoot);
     if (!narrowViewport() && !allScreens) return null;
     if (sliderRoot.getAttribute('data-mobile-carousel') !== 'true') return null;
@@ -93,9 +182,10 @@
     const structure = ensureSwiperStructure(sliderRoot);
     if (!structure) return null;
 
-    const { container } = structure;
+    const { container, track } = structure;
     const { prevEl, nextEl } = pickVisibleNav(sliderRoot);
     const loop = sliderRoot.getAttribute('data-infinite') === 'true';
+    const wideSlides = sliderRoot.getAttribute('data-swiper-wide-slides') === 'true';
     const edgeRaw = sliderRoot.getAttribute('data-swiper-edge');
     const edgeInset = edgeRaw != null && String(edgeRaw).trim() !== '' ? Math.max(0, parseInt(edgeRaw, 10) || 0) : 0;
     const offsetAfterDesktopRaw = sliderRoot.getAttribute('data-swiper-offset-after-desktop');
@@ -103,9 +193,10 @@
       offsetAfterDesktopRaw != null && String(offsetAfterDesktopRaw).trim() !== '' ? Math.max(0, parseInt(offsetAfterDesktopRaw, 10) || 0) : 0;
     const currentEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-current]'));
     const totalEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-total]'));
-    const slidesCount = Array.from(sliderRoot.querySelectorAll('[data-track] [data-slide]')).length;
-    totalEls.forEach((el) => (el.textContent = String(slidesCount || 0)));
-    const loopEnabled = allScreens ? false : loop && slidesCount >= 5;
+    const desktop = !narrowViewport();
+    const loopRequested = desktop && loop;
+    const { originalCount, loopEnabled } = prepareLoopSlides(container, track, sliderRoot, loopRequested);
+    totalEls.forEach((el) => (el.textContent = String(originalCount || 0)));
 
     if (container.__swiperInstance) return container.__swiperInstance;
 
@@ -113,6 +204,7 @@
       slidesPerView: 'auto',
       spaceBetween: 0,
       loop: loopEnabled,
+      ...(loopEnabled && !wideSlides ? { loopAdditionalSlides: 2 } : {}),
       ...(edgeInset > 0 ? { slidesOffsetBefore: edgeInset, slidesOffsetAfter: edgeInset } : {}),
       speed: 380,
       resistanceRatio: 0.85,
@@ -124,18 +216,18 @@
       navigation: prevEl && nextEl ? { prevEl, nextEl } : undefined,
       on: {
         init(sw) {
-          const realIndex = typeof sw.realIndex === 'number' ? sw.realIndex : 0;
-          currentEls.forEach((el) => (el.textContent = String(realIndex + 1)));
+          if (loopEnabled && typeof sw.loopFix === 'function') sw.loopFix();
+          const index = slideIndex(sw, loopEnabled, originalCount);
+          currentEls.forEach((el) => (el.textContent = String(index + 1)));
         },
         slideChange(sw) {
-          const realIndex = typeof sw.realIndex === 'number' ? sw.realIndex : 0;
-          currentEls.forEach((el) => (el.textContent = String(realIndex + 1)));
+          const index = slideIndex(sw, loopEnabled, originalCount);
+          currentEls.forEach((el) => (el.textContent = String(index + 1)));
         },
       },
     };
 
     if (allScreens) {
-      const wideSlides = sliderRoot.getAttribute('data-swiper-wide-slides') === 'true';
       if (!wideSlides) {
         baseOptions.breakpoints = {
           0: {
@@ -167,6 +259,7 @@
     const inst = container?.__swiperInstance;
     if (inst && typeof inst.destroy === 'function') inst.destroy(true, false);
     if (container) container.__swiperInstance = null;
+    removeLoopClones(track);
   }
 
   function initAll() {
