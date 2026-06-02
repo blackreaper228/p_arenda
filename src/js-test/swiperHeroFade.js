@@ -99,8 +99,7 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from '../js/arendaSwi
     });
 
     const slidesCount = slides.length;
-    const mobileTouch = narrowViewport();
-    const loopEnabled = !mobileTouch && slidesCount >= 2;
+    const loopEnabled = slidesCount >= 2;
 
     const getIndex = (sw) => {
       if (loopEnabled && typeof sw.realIndex === 'number') return sw.realIndex;
@@ -115,7 +114,7 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from '../js/arendaSwi
       });
     };
 
-    const instance = new Swiper(container, {
+    const baseOptions = {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: loopEnabled,
@@ -128,7 +127,6 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from '../js/arendaSwi
       resistanceRatio: 0.85,
       touchStartPreventDefault: false,
       touchEventsTarget: 'container',
-      navigation: prevEl && nextEl ? { prevEl, nextEl } : undefined,
       on: {
         init(sw) {
           syncFromSwiper(sw);
@@ -137,7 +135,13 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from '../js/arendaSwi
           syncFromSwiper(sw);
         },
       },
-    });
+    };
+
+    if (prevEl && nextEl) {
+      baseOptions.navigation = { prevEl, nextEl };
+    }
+
+    const instance = new Swiper(container, baseOptions);
 
     container.__swiperInstance = instance;
     return instance;

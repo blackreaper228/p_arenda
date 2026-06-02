@@ -14,6 +14,7 @@ import '../js/scrollToTop.js';
 
 const DESIGN_WIDTH = 1440;
 const MIN_SCALE_BREAKPOINT = 769; // start scaling at >= 768px viewport width
+let lastScaleRefreshWidth = null;
 
 function supportsZoomProperty() {
   // Not standardized, but widely supported in Chromium-based & Safari; return boolean
@@ -52,6 +53,8 @@ function updateScale() {
   const container = document.getElementById('scale-container');
   const wrapper = document.getElementById('scale-wrapper');
   if (!container || !wrapper) return;
+  const shouldRefreshSwipers = lastScaleRefreshWidth == null || Math.abs(viewportWidth - lastScaleRefreshWidth) >= 2;
+  lastScaleRefreshWidth = viewportWidth;
 
   if (viewportWidth >= MIN_SCALE_BREAKPOINT) {
     const scale = Math.max(viewportWidth / DESIGN_WIDTH, 0.01); // avoid 0
@@ -66,7 +69,9 @@ function updateScale() {
     container.style.width = '100%';
   }
 
-  requestAnimationFrame(() => refreshArendaSwipersAfterLayout());
+  if (shouldRefreshSwipers) {
+    requestAnimationFrame(() => refreshArendaSwipersAfterLayout());
+  }
 }
 
 // Initialize and listen for resize/zoom changes

@@ -705,6 +705,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     container.classList.add('swiper');
     track.classList.add('swiper-wrapper');
+    track.style.transform = '';
+    track.style.transition = '';
+    container.scrollLeft = 0;
 
     getOriginalSlides(track).forEach((s) => s.classList.add('swiper-slide'));
 
@@ -713,6 +716,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const LOOP_CLONE_ATTR = 'data-swiper-loop-clone';
   const DUPLICATE_CLONE_ATTR = 'data-swiper-duplicate-clone';
+  const SLIDE_ORDER = [
+    'first',
+    'second',
+    'third',
+    'fourth',
+    'fifth',
+    'sixth',
+    'seventh',
+    'eighth',
+    'ninth',
+    'tenth',
+  ];
 
   function removeLoopClones(track) {
     if (!track) return;
@@ -724,23 +739,43 @@ document.addEventListener('DOMContentLoaded', function () {
     track.querySelectorAll(`[${DUPLICATE_CLONE_ATTR}]`).forEach((el) => el.remove());
   }
 
+  function removeNativeSwiperClones(track) {
+    if (!track) return;
+    track.querySelectorAll('.swiper-slide-duplicate').forEach((el) => el.remove());
+  }
+
+  function slideOrderIndex(slide) {
+    const index = SLIDE_ORDER.findIndex((className) => slide.classList.contains(className));
+    return index === -1 ? Number.MAX_SAFE_INTEGER : index;
+  }
+
+  function restoreOriginalSlideOrder(track) {
+    if (!track) return;
+    const slides = Array.from(
+      track.querySelectorAll(
+        `[data-slide]:not([${LOOP_CLONE_ATTR}]):not([${DUPLICATE_CLONE_ATTR}]):not(.swiper-slide-duplicate)`
+      )
+    );
+    const sorted = slides
+      .map((slide, index) => ({ slide, index, order: slideOrderIndex(slide) }))
+      .sort((a, b) => a.order - b.order || a.index - b.index);
+
+    sorted.forEach(({ slide }) => track.appendChild(slide));
+  }
+
   function getOriginalSlides(track) {
     return Array.from(
-      track.querySelectorAll(`[data-slide]:not([${LOOP_CLONE_ATTR}]):not([${DUPLICATE_CLONE_ATTR}])`)
+      track.querySelectorAll(
+        `[data-slide]:not([${LOOP_CLONE_ATTR}]):not([${DUPLICATE_CLONE_ATTR}]):not(.swiper-slide-duplicate)`
+      )
     );
   }
 
-  /** Duplicate each slide once in DOM (for Tilda char limit). Counter still uses originals only. */
+  /** Keep duplicate/loop clones out of the static start state. */
   function applyDuplicateSlides(track, sliderRoot) {
-    if (sliderRoot.getAttribute('data-swiper-duplicate-slides') !== 'true') return;
+    removeNativeSwiperClones(track);
     removeDuplicateClones(track);
-    const originals = getOriginalSlides(track);
-    originals.forEach((slide) => {
-      const clone = slide.cloneNode(true);
-      clone.setAttribute(DUPLICATE_CLONE_ATTR, 'true');
-      clone.removeAttribute('id');
-      track.appendChild(clone);
-    });
+    restoreOriginalSlideOrder(track);
   }
 
   function countSlidesForLoop(track) {
@@ -855,8 +890,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function slideIndex(sw, loopEnabled, originalCount) {
-    if (loopEnabled && originalCount) return loopDisplayIndex(sw, originalCount);
-    return typeof sw.activeIndex === 'number' ? sw.activeIndex : 0;
+    if (!originalCount) return 0;
+    if (loopEnabled) return loopDisplayIndex(sw, originalCount);
+    const raw = typeof sw.activeIndex === 'number' ? sw.activeIndex : 0;
+    return ((raw % originalCount) + originalCount) % originalCount;
   }
 
   function initOne(sliderRoot) {
@@ -886,7 +923,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-current]'));
     const totalEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-total]'));
     const desktop = !narrowViewport();
-    const loopRequested = desktop && loop;
+    const duplicateSlides = desktop && sliderRoot.getAttribute('data-swiper-duplicate-slides') === 'true';
+    const loopRequested = desktop && loop && !duplicateSlides;
     const { originalCount, loopEnabled } = prepareLoopSlides(container, track, sliderRoot, loopRequested);
     totalEls.forEach((el) => (el.textContent = String(originalCount || 0)));
 
@@ -899,6 +937,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const baseOptions = {
       slidesPerView: 'auto',
+      initialSlide: 0,
       spaceBetween: 0,
       loop: loopEnabled,
       ...(loopEnabled && !wideSlides ? { loopAdditionalSlides: 2 } : {}),
@@ -910,7 +949,6 @@ document.addEventListener('DOMContentLoaded', function () {
       grabCursor: allScreens,
       simulateTouch: allScreens,
       preventInteractionOnTransition: false,
-      navigation: prevEl && nextEl ? { prevEl, nextEl } : undefined,
       on: {
         init(sw) {
           if (loopEnabled && typeof sw.loopFix === 'function') sw.loopFix();
@@ -923,6 +961,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       },
     };
+
+    if (prevEl && nextEl) {
+      baseOptions.navigation = { prevEl, nextEl };
+    }
 
     if (allScreens) {
       if (!wideSlides) {
@@ -954,10 +996,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const track = sliderRoot.querySelector('[data-track]');
     const container = track?.parentElement;
     const inst = container?.__swiperInstance;
-    if (inst && typeof inst.destroy === 'function') inst.destroy(true, false);
+    if (inst && typeof inst.destroy === 'function') inst.destroy(true, true);
     if (container) container.__swiperInstance = null;
+    if (track) {
+      track.style.transform = '';
+      track.style.transition = '';
+    }
+    if (container) container.scrollLeft = 0;
     removeLoopClones(track);
+    removeNativeSwiperClones(track);
     removeDuplicateClones(track);
+    restoreOriginalSlideOrder(track);
   }
 
   function initAll() {
@@ -965,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', function () {
     roots.forEach((r) => initOne(r));
   }
 
-  function refreshOnResize() {
+  function refreshAll() {
     const roots = Array.from(document.querySelectorAll('[data-slider][data-mobile-carousel="true"]'));
     roots.forEach((r) => {
       const track = r.querySelector('[data-track]');
@@ -979,6 +1028,25 @@ document.addEventListener('DOMContentLoaded', function () {
       if (inst) destroyOne(r);
       initOne(r);
     });
+  }
+
+  let lastLayoutWidth = window.visualViewport?.width ?? window.innerWidth;
+  let resizeRefreshTimer = null;
+
+  function refreshOnResize() {
+    clearTimeout(resizeRefreshTimer);
+    resizeRefreshTimer = setTimeout(() => {
+      const width = window.visualViewport?.width ?? window.innerWidth;
+      if (Math.abs(width - lastLayoutWidth) < 2) return;
+      lastLayoutWidth = width;
+      refreshAll();
+    }, 150);
+  }
+
+  function refreshOnOrientationChange() {
+    lastLayoutWidth = window.visualViewport?.width ?? window.innerWidth;
+    clearTimeout(resizeRefreshTimer);
+    refreshAll();
   }
 
   /** For Tilda / dynamic blocks — re-init one carousel after HTML changes. */
@@ -995,7 +1063,7 @@ document.addEventListener('DOMContentLoaded', function () {
   scheduleArendaSwiperBoot(initAll);
 
   window.addEventListener('resize', refreshOnResize);
-  window.addEventListener('orientationchange', refreshOnResize);
+  window.addEventListener('orientationchange', refreshOnOrientationChange);
 })();
 
 // ===== src/js-test/swiperHeroFade.js =====
@@ -1099,8 +1167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const slidesCount = slides.length;
-    const mobileTouch = narrowViewport();
-    const loopEnabled = !mobileTouch && slidesCount >= 2;
+    const loopEnabled = slidesCount >= 2;
 
     const getIndex = (sw) => {
       if (loopEnabled && typeof sw.realIndex === 'number') return sw.realIndex;
@@ -1115,7 +1182,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     };
 
-    const instance = new Swiper(container, {
+    const baseOptions = {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: loopEnabled,
@@ -1128,7 +1195,6 @@ document.addEventListener('DOMContentLoaded', function () {
       resistanceRatio: 0.85,
       touchStartPreventDefault: false,
       touchEventsTarget: 'container',
-      navigation: prevEl && nextEl ? { prevEl, nextEl } : undefined,
       on: {
         init(sw) {
           syncFromSwiper(sw);
@@ -1137,7 +1203,13 @@ document.addEventListener('DOMContentLoaded', function () {
           syncFromSwiper(sw);
         },
       },
-    });
+    };
+
+    if (prevEl && nextEl) {
+      baseOptions.navigation = { prevEl, nextEl };
+    }
+
+    const instance = new Swiper(container, baseOptions);
 
     container.__swiperInstance = instance;
     return instance;
@@ -1955,6 +2027,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const DESIGN_WIDTH = 1440;
 const MIN_SCALE_BREAKPOINT = 769; // start scaling at >= 768px viewport width
+let lastScaleRefreshWidth = null;
 
 function supportsZoomProperty() {
   // Not standardized, but widely supported in Chromium-based & Safari; return boolean
@@ -1993,6 +2066,8 @@ function updateScale() {
   const container = document.getElementById('scale-container');
   const wrapper = document.getElementById('scale-wrapper');
   if (!container || !wrapper) return;
+  const shouldRefreshSwipers = lastScaleRefreshWidth == null || Math.abs(viewportWidth - lastScaleRefreshWidth) >= 2;
+  lastScaleRefreshWidth = viewportWidth;
 
   if (viewportWidth >= MIN_SCALE_BREAKPOINT) {
     const scale = Math.max(viewportWidth / DESIGN_WIDTH, 0.01); // avoid 0
@@ -2007,7 +2082,9 @@ function updateScale() {
     container.style.width = '100%';
   }
 
-  requestAnimationFrame(() => refreshArendaSwipersAfterLayout());
+  if (shouldRefreshSwipers) {
+    requestAnimationFrame(() => refreshArendaSwipersAfterLayout());
+  }
 }
 
 // Initialize and listen for resize/zoom changes
