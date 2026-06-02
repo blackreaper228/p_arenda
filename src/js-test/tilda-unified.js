@@ -794,11 +794,34 @@ document.addEventListener('DOMContentLoaded', function () {
     return originalCount;
   }
 
+  function applyMobileCounterLimit(track, sliderRoot) {
+    const raw = sliderRoot.getAttribute('data-swiper-counter-total');
+    if (raw == null || String(raw).trim() === '') return;
+
+    const limit = parseInt(raw, 10);
+    if (!Number.isFinite(limit) || limit <= 0) return;
+
+    const slides = Array.from(
+      track.querySelectorAll(`[data-slide]:not([${LOOP_CLONE_ATTR}]):not([${DUPLICATE_CLONE_ATTR}]):not(.swiper-slide-duplicate)`)
+    );
+
+    slides.forEach((slide, index) => {
+      slide.style.display = '';
+      slide.classList.add('swiper-slide');
+
+      if (narrowViewport() && index >= limit) {
+        slide.style.display = 'none';
+        slide.classList.remove('swiper-slide');
+      }
+    });
+  }
+
   /** Keep duplicate/loop clones out of the static start state. */
   function applyDuplicateSlides(track, sliderRoot) {
     removeNativeSwiperClones(track);
     removeDuplicateClones(track);
     restoreOriginalSlideOrder(track);
+    applyMobileCounterLimit(track, sliderRoot);
     if (narrowViewport()) {
       track.querySelectorAll(`[${STATIC_DUPLICATE_ATTR}]`).forEach((el) => el.remove());
     }
