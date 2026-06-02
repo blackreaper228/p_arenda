@@ -32,13 +32,14 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from './arendaSwiperB
     track.style.transition = '';
     container.scrollLeft = 0;
 
-    getOriginalSlides(track).forEach((s) => s.classList.add('swiper-slide'));
+    Array.from(track.querySelectorAll(`[data-slide]:not([${LOOP_CLONE_ATTR}])`)).forEach((s) => s.classList.add('swiper-slide'));
 
     return { container, track };
   }
 
   const LOOP_CLONE_ATTR = 'data-swiper-loop-clone';
   const DUPLICATE_CLONE_ATTR = 'data-swiper-duplicate-clone';
+  const STATIC_DUPLICATE_ATTR = 'data-swiper-static-duplicate';
   const SLIDE_ORDER = [
     'first',
     'second',
@@ -76,22 +77,44 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from './arendaSwiperB
     if (!track) return;
     const slides = Array.from(
       track.querySelectorAll(
-        `[data-slide]:not([${LOOP_CLONE_ATTR}]):not([${DUPLICATE_CLONE_ATTR}]):not(.swiper-slide-duplicate)`
+        `[data-slide]:not([${LOOP_CLONE_ATTR}]):not([${DUPLICATE_CLONE_ATTR}]):not([${STATIC_DUPLICATE_ATTR}]):not(.swiper-slide-duplicate)`
       )
     );
+    const orderClassCounts = slides.reduce((acc, slide) => {
+      const order = slideOrderIndex(slide);
+      if (order !== Number.MAX_SAFE_INTEGER) acc.set(order, (acc.get(order) || 0) + 1);
+      return acc;
+    }, new Map());
+    if (Array.from(orderClassCounts.values()).some((count) => count > 1)) return;
+
     const sorted = slides
       .map((slide, index) => ({ slide, index, order: slideOrderIndex(slide) }))
       .sort((a, b) => a.order - b.order || a.index - b.index);
 
+    const staticDuplicates = Array.from(track.querySelectorAll(`[data-slide][${STATIC_DUPLICATE_ATTR}]`));
+    const beforeDuplicates = staticDuplicates.filter((slide) => slide.getAttribute(STATIC_DUPLICATE_ATTR) === 'before');
+    const afterDuplicates = staticDuplicates.filter((slide) => slide.getAttribute(STATIC_DUPLICATE_ATTR) !== 'before');
+
+    beforeDuplicates.forEach((slide) => track.appendChild(slide));
     sorted.forEach(({ slide }) => track.appendChild(slide));
+    afterDuplicates.forEach((slide) => track.appendChild(slide));
   }
 
   function getOriginalSlides(track) {
     return Array.from(
       track.querySelectorAll(
-        `[data-slide]:not([${LOOP_CLONE_ATTR}]):not([${DUPLICATE_CLONE_ATTR}]):not(.swiper-slide-duplicate)`
+        `[data-slide]:not([${LOOP_CLONE_ATTR}]):not([${DUPLICATE_CLONE_ATTR}]):not([${STATIC_DUPLICATE_ATTR}]):not(.swiper-slide-duplicate)`
       )
     );
+  }
+
+  function getCounterTotal(sliderRoot, originalCount) {
+    const raw = sliderRoot.getAttribute('data-swiper-counter-total');
+    if (raw != null && String(raw).trim() !== '') {
+      const parsed = parseInt(raw, 10);
+      if (Number.isFinite(parsed) && parsed > 0) return parsed;
+    }
+    return originalCount;
   }
 
   /** Keep duplicate/loop clones out of the static start state. */
@@ -99,6 +122,9 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from './arendaSwiperB
     removeNativeSwiperClones(track);
     removeDuplicateClones(track);
     restoreOriginalSlideOrder(track);
+    if (narrowViewport()) {
+      track.querySelectorAll(`[${STATIC_DUPLICATE_ATTR}]`).forEach((el) => el.remove());
+    }
   }
 
   function countSlidesForLoop(track) {
@@ -212,11 +238,11 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from './arendaSwiperB
     return sliderRoot.getAttribute('data-swiper-all-screens') === 'true';
   }
 
-  function slideIndex(sw, loopEnabled, originalCount) {
-    if (!originalCount) return 0;
-    if (loopEnabled) return loopDisplayIndex(sw, originalCount);
+  function slideIndex(sw, loopEnabled, originalCount, counterTotal = originalCount) {
+    if (!counterTotal) return 0;
+    if (loopEnabled) return loopDisplayIndex(sw, originalCount) % counterTotal;
     const raw = typeof sw.activeIndex === 'number' ? sw.activeIndex : 0;
-    return ((raw % originalCount) + originalCount) % originalCount;
+    return ((raw % counterTotal) + counterTotal) % counterTotal;
   }
 
   function initOne(sliderRoot) {
@@ -246,10 +272,10 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from './arendaSwiperB
     const currentEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-current]'));
     const totalEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-total]'));
     const desktop = !narrowViewport();
-    const duplicateSlides = desktop && sliderRoot.getAttribute('data-swiper-duplicate-slides') === 'true';
-    const loopRequested = desktop && loop && !duplicateSlides;
+    const loopRequested = desktop && loop;
     const { originalCount, loopEnabled } = prepareLoopSlides(container, track, sliderRoot, loopRequested);
-    totalEls.forEach((el) => (el.textContent = String(originalCount || 0)));
+    const counterTotal = getCounterTotal(sliderRoot, originalCount);
+    totalEls.forEach((el) => (el.textContent = String(counterTotal || 0)));
 
     const existing = container.__swiperInstance;
     if (existing) {
@@ -275,11 +301,11 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from './arendaSwiperB
       on: {
         init(sw) {
           if (loopEnabled && typeof sw.loopFix === 'function') sw.loopFix();
-          const index = slideIndex(sw, loopEnabled, originalCount);
+          const index = slideIndex(sw, loopEnabled, originalCount, counterTotal);
           currentEls.forEach((el) => (el.textContent = String(index + 1)));
         },
         slideChange(sw) {
-          const index = slideIndex(sw, loopEnabled, originalCount);
+          const index = slideIndex(sw, loopEnabled, originalCount, counterTotal);
           currentEls.forEach((el) => (el.textContent = String(index + 1)));
         },
       },

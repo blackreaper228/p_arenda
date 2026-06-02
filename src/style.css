@@ -56,7 +56,8 @@
 
   --parametr-ease: cubic-bezier(0.16, 1, 0.3, 1);
 
-  --tw-invert: 
+  --tw-invert:   
+;
 }
 
 body {
@@ -1105,3 +1106,11 @@ a:visited {
   background-repeat: no-repeat;
 }
 
+.geoArrow {
+  background-image: url('https://static.tildacdn.com/tild6266-3762-4362-a339-343337326463/geoArrowIcon.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+}
