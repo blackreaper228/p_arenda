@@ -1,14 +1,7 @@
-/**
- * Unified plain JS for Tilda / rent.parametr.space/test.
- * Generated from src/js-test/main.js imports. Do not paste ES module import/export lines into Tilda.
- * Requires Swiper to be loaded before this script.
- */
-
-// ===== src/js/arendaSwiperBootstrap.js =====
+/* src/js/arendaSwiperBootstrap.js */
 /**
  * Tilda / first-paint helpers: wait for Swiper + layout before binding navigation.
  */
-
 function whenArendaLayoutReady(callback) {
   const run = () => {
     const fontsReady =
@@ -28,7 +21,6 @@ function whenArendaLayoutReady(callback) {
     run();
   }
 }
-
 function waitForSwiper(callback, maxAttempts = 80) {
   if (window.Swiper) {
     callback();
@@ -60,7 +52,6 @@ function scheduleArendaSwiperBoot(initFn) {
     { once: true }
   );
 }
-
 function applySwiperNavigation(sw, prevEl, nextEl) {
   if (!sw || !prevEl || !nextEl) return false;
 
@@ -81,7 +72,6 @@ function applySwiperNavigation(sw, prevEl, nextEl) {
 
   return true;
 }
-
 function refreshArendaSwipersAfterLayout() {
   if (typeof window.initArendaSwiperCarousel === 'function') {
     window.initArendaSwiperCarousel();
@@ -91,7 +81,7 @@ function refreshArendaSwipersAfterLayout() {
   }
 }
 
-// ===== src/js/slider.js =====
+/* src/js/slider.js */
 document.addEventListener('DOMContentLoaded', () => {
   const offersContainer = document.querySelector('.W_Offers');
   const offers = document.querySelectorAll('.W_Offer');
@@ -147,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', updateSliderPosition);
 });
 
-// ===== src/js-test/accordion-test.js =====
+/* src/js-test/accordion-test.js */
 /**
  * Копия src/js/accordion.js для блока «Доступные лоты» (financeProgram).
  * Редактируйте этот файл в test.html; index.html использует оригинал в src/js/accordion.js.
@@ -507,7 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ===== src/js/projectsAnim.js =====
+/* src/js/projectsAnim.js */
 // Обработка клика на .plus для мобильных устройств (< 768px)
 let projectClickHandlersInitialized = false;
 
@@ -565,7 +555,7 @@ window.addEventListener('resize', function () {
   }
 });
 
-// ===== src/js/textSlider.js =====
+/* src/js/textSlider.js */
 // слайдер текста
 document.addEventListener('DOMContentLoaded', function () {
   // Находим основной контейнер слайдера
@@ -675,8 +665,7 @@ document.addEventListener('DOMContentLoaded', function () {
   updateTextSlides();
 });
 
-// ===== src/js/swiperMobileCarousels.js =====
-
+/* src/js/swiperMobileCarousels.js */
 /**
  * Swiper init for `[data-slider][data-mobile-carousel="true"]` translate carousels.
  * Wrapped in an IIFE so no global `isMobile` / `refreshOnResize` names collide with Tilda
@@ -969,6 +958,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const offsetAfterDesktopRaw = sliderRoot.getAttribute('data-swiper-offset-after-desktop');
     const offsetAfterDesktop =
       offsetAfterDesktopRaw != null && String(offsetAfterDesktopRaw).trim() !== '' ? Math.max(0, parseInt(offsetAfterDesktopRaw, 10) || 0) : 0;
+    const offsetAfterMobileRaw = sliderRoot.getAttribute('data-swiper-offset-after-mobile');
+    const offsetAfterMobile =
+      offsetAfterMobileRaw != null && String(offsetAfterMobileRaw).trim() !== '' ? Math.max(0, parseInt(offsetAfterMobileRaw, 10) || 0) : 0;
     const currentEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-current]'));
     const totalEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-total]'));
     const desktop = !narrowViewport();
@@ -1021,15 +1013,16 @@ document.addEventListener('DOMContentLoaded', function () {
           0: {
             spaceBetween: 0,
             ...(offsetAfterDesktop > 0 ? { slidesOffsetAfter: 0 } : {}),
+            ...(offsetAfterMobile > 0 ? { slidesOffsetAfter: offsetAfterMobile } : {}),
           },
           1024: {
             spaceBetween: 2,
             ...(offsetAfterDesktop > 0 ? { slidesOffsetAfter: offsetAfterDesktop } : {}),
           },
         };
-      } else if (offsetAfterDesktop > 0) {
+      } else if (offsetAfterDesktop > 0 || offsetAfterMobile > 0) {
         baseOptions.breakpoints = {
-          0: { spaceBetween: 0, slidesOffsetAfter: 0 },
+          0: { spaceBetween: 0, slidesOffsetAfter: offsetAfterMobile },
           1024: { spaceBetween: 0, slidesOffsetAfter: offsetAfterDesktop },
         };
       }
@@ -1115,8 +1108,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('orientationchange', refreshOnOrientationChange);
 })();
 
-// ===== src/js-test/swiperHeroFade.js =====
-
+/* src/js-test/swiperHeroFade.js */
 /**
  * Hero carousel on test.html — Swiper slide swipe (desktop + mobile).
  */
@@ -1298,7 +1290,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('orientationchange', initAllOnOrientationChange);
 })();
 
-// ===== src/js-test/adminka-test.js =====
+/* src/js-test/adminka-test.js */
 /**
  * Копия src/js/adminka.js — загрузка лотов из Google Sheets в #lotsSenkino / #lotsKuvekino / #lotsBalashikha.
  * Редактируйте для test.html; index.html использует оригинал в src/js/adminka.js.
@@ -1938,7 +1930,7 @@ if (document.readyState === 'loading') {
   initApp();
 }
 
-// ===== src/js/customScroll.js =====
+/* src/js/customScroll.js */
 // скрипт шапки  и фикс скролла
 (function () {
   if (typeof window > 'u' || window.__headerDomInitialized) return;
@@ -2058,7 +2050,7 @@ if (document.readyState === 'loading') {
   m();
 })();
 
-// ===== src/js/scrollToTop.js =====
+/* src/js/scrollToTop.js */
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-scroll-top]').forEach((el) => {
     el.addEventListener('click', () => {
@@ -2071,9 +2063,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ===== src/js-test/main.js =====
+/* src/js-test/main.js */
 /** Entry для test.html: аккордеон и таблицы лотов из js-test/, остальное — из src/js/. */
-
 const DESIGN_WIDTH = 1440;
 const MIN_SCALE_BREAKPOINT = 769; // start scaling at >= 768px viewport width
 let lastScaleRefreshWidth = null;

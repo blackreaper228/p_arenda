@@ -292,6 +292,9 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from './arendaSwiperB
     const offsetAfterDesktopRaw = sliderRoot.getAttribute('data-swiper-offset-after-desktop');
     const offsetAfterDesktop =
       offsetAfterDesktopRaw != null && String(offsetAfterDesktopRaw).trim() !== '' ? Math.max(0, parseInt(offsetAfterDesktopRaw, 10) || 0) : 0;
+    const offsetAfterMobileRaw = sliderRoot.getAttribute('data-swiper-offset-after-mobile');
+    const offsetAfterMobile =
+      offsetAfterMobileRaw != null && String(offsetAfterMobileRaw).trim() !== '' ? Math.max(0, parseInt(offsetAfterMobileRaw, 10) || 0) : 0;
     const currentEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-current]'));
     const totalEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-total]'));
     const desktop = !narrowViewport();
@@ -344,15 +347,16 @@ import { applySwiperNavigation, scheduleArendaSwiperBoot } from './arendaSwiperB
           0: {
             spaceBetween: 0,
             ...(offsetAfterDesktop > 0 ? { slidesOffsetAfter: 0 } : {}),
+            ...(offsetAfterMobile > 0 ? { slidesOffsetAfter: offsetAfterMobile } : {}),
           },
           1024: {
             spaceBetween: 2,
             ...(offsetAfterDesktop > 0 ? { slidesOffsetAfter: offsetAfterDesktop } : {}),
           },
         };
-      } else if (offsetAfterDesktop > 0) {
+      } else if (offsetAfterDesktop > 0 || offsetAfterMobile > 0) {
         baseOptions.breakpoints = {
-          0: { spaceBetween: 0, slidesOffsetAfter: 0 },
+          0: { spaceBetween: 0, slidesOffsetAfter: offsetAfterMobile },
           1024: { spaceBetween: 0, slidesOffsetAfter: offsetAfterDesktop },
         };
       }
