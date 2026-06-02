@@ -1,3 +1,5 @@
+import { applySwiperNavigation, scheduleArendaSwiperBoot } from '../js/arendaSwiperBootstrap.js';
+
 /**
  * Hero carousel on test.html — Swiper slide swipe (desktop + mobile).
  */
@@ -17,25 +19,32 @@
     });
   }
 
-  function isVisible(el) {
+  function isMobileNavControl(el) {
     if (!el) return false;
-    let node = el;
-    while (node && node.nodeType === 1) {
-      const style = window.getComputedStyle(node);
-      if (style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity) === 0) return false;
-      node = node.parentElement;
-    }
-    const rect = el.getBoundingClientRect();
-    return rect.width > 0 && rect.height > 0;
+    const mobileWrap = el.closest('[class*="max-md:flex"]');
+    if (!mobileWrap) return false;
+    const cls = mobileWrap.className || '';
+    return cls.includes('hidden') && cls.includes('max-md:flex');
   }
 
   function pickNav(sliderRoot) {
-    const prevAll = Array.from(sliderRoot.querySelectorAll('[data-prev]')).filter(isVisible);
-    const nextAll = Array.from(sliderRoot.querySelectorAll('[data-next]')).filter(isVisible);
-    return {
-      prevEl: prevAll[0] ?? null,
-      nextEl: nextAll[0] ?? null,
+    const prevAll = Array.from(sliderRoot.querySelectorAll('[data-prev]'));
+    const nextAll = Array.from(sliderRoot.querySelectorAll('[data-next]'));
+    const narrow = narrowViewport();
+
+    const pick = (all) => {
+      if (!all.length) return null;
+      if (narrow) {
+        const mobile = all.filter(isMobileNavControl);
+        if (mobile.length) return mobile[mobile.length - 1];
+        return all[all.length - 1];
+      }
+      const desktop = all.filter((el) => !isMobileNavControl(el));
+      if (desktop.length) return desktop[0];
+      return all[0];
     };
+
+    return { prevEl: pick(prevAll), nextEl: pick(nextAll) };
   }
 
   function destroyOne(sliderRoot) {
@@ -58,7 +67,14 @@
     const container = track.parentElement;
     if (!container) return null;
 
-    if (container.__swiperInstance) return container.__swiperInstance;
+    const { prevEl, nextEl } = pickNav(sliderRoot);
+
+    const existing = container.__swiperInstance;
+    if (existing) {
+      applySwiperNavigation(existing, prevEl, nextEl);
+      if (typeof existing.update === 'function') existing.update();
+      return existing;
+    }
 
     container.classList.add('swiper');
     track.classList.add('swiper-wrapper');
@@ -75,7 +91,6 @@
     });
 
     const textSlides = Array.from(sliderRoot.querySelectorAll('[data-text-slide]'));
-    const { prevEl, nextEl } = pickNav(sliderRoot);
     const currentEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-current]'));
     const totalEls = Array.from(sliderRoot.querySelectorAll('[data-counter] [data-total]'));
 
@@ -156,11 +171,7 @@
 
   window.initArendaHeroSwiperFade = initAll;
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAll);
-  } else {
-    initAll();
-  }
+  scheduleArendaSwiperBoot(initAll);
 
   window.addEventListener('resize', initAllIfWidthChanged);
   window.addEventListener('orientationchange', initAllOnOrientationChange);

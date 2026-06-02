@@ -1,3 +1,5 @@
+import { applySwiperNavigation, scheduleArendaSwiperBoot } from './arendaSwiperBootstrap.js';
+
 /**
  * Swiper init for `[data-slider][data-mobile-carousel="true"]` translate carousels.
  * Wrapped in an IIFE so no global `isMobile` / `refreshOnResize` names collide with Tilda
@@ -140,18 +142,6 @@
     return ((raw % originalCount) + originalCount) % originalCount;
   }
 
-  function isVisible(el) {
-    if (!el) return false;
-    let node = el;
-    while (node && node.nodeType === 1) {
-      const style = window.getComputedStyle(node);
-      if (style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity) === 0) return false;
-      node = node.parentElement;
-    }
-    const rect = el.getBoundingClientRect();
-    return rect.width > 0 && rect.height > 0;
-  }
-
   /** Mobile nav lives in `hidden max-md:flex` blocks; desktop uses `max-md:hidden`. */
   function isMobileNavControl(el) {
     if (!el) return false;
@@ -167,18 +157,17 @@
     const narrow = narrowViewport();
 
     const pick = (all) => {
-      const visible = all.filter(isVisible);
-      if (!visible.length) return null;
+      if (!all.length) return null;
 
       if (narrow) {
-        const mobile = visible.filter(isMobileNavControl);
+        const mobile = all.filter(isMobileNavControl);
         if (mobile.length) return mobile[mobile.length - 1];
-        return visible[visible.length - 1];
+        return all[all.length - 1];
       }
 
-      const desktop = visible.filter((el) => !isMobileNavControl(el));
+      const desktop = all.filter((el) => !isMobileNavControl(el));
       if (desktop.length) return desktop[0];
-      return visible[0];
+      return all[0];
     };
 
     return { prevEl: pick(prevAll), nextEl: pick(nextAll) };
@@ -224,7 +213,12 @@
     const { originalCount, loopEnabled } = prepareLoopSlides(container, track, sliderRoot, loopRequested);
     totalEls.forEach((el) => (el.textContent = String(originalCount || 0)));
 
-    if (container.__swiperInstance) return container.__swiperInstance;
+    const existing = container.__swiperInstance;
+    if (existing) {
+      applySwiperNavigation(existing, prevEl, nextEl);
+      if (typeof existing.update === 'function') existing.update();
+      return existing;
+    }
 
     const baseOptions = {
       slidesPerView: 'auto',
@@ -321,11 +315,7 @@
 
   window.initArendaSwiperCarousel = initArendaSwiperCarousel;
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAll);
-  } else {
-    initAll();
-  }
+  scheduleArendaSwiperBoot(initAll);
 
   window.addEventListener('resize', refreshOnResize);
   window.addEventListener('orientationchange', refreshOnResize);

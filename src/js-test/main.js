@@ -6,6 +6,7 @@ import './accordion-test.js';
 import '../js/projectsAnim.js';
 import '../js/textSlider.js';
 import '../js/swiperMobileCarousels.js';
+import { refreshArendaSwipersAfterLayout } from '../js/arendaSwiperBootstrap.js';
 import './swiperHeroFade.js';
 import './adminka-test.js';
 import '../js/customScroll.js';
@@ -64,6 +65,8 @@ function updateScale() {
     container.style.marginRight = 'auto';
     container.style.width = '100%';
   }
+
+  requestAnimationFrame(() => refreshArendaSwipersAfterLayout());
 }
 
 // Initialize and listen for resize/zoom changes
