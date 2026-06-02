@@ -33,14 +33,39 @@
   }
 
   const LOOP_CLONE_ATTR = 'data-swiper-loop-clone';
+  const DUPLICATE_CLONE_ATTR = 'data-swiper-duplicate-clone';
 
   function removeLoopClones(track) {
     if (!track) return;
     track.querySelectorAll(`[${LOOP_CLONE_ATTR}]`).forEach((el) => el.remove());
   }
 
+  function removeDuplicateClones(track) {
+    if (!track) return;
+    track.querySelectorAll(`[${DUPLICATE_CLONE_ATTR}]`).forEach((el) => el.remove());
+  }
+
   function getOriginalSlides(track) {
-    return Array.from(track.querySelectorAll(`[data-slide]:not([${LOOP_CLONE_ATTR}])`));
+    return Array.from(
+      track.querySelectorAll(`[data-slide]:not([${LOOP_CLONE_ATTR}]):not([${DUPLICATE_CLONE_ATTR}])`)
+    );
+  }
+
+  /** Duplicate each slide once in DOM (for Tilda char limit). Counter still uses originals only. */
+  function applyDuplicateSlides(track, sliderRoot) {
+    if (sliderRoot.getAttribute('data-swiper-duplicate-slides') !== 'true') return;
+    removeDuplicateClones(track);
+    const originals = getOriginalSlides(track);
+    originals.forEach((slide) => {
+      const clone = slide.cloneNode(true);
+      clone.setAttribute(DUPLICATE_CLONE_ATTR, 'true');
+      clone.removeAttribute('id');
+      track.appendChild(clone);
+    });
+  }
+
+  function countSlidesForLoop(track) {
+    return track.querySelectorAll(`[data-slide]:not([${LOOP_CLONE_ATTR}])`).length;
   }
 
   function measureVisibleSlides(container, slides) {
@@ -86,14 +111,14 @@
 
     const visibleCount = measureVisibleSlides(container, originals);
     const wideSlides = sliderRoot.getAttribute('data-swiper-wide-slides') === 'true';
-    const nativeLoopOk = wideSlides || originalCount > visibleCount;
+    const nativeLoopOk = wideSlides || originalCount >= visibleCount * 2;
 
     if (nativeLoopOk) {
       return { originalCount, loopEnabled: true };
     }
 
-    const minRequired = visibleCount * 2;
-    let total = originals.length;
+    const minRequired = Math.max(originalCount + 2, visibleCount * 2 + 2);
+    let total = countSlidesForLoop(track);
     let cloneIndex = 0;
     while (total < minRequired) {
       const source = originals[cloneIndex % originalCount];
@@ -183,6 +208,7 @@
     if (!structure) return null;
 
     const { container, track } = structure;
+    applyDuplicateSlides(track, sliderRoot);
     const { prevEl, nextEl } = pickVisibleNav(sliderRoot);
     const loop = sliderRoot.getAttribute('data-infinite') === 'true';
     const wideSlides = sliderRoot.getAttribute('data-swiper-wide-slides') === 'true';
@@ -260,6 +286,7 @@
     if (inst && typeof inst.destroy === 'function') inst.destroy(true, false);
     if (container) container.__swiperInstance = null;
     removeLoopClones(track);
+    removeDuplicateClones(track);
   }
 
   function initAll() {
