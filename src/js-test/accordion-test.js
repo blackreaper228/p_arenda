@@ -108,6 +108,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function getHeaderHeightPx() {
+    const value = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
+    const parsed = parseInt(value, 10);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  function getMobileCollapsedAccordionHeight(acc) {
+    const mobileHeader = acc.querySelector('[id^="accordionCardMobile"]');
+    if (!mobileHeader) return acc.offsetHeight;
+
+    const accRect = acc.getBoundingClientRect();
+    const headerRect = mobileHeader.getBoundingClientRect();
+    const headerBottomInAcc = headerRect.bottom - accRect.top;
+    const style = getComputedStyle(acc);
+    const paddingBottom = parseFloat(style.paddingBottom) || 0;
+    const borderBottom = parseFloat(style.borderBottomWidth) || 0;
+
+    return headerBottomInAcc + paddingBottom + borderBottom;
+  }
+
+  function getMobileAccordionTargetScrollTop(acc) {
+    const headerHeight = getHeaderHeightPx();
+    const stack = getAccordionStack();
+
+    if (!stack) {
+      return Math.max(0, acc.getBoundingClientRect().top + window.scrollY - headerHeight);
+    }
+
+    let top = stack.getBoundingClientRect().top + window.scrollY;
+
+    for (const item of stack.children) {
+      if (item === acc) break;
+      top += getMobileCollapsedAccordionHeight(item);
+    }
+
+    return Math.max(0, top - headerHeight);
+  }
+
+  function scrollAccordionBlockToTop(acc, { instant = false } = {}) {
+    if (window.innerWidth >= 768 || !acc) return;
+
+    const top = getMobileAccordionTargetScrollTop(acc);
+    const behavior = instant ? 'auto' : 'smooth';
+
+    try {
+      window.scrollTo({ top, behavior });
+    } catch {
+      window.scrollTo(0, top);
+    }
+  }
+
   function getAccordionStack() {
     return accordions[0]?.parentElement ?? null;
   }
@@ -332,6 +383,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!card) return;
 
       const wasOpen = card.classList.contains('is-open');
+      if (!wasOpen) {
+        scrollAccordionBlockToTop(acc, { instant: true });
+      }
       closeAll();
       if (!wasOpen) openCard(acc, card);
     });
